@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 
-    <title>Creating an anchor link to an unknown version of an OAS document - HMRC Developer Hub</title>
+    <title>Linking to API base pages and endpoints - HMRC Developer Hub</title>
 
     <link href="../stylesheets/manifest.css" rel="stylesheet" />
 
@@ -14,13 +14,13 @@
       <meta name="description" content="Technical writers. Add anchor links to the latest version of an OAS document." />
       <meta name="twitter:card" content="summary" />
       <meta name="twitter:image" content="docs.developer.service.hmrc.gov.uk/images/govuk-large.png" />
-      <meta name="twitter:title" content="Creating an anchor link to an unknown version of an OAS document - HMRC Developer Hub" />
+      <meta name="twitter:title" content="Linking to API base pages and endpoints - HMRC Developer Hub" />
       <meta name="twitter:url" content="docs.developer.service.hmrc.gov.uk/documentation/test-dev-link.html" />
 
       <meta property="og:description" content="Technical writers. Add anchor links to the latest version of an OAS document." />
       <meta property="og:image" content="docs.developer.service.hmrc.gov.uk/images/govuk-large.png" />
       <meta property="og:site_name" content="HMRC Developer Hub" />
-      <meta property="og:title" content="Creating an anchor link to an unknown version of an OAS document" />
+      <meta property="og:title" content="Linking to API base pages and endpoints" />
       <meta property="og:type" content="object" />
       <meta property="og:url" content="docs.developer.service.hmrc.gov.uk/documentation/test-dev-link.html" />
 
@@ -153,7 +153,15 @@
     </ul>
   </li>
   <li>
-    <a href="../documentation/test-dev-link.html"><span>About the link</span></a>
+    <a href="../documentation/test-dev-link.html"><span>Linking to API base pages and endpoints</span></a>
+    <ul>
+      <li>
+        <a href="../documentation/test-dev-link.html#creating-a-link-to-an-api-base-page"><span>Creating a link to an API base page</span></a>
+      </li>
+      <li>
+        <a href="../documentation/test-dev-link.html#creating-an-anchor-link-to-the-latest-version-of-an-api-endpoint"><span>Creating an anchor link to the latest version of an API endpoint</span></a>
+      </li>
+    </ul>
   </li>
   <li>
     <a href="../documentation/signup.html"><span>Sign up</span></a>
@@ -358,15 +366,44 @@
         <div class="app-pane__content toc-open-disabled" aria-label="Content" tabindex="0">
           <main id="content" class="technical-documentation" data-module="anchored-headings">
             <!--- Section owner: MTD Programme --->
-<h1 id="about-the-link">About the link</h1>
-<p>To create an anchor link, you need to do the following:
- - Rename the page, appending .erb. This is to indicate that the page contains embedded Ruby code.
- - Add the link code to the page &lt; % = make_a_link(&ldquo;api-name&rdquo;, &ldquo;anchor-name&rdquo;, &ldquo;Link text&rdquo;) % &gt;. The anchor name is the ID of the anchor in the OAS document. The link text is the text that appears in the link.
- - The markup will contain a link to the most recent version of the api. Note that the anchor is all code after the # in the url.</p>
+<h1 id="linking-to-api-base-pages-and-endpoints">Linking to API base pages and endpoints</h1>
+<h2 id="creating-a-link-to-an-api-base-page">Creating a link to an API base page</h2>
+<p>Use the standard markdown coding. For example:</p>
+<div class="highlight"><pre class="highlight plaintext" tabindex="0"><code>[Test Fraud Prevention Headers API](https://developer.service.hmrc.gov.uk/api-documentation/docs/api/service/txm-fph-validator-api/)
+</code></pre></div><p>Notice that the version number is intentionally omitted from the end of the URL. This results in the link automatically pointing to the latest version.</p>
+<h2 id="creating-an-anchor-link-to-the-latest-version-of-an-api-endpoint">Creating an anchor link to the latest version of an API endpoint</h2>
+<p>To create an anchor link, you need to do the following:</p>
+
+<ol>
+<li>Rename the page, appending .erb. This is to indicate that the page contains embedded Ruby code.</li>
+<li>Add the following link code to the page:</li>
+</ol>
+<div class="highlight"><pre class="highlight plaintext" tabindex="0"><code>&lt; % = make_a_link("api-name", "anchor-name", "Link text") % &gt;
+</code></pre></div><p>The anchor name is the ID of the anchor in the OAS document. The link text is the text that appears in the link.</p>
+<p>The markup will contain a link to the most recent version of the api. Note that the anchor is all code after the # in the url.</p>
 
 <hr>
-<p><a href='https://developer.service.hmrc.gov.uk/api-documentation/docs/api/service/individual-calculations-api//4.0/oas/page#trigger_a_self_assessment_tax_calculation'>Trigger A Self Assessment Tax Calculation</a></p>
+<p>Here&rsquo;s an example of the correctly rendered link code:
+<a href='https://developer.service.hmrc.gov.uk/api-documentation/docs/api/service/individual-calculations-api//4.0/oas/page#trigger_a_self_assessment_tax_calculation'>Trigger A Self Assessment Tax Calculation</a></p>
+<p>For example, the <a href="https://developer.service.hmrc.gov.uk/api-documentation/docs/api/service/business-details-api/1.0/oas/page#/paths/~1individuals~1business~1details~1%7Bnino%7D~1list/get">List All Businesses</a> endpoint link uses this code:</p>
+<div class="highlight"><pre class="highlight plaintext" tabindex="0"><code>[List All Businesses](https://developer.service.hmrc.gov.uk/api-documentation/docs/api/service/business-details-api/1.0/oas/page#/paths/~1individuals~1business~1details~1%7Bnino%7D~1list/get)
+</code></pre></div><p>Notice the &ldquo;business-details-api/1.0&rdquo; embedded in the middle. This solution involves constructing the URL from the three building blocks, which you place within the &ldquo;make_a_link&rdquo; code. The &ldquo;make_a_link&rdquo; code then constructs the link with the version number always pointing to the latest version.</p>
+<p>In this example:</p>
 
+<ul>
+<li>api-name = <strong>business-details-api</strong></li>
+<li>anchor-name = <strong>/paths/~1individuals~1business~1details~1%7Bnino%7D~1list/get</strong></li>
+<li>Link text = <strong>List All Businesses</strong></li>
+</ul>
+<p>So the link code you would add in this example is:</p>
+<div class="highlight"><pre class="highlight plaintext" tabindex="0"><code>&lt; % = make_a_link("business-details-api", "/paths/~1individuals~1business~1details~1%7Bnino%7D~1list/get", "List All Businesses")  % &gt;
+</code></pre></div><h3 id="search-and-replace-regular-expressions">Search and Replace Regular Expressions</h3>
+<p>To speed up the process of converting from markdown link coding to the anchor link coding, you can use the following search and replace regular expressions:</p>
+<h4 id="search">Search</h4>
+<div class="highlight"><pre class="highlight plaintext" tabindex="0"><code>\[(.*)\]\((https://developer.service.hmrc.gov.uk/api-documentation/docs/api/service/)(.*\/)[0-9]+.[0-9]/oas/page#(.*)\)
+</code></pre></div><h4 id="replace">Replace</h4>
+<div class="highlight"><pre class="highlight plaintext" tabindex="0"><code>&lt; % = make_a_link(“$3”, “$4”, “$1”) % &gt;
+</code></pre></div>
             
           </main>
 
