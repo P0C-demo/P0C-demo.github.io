@@ -576,7 +576,7 @@
 </code></pre></div><h3 id="search-and-replace-regular-expressions">Search and Replace Regular Expressions</h3>
 <p>To speed up the process of converting from markdown link coding to the anchor link coding, you can use the following search and replace regular expressions:</p>
 <h4 id="search">Search</h4>
-<div class="highlight"><pre class="highlight plaintext" tabindex="0"><code>\[(.*)\]\((https://developer.service.hmrc.gov.uk/api-documentation/docs/api/service/)(.*\/)[0-9]+.[0-9]/oas/page#(.*)\)
+<div class="highlight"><pre class="highlight plaintext" tabindex="0"><code>\[(.*)\]\((https://developer.service.hmrc.gov.uk/api-documentation/docs/api/service/)(.*\/)[0-9]+.[0-9]/oas/page#(.*?)\)
 </code></pre></div><h4 id="replace">Replace</h4>
 <div class="highlight"><pre class="highlight plaintext" tabindex="0"><code>&lt; % = make_a_link("$3", "$4", "$1") % &gt;
 </code></pre></div>
