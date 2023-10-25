@@ -1,5 +1,5 @@
 <h1 id="income-tax-making-tax-digital-end-to-end-service-guide">Income Tax (Making Tax Digital) end-to-end service guide</h1>
-<p><strong>Version X.Y</strong> experimental version</p>
+<p><strong>Version 3.3</strong> issued October 2023</p>
 <p>This service guide explains how you can integrate your software with the <a href="https://developer.service.hmrc.gov.uk/api-documentation/docs/api?filter=income-tax">Income Tax (Making Tax Digital) APIs</a>.</p>
 
 <blockquote>
@@ -8,7 +8,7 @@
           <tr>
 <th>Help us improve this guide</th>
 </tr><tr>
-<td>This guide is currently being revised and overhauled to ensure it meets the needs of software providers. See the service guide <a href="#changelog">changelog</a> for latest updates.<br><br>If there is a way that this guide could be improved or expanded to meet your needs, <b>now is the time to let us know.</b><br><br>If you use this guide regularly, we&rsquo;d like to invite you to share your thoughts and feedback via an online video call, which will involve a 60-minute one-to-one interview.<br><br>We’d like to explore:<ul>
+<td>This guide is currently being revised and overhauled to ensure it meets the needs of software providers. See the service guide <a href="#documentation-changelog">changelog</a> for latest updates.<br><br>If there is a way that this guide could be improved or expanded to meet your needs, <b>now is the time to let us know.</b><br><br>If you use this guide regularly, we&rsquo;d like to invite you to share your thoughts and feedback via an online video call, which will involve a 60-minute one-to-one interview.<br><br>We’d like to explore:<ul>
 <li>Your current use of and experience with the service guide</li>
 <li>Any challenges you face</li>
 <li>How helpful you find the service guide</li>
@@ -18,17 +18,41 @@
 </tr>
         </table>
       </div></blockquote>
+<h2 id="overview">Overview</h2>
+<p>This guide explains how you can integrate your software with our APIs, and provides examples of how they fit into various end-to-end user journeys to enable agents and individuals to meet their obligations once they have signed up to Making Tax Digital, a service where quarterly updates and final declarations will replace the need for a Self Assessment return to be submitted.</p>
+<p>For more information about eligibility and how to use Making Tax Digital for Income Tax, please refer to the <a href="https://www.gov.uk/government/collections/making-tax-digital-for-income-tax-for-businesses-step-by-step">Making Tax Digital step by step guidance</a>.</p>
 <h2 id="changelogs">Changelogs</h2>
 <h3 id="api-changelog">API changelog</h3>
 <p>The full changelog for Income Tax MTD APIs is now at <a href="https://github.com/hmrc/income-tax-mtd-changelog">https://github.com/hmrc/income-tax-mtd-changelog</a> - that is the best source for detailed and comprehensive information about API changes.</p>
 <h3 id="documentation-changelog">Documentation changelog</h3>
 <p>Below is a summary of significant updates to this service guide:</p>
-<h4 id="version-3-1">Version 3.1</h4>
+<h4 id="version-3-3">Version 3.3</h4>
+<p>04 October 2023</p>
 
 <ul>
-<li>Added &lsquo;API lifecycle &amp; deprecation&rsquo; section, removed some duplicated content.</li>
+<li>Updated content for <a href="https://developer.service.hmrc.gov.uk/guides/income-tax-mtd-end-to-end-service-guide/documentation/online-tax-account.html">HMRC online services</a> section</li>
+<li>Updated content for <a href="https://developer.service.hmrc.gov.uk/guides/income-tax-mtd-end-to-end-service-guide/documentation/closedown.html">Opting out of MTD</a> section</li>
+<li>Updated content for <a href="https://developer.service.hmrc.gov.uk/guides/income-tax-mtd-end-to-end-service-guide/documentation/hmrc-assist.html">HMRC Assist</a> section</li>
+</ul>
+<h4 id="version-3-2">Version 3.2</h4>
+<p>20 September 2023</p>
+
+<ul>
+<li>Updated content for <a href="https://developer.service.hmrc.gov.uk/guides/income-tax-mtd-end-to-end-service-guide/documentation/penaltiesandappeals.html">Penalties and Appeals</a> section</li>
+<li>Updated content for <a href="https://developer.service.hmrc.gov.uk/guides/income-tax-mtd-end-to-end-service-guide/documentation/final-declaration-crystallisation.html">Final Declaration (Crystallisation)</a> section</li>
+<li>Updated content for <a href="#production-approvals-process-for-making-tax-digital-for-income-tax-self-assessment">Production approvals process</a> section</li>
+<li>Updated content for <a href="#software-choices">Software choices</a> section</li>
+<li>Updated content for <a href="#bridging-software">Bridging software</a> section</li>
+<li>Removed Business Validation Rules section</li>
+</ul>
+<h4 id="version-3-1">Version 3.1</h4>
+<p>27 June 2023</p>
+
+<ul>
+<li>Added <a href="https://developer.service.hmrc.gov.uk/guides/income-tax-mtd-end-to-end-service-guide/documentation/api-deprecation-guidance.html">API lifecycle &amp; deprecation</a> section, removed some duplicated content</li>
 </ul>
 <h4 id="version-3-0">Version 3.0</h4>
+<p>14 June 2023</p>
 
 <ul>
 <li>Updated API and endpoint links.</li>
@@ -36,12 +60,12 @@
 <h4 id="version-2-9">Version 2.9</h4>
 
 <ul>
-<li>Updated direct links to endpoints to reflect changes in how API documentation is published.</li>
+<li>Updated direct links to endpoints to reflect changes in how API documentation is published</li>
 </ul>
 <h4 id="version-2-8">Version 2.8</h4>
 
 <ul>
-<li>Updated HMRC Assist section.</li>
+<li>Updated HMRC Assist section</li>
 </ul>
 <h4 id="version-2-7">Version 2.7</h4>
 
@@ -66,20 +90,20 @@
 <h4 id="version-2-3">Version 2.3</h4>
 
 <ul>
-<li>Added note and an example table demonstrating how adjustments submitted work.</li>
+<li>Added note and an example table demonstrating how adjustments submitted work</li>
 </ul>
 <h4 id="version-2-2">Version 2.2</h4>
 
 <ul>
-<li>Added a Frequently Asked Questions section to the menu tree.</li>
+<li>Added a Frequently Asked Questions section to the menu tree</li>
 </ul>
 <h4 id="version-2-1">Version 2.1</h4>
 
 <ul>
 <li>Notice of version change to Business Income Source Summary V1.0</li>
 <li>&ldquo;Set up&rdquo; heading replaced by &ldquo;Sign up&rdquo; with the menu tree updated to only have three sections: <strong>Agent</strong>, <strong>Individual</strong> and <strong>Link software to HMRC</strong>.</li>
-<li>Updated content in the <strong>Minimum functionality standards</strong> section with two other sections added: <strong>Bridging software</strong> and <strong>Non-MTD products</strong>.</li>
-<li>Updated content in the <strong>Declaration</strong> and <strong>Declaration for agents</strong> sections of <strong>Final declaration</strong> (previously called &ldquo;crystallisation&rdquo;).</li>
+<li>Updated content in the <strong>Minimum functionality standards</strong> section with two other sections added: <strong>Bridging software</strong> and <strong>Non-MTD products</strong></li>
+<li>Updated content in the <strong>Declaration</strong> and <strong>Declaration for agents</strong> sections of <strong>Final declaration</strong> (previously called &ldquo;crystallisation&rdquo;)</li>
 </ul>
 <h4 id="version-2-0">Version 2.0</h4>
 
@@ -89,28 +113,28 @@
 <h4 id="version-1-9">Version 1.9</h4>
 
 <ul>
-<li>Addition of requirement for businesses and landlords to provide information about residential property disposals.</li>
-<li>Addition of information regarding BSAS adjustments.</li>
-<li>Addition of content changes to meet MTD Style Guide V2.2.</li>
-<li>Replacing the term ‘crystallisation’ with ‘final declaration&rsquo;.</li>
+<li>Addition of requirement for businesses and landlords to provide information about residential property disposals</li>
+<li>Addition of information regarding BSAS adjustments</li>
+<li>Addition of content changes to meet MTD Style Guide V2.2</li>
+<li>Replacing the term ‘crystallisation’ with ‘final declaration&rsquo;</li>
 </ul>
 <h4 id="version-1-8">Version 1.8</h4>
 
 <ul>
-<li>Addition of deprecation dates for Self Assessment API Endpoints.</li>
-<li>Notice of version change to Business Source Adjustable Summary (MTD) - V 1.0.</li>
-<li>Notice of version change to Individual Losses (MTD) - V1.0.</li>
-<li>Notice of version change to Individual Calculations v 1.0.</li>
+<li>Addition of deprecation dates for Self Assessment API Endpoints</li>
+<li>Notice of version change to Business Source Adjustable Summary (MTD) - V 1.0</li>
+<li>Notice of version change to Individual Losses (MTD) - V1.0</li>
+<li>Notice of version change to Individual Calculations v 1.0</li>
 </ul>
 <h4 id="version-1-7">Version 1.7</h4>
 
 <ul>
-<li>Change of title to Income Tax (Making Tax Digital) end-to-end Service Guide.</li>
-<li>Inclusion of Income Tax (MTD) APIs.</li>
-<li>Inclusion of Tax Terminology.</li>
-<li>Addition of Foreign Property reference to Obligations.</li>
-<li>Replaced the term, ‘taxpayers’ with ‘customers’.</li>
-<li>Replaced references to SA Accounting Summary API with BSAS API.</li>
+<li>Change of title to Income Tax (Making Tax Digital) end-to-end Service Guide</li>
+<li>Inclusion of Income Tax (MTD) APIs</li>
+<li>Inclusion of Tax Terminology</li>
+<li>Addition of Foreign Property reference to Obligations</li>
+<li>Replaced the term, ‘taxpayers’ with ‘customers’</li>
+<li>Replaced references to SA Accounting Summary API with BSAS API</li>
 </ul>
 <h4 id="version-1-6">Version 1.6</h4>
 
