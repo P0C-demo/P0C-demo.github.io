@@ -5,23 +5,22 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 
-    <title>Search - HMRC Developer Hub</title>
+    <title>Customer status | ITSA (MTD) End-to-End Service Guide - HMRC Developer Hub</title>
 
     <link href="../stylesheets/manifest.css" rel="stylesheet" />
 
-    <link rel="canonical" href="docs.developer.service.hmrc.gov.uk/search/">
+    <link rel="canonical" href="docs.developer.service.hmrc.gov.uk/documentation/customer-status.html">
 
-      <meta name="robots" content="noindex" />
       <meta name="twitter:card" content="summary" />
       <meta name="twitter:image" content="docs.developer.service.hmrc.gov.uk/images/govuk-large.png" />
-      <meta name="twitter:title" content="Search - HMRC Developer Hub" />
-      <meta name="twitter:url" content="docs.developer.service.hmrc.gov.uk/search/" />
+      <meta name="twitter:title" content="Customer status | ITSA (MTD) End-to-End Service Guide - HMRC Developer Hub" />
+      <meta name="twitter:url" content="docs.developer.service.hmrc.gov.uk/documentation/customer-status.html" />
 
       <meta property="og:image" content="docs.developer.service.hmrc.gov.uk/images/govuk-large.png" />
       <meta property="og:site_name" content="HMRC Developer Hub" />
-      <meta property="og:title" content="Search" />
+      <meta property="og:title" content="Customer status | ITSA (MTD) End-to-End Service Guide" />
       <meta property="og:type" content="object" />
-      <meta property="og:url" content="docs.developer.service.hmrc.gov.uk/search/" />
+      <meta property="og:url" content="docs.developer.service.hmrc.gov.uk/documentation/customer-status.html" />
 
     
   </head>
@@ -376,29 +375,28 @@
 
         <div class="app-pane__content toc-open-disabled" aria-label="Content" tabindex="0">
           <main id="content" class="technical-documentation" data-module="anchored-headings">
-            <div id="search-help" class="search-help">
-  <h1 id="how-to-search">Search</h1>
+            <h1 id="customer-status">Customer status</h1>
+<p>To manage a customer&rsquo;s filing obligations, MTD needs to identify different types of customer in the service. To do this, MTD has allocated a status for each customer for each tax year. This status will be reviewed annually by HMRC using the latest tax return received from the customer. This status will persist year-on-year.</p>
+<p>In software, the customer status can be retrieved using the <a href="/api-documentation/docs/api/service/self-assessment-individual-details-api/">Self Assessment Individual Details</a> API. However, the software should not show the ITSA status to the customer. Instead, the statuses can be used in software in the following ways:</p>
 
-  <p class="govuk-body search-help__no-js">
-    You need to turn on JavaScript in your browser to search this site. You can either:
-
-    <ul>
-      <li>turn on JavaScript in your browser</li>
-      <li>search this site using Google</li>
-    </ul>
-  </p>
-
-  <p class="govuk-body">
-    Enter a search term in the search box, then select the search button.
-  </p>
-</div>
-
-<div id="search-results" class="search-results" hidden aria-labelledby="search-results-title">
-  <div class="search-results__inner">
-    <h1 id="search-results-title" class="search-results__title" aria-live="assertive">Results</h1>
-    <div class="search-results__content"></div>
-  </div>
-</div>
+<ul>
+<li>encourage customers to fulfil their obligations </li>
+<li>where necessary, inform customers that they may receive a penalty if they do not submit their updates on time</li>
+<li>establish if a customer can opt out of MTD or sign up and direct them to HMRC online services </li>
+</ul>
+<p>The different types of customer status are described below.</p>
+<h2 id="mtd-mandated">MTD mandated</h2>
+<p>MTD mandated customers have qualifying income above the MTD threshold. This status will not be set until the first mandated year when their obligations become penalty-bearing. These obligations include quarterly updates, end-of-period statement, and final declaration.</p>
+<h2 id="mtd-voluntary">MTD voluntary</h2>
+<p>MTD voluntary customers have qualifying income below or equal to the MTD threshold. These customers will have the same obligations as MTD mandated customers but only the final declaration is penalty-bearing.</p>
+<h2 id="annual">Annual</h2>
+<p>Annual customers have an annual self-assessment return obligation which is penalty-bearing. This status will include customers who have qualifying income below or equal to the MTD threshold and have chosen not to voluntarily sign up for MTD.</p>
+<h2 id="mtd-exempt">MTD exempt</h2>
+<p>MTD exempt customers have manually applied for an exemption from MTD. If a request has been made for VAT, it is applied to MTD ITSA without the need for a further application. These customers will have an annual self-assessment return obligation which is penalty-bearing.</p>
+<h2 id="non-digital">Non-digital</h2>
+<p>Non-digital customers have manually applied for a non-digital status. If a request has been made for VAT, it is applied to MTD ITSA without the need for a further application.  These customers will have an annual self-assessment return obligation which is penalty-bearing. Customers with this status are unlikely to be using a software product to meet their self-assessment obligations.</p>
+<h2 id="dormant">Dormant</h2>
+<p>Dormant customers are no longer required to file a self-assessment tax return. No obligations will be created. Customers with this status may start using software and intend to file a self-assessment tax return but have yet to inform HMRC.</p>
 
             
           </main>

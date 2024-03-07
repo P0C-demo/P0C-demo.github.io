@@ -5,23 +5,24 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 
-    <title>Search - HMRC Developer Hub</title>
+    <title>Using Tax Codes to Collect Tax Due | Income Tax (MTD) End-to-End Service Guide - HMRC Developer Hub</title>
 
     <link href="../stylesheets/manifest.css" rel="stylesheet" />
 
-    <link rel="canonical" href="docs.developer.service.hmrc.gov.uk/search/">
+    <link rel="canonical" href="docs.developer.service.hmrc.gov.uk/documentation/using-tax-codes-to-collect-taxes-due.html">
 
-      <meta name="robots" content="noindex" />
+      <meta name="description" content="Software developers, designers, product owners or business analysts. Integrate your software with the Income Tax API for Making Tax Digital." />
       <meta name="twitter:card" content="summary" />
       <meta name="twitter:image" content="docs.developer.service.hmrc.gov.uk/images/govuk-large.png" />
-      <meta name="twitter:title" content="Search - HMRC Developer Hub" />
-      <meta name="twitter:url" content="docs.developer.service.hmrc.gov.uk/search/" />
+      <meta name="twitter:title" content="Using Tax Codes to Collect Tax Due | Income Tax (MTD) End-to-End Service Guide - HMRC Developer Hub" />
+      <meta name="twitter:url" content="docs.developer.service.hmrc.gov.uk/documentation/using-tax-codes-to-collect-taxes-due.html" />
 
+      <meta property="og:description" content="Software developers, designers, product owners or business analysts. Integrate your software with the Income Tax API for Making Tax Digital." />
       <meta property="og:image" content="docs.developer.service.hmrc.gov.uk/images/govuk-large.png" />
       <meta property="og:site_name" content="HMRC Developer Hub" />
-      <meta property="og:title" content="Search" />
+      <meta property="og:title" content="Using Tax Codes to Collect Tax Due | Income Tax (MTD) End-to-End Service Guide" />
       <meta property="og:type" content="object" />
-      <meta property="og:url" content="docs.developer.service.hmrc.gov.uk/search/" />
+      <meta property="og:url" content="docs.developer.service.hmrc.gov.uk/documentation/using-tax-codes-to-collect-taxes-due.html" />
 
     
   </head>
@@ -376,29 +377,28 @@
 
         <div class="app-pane__content toc-open-disabled" aria-label="Content" tabindex="0">
           <main id="content" class="technical-documentation" data-module="anchored-headings">
-            <div id="search-help" class="search-help">
-  <h1 id="how-to-search">Search</h1>
+            <!--- Section owner: MTD Programme --->
+<h1 id="using-tax-codes-to-collect-tax-due">Using Tax Codes to Collect Tax Due</h1>
+<p>When a Self Assessment customer receives PAYE income in addition to business income, HMRC will try to collect any Self Assessment tax owed through their tax code for the following tax year.</p>
+<p>However, if there is a change in the customer&rsquo;s tax code, it may no longer be possible to collect the tax owed using this method. As a result, any amount collected will be returned to the customer’s account. For more information, refer to <a href="https://www.gov.uk/pay-self-assessment-tax-bill/through-your-tax-code">Pay your Self Assessment tax bill: Through your tax code (GOV.UK)</a>.</p>
+<p>‘Coding out’ refers to the use of tax codes to collect tax and debts due to HMRC. The coding out underpayments and debts endpoints in the <a href="/api-documentation/docs/api/service/self-assessment-accounts-api/">Self Assessment Accounts API</a> enable the customer to complete the following tasks:</p>
 
-  <p class="govuk-body search-help__no-js">
-    You need to turn on JavaScript in your browser to search this site. You can either:
+<ul>
+<li>view coding out underpayment and debt amounts</li>
+<li>create or amend coding out underpayment and debt amounts</li>
+<li>delete coding out underpayment and debt amounts</li>
+</ul>
+<p>A customer can view the coded out Self Assessment underpayments stored by HMRC and the amount submitted for the previous tax year at any time. In the software, this is done by calling the <a href="/api-documentation/docs/api/service/self-assessment-accounts-api/2.0/oas/page#tag/Coding-Out-Underpayments-and-Debts/paths/~1accounts~1self-assessment~1%7Bnino%7D~1%7BtaxYear%7D~1collection~1tax-code/get">Retrieve Coding Out Underpayments and Debt Amounts</a> endpoint.</p>
+<p>At the end of the tax year, the customer will review their calculations before submitting the final declaration. If the customer does not agree with the coded out amount in their calculation shown by HMRC, they can submit what they believe to be the correct coded out amount. This can be corrected more than once if needed, but it needs to be done before the final declaration is submitted. In the software, this amendment is done by calling the <a href="/api-documentation/docs/api/service/self-assessment-accounts-api/2.0/oas/page#tag/Coding-Out-Underpayments-and-Debts/paths/~1accounts~1self-assessment~1%7Bnino%7D~1%7BtaxYear%7D~1collection~1tax-code/put">Create or Amend Coding Out Underpayments and Debt Amounts</a> endpoint. This endpoint can be used only after the tax year has ended.</p>
+<p>If the customer has submitted an amendment to the coded out amount after the end of the tax year but later realises they agree with the coded out amount shown by HMRC, they can delete their submitted amount. This deletion needs to be done before the final declaration is submitted. In the software, this deletion is done by calling the <a href="/api-documentation/docs/api/service/self-assessment-accounts-api/2.0/oas/page#tag/Coding-Out-Underpayments-and-Debts/paths/~1accounts~1self-assessment~1%7Bnino%7D~1%7BtaxYear%7D~1collection~1tax-code/delete">Delete Coding Out Underpayments and Debt Amounts</a> endpoint.</p>
+<p>Coding out is specific to the tax year. If a customer opts out of coding out for a specific tax year, they will not be opted out for future tax years.</p>
+<p>The software can use the following endpoints to enable customers to:</p>
 
-    <ul>
-      <li>turn on JavaScript in your browser</li>
-      <li>search this site using Google</li>
-    </ul>
-  </p>
-
-  <p class="govuk-body">
-    Enter a search term in the search box, then select the search button.
-  </p>
-</div>
-
-<div id="search-results" class="search-results" hidden aria-labelledby="search-results-title">
-  <div class="search-results__inner">
-    <h1 id="search-results-title" class="search-results__title" aria-live="assertive">Results</h1>
-    <div class="search-results__content"></div>
-  </div>
-</div>
+<ul>
+<li><a href="/api-documentation/docs/api/service/self-assessment-accounts-api/3.0/oas/page#tag/Coding-Out-Status/paths/~1accounts~1self-assessment~1{nino}~1{taxYear}~1collection~1tax-code~1coding-out~1opt-out/post">Opt Out of Coding Out</a> </li>
+<li><a href="/api-documentation/docs/api/service/self-assessment-accounts-api/3.0/oas/page#tag/Coding-Out-Status/paths/~1accounts~1self-assessment~1{nino}~1{taxYear}~1collection~1tax-code~1coding-out~1status/get">Retrieve Coding Out Status</a></li>
+<li><a href="/api-documentation/docs/api/service/self-assessment-accounts-api/3.0/oas/page#tag/Coding-Out-Status/paths/~1accounts~1self-assessment~1{nino}~1{taxYear}~1collection~1tax-code~1coding-out~1opt-in/post">Opt in to Coding Out</a></li>
+</ul>
 
             
           </main>
