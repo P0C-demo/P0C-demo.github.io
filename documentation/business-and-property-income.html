@@ -140,6 +140,9 @@
         <a href="/#end-to-end-user-journey"><span>End-to-end user journey</span></a>
       </li>
       <li>
+        <a href="/#mapping-apis-to-self-assessment-tax-return-forms"><span>Mapping APIs to Self Assessment tax return forms</span></a>
+      </li>
+      <li>
         <a href="/#changelogs"><span>Changelogs</span></a>
       </li>
     </ul>
@@ -481,7 +484,7 @@
       </div><h3 id="submit-quarterly-update">Submit quarterly update</h3>
 
 <p>The software should convert transactional information into summary totals. It should categorise these totals as income or expenses. It should send this summary information to HMRC for each self-employment and property income source. HMRC can then use this information to calculate business profits based on the most recent data.</p>
-<p>Customers with an annual turnover (sales) less than £85,000 can report their total income and expenses in their quarterly updates (no detailed breakdown required). They can do this through the software by using the ‘Consolidated Expenses’ parameter in the <a href="https://developer.service.hmrc.gov.uk/api-documentation/docs/api/service/self-employment-business-api/3.0" rel="noopener noreferrer">Self Employment Business</a> and <a href="https://developer.service.hmrc.gov.uk/api-documentation/docs/api/service/property-business-api/3.0" rel="noopener noreferrer">Property Business</a> APIs for both self-employment and property income. If their income is above £85,000 and their expenses have been submitted through consolidated expenses, an error will be produced.</p>
+<p>Customers with an annual turnover (sales) less than £85,000 can report their total income and expenses in their quarterly updates (no detailed breakdown required). They can do this through the software by using the ‘Consolidated Expenses’ parameter in the <a href="https://developer.service.hmrc.gov.uk/api-documentation/docs/api/service/self-employment-business-api/3.0" rel="noopener noreferrer">Self Employment Business</a> and <a href="https://developer.service.hmrc.gov.uk/api-documentation/docs/api/service/property-business-api/3.0" rel="noopener noreferrer">Property Business</a> APIs for both self-employment and property income.</p>
 <p>When the tax calculation is triggered, it means that the quarterly obligation has been fulfilled, if the data covers the entire period. If the calculation fails, the obligation will not be marked as fulfilled. Customers can also check the status of their <a href="#retrieving-obligations" rel="noopener noreferrer">obligations</a> through HMRC online services.</p>
 <p><a href="/documentation/figures/submit-periodics.svg" target="blank"><img src="/documentation/figures/submit-periodics.svg" alt="submit periodics diagram" style="width:720px;" /></a></p>
 <p><a href="/documentation/figures/submit-periodics.svg" target="blank">Open the submit periodics diagram in a new tab</a>.</p>

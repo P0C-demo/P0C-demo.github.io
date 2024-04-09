@@ -236,11 +236,47 @@ Alternatively, the software may choose to create a BISS themselves by totalling 
 <li><a href="/guides/income-tax-mtd-end-to-end-service-guide/documentation/additional-information.html#providing-information-about-how-to-treat-a-loss" rel="noopener noreferrer">providing information about how to treat a loss</a></li>
 <li><a href="/guides/income-tax-mtd-end-to-end-service-guide/documentation/final-declaration.html#making-a-final-declaration" rel="noopener noreferrer">making a final declaration</a></li>
 </ul>
-<h2 id="changelogs">Changelogs</h2>
+<h2 id="mapping-apis-to-self-assessment-tax-return-forms">Mapping APIs to Self Assessment tax return forms</h2>
+
+<p>Many parameters in some Income Tax (Making Tax Digital) APIs map to box numbers in <a href="https://www.gov.uk/self-assessment-tax-return-forms" rel="noopener noreferrer">Self Assessment tax return forms (GOV.UK)</a>. You can download this mapping information as CSV files from the <a href="https://github.com/hmrc/income-tax-mtd-changelog?tab=readme-ov-file#mapping-apis-to-self-assessment-tax-return-forms" rel="noopener noreferrer">income-tax-mtd-changelog/mapping</a> (GitHub).</p>
+<p>Some APIs map to box numbers in more than one form. The following table shows which APIs are linked to which forms.</p>
+<div class="table-container">
+        <table>
+          <tr>
+<th>Self Assessment tax return form</th>
+<th>Related APIs</th>
+</tr><tr>
+<td><a href="https://www.gov.uk/government/publications/self-assessment-tax-return-sa100" rel="noopener noreferrer">SA100 Main tax return (GOV.UK)</a></td>
+<td>
+<a href="/api-documentation/docs/api/service/individual-calculations-api" rel="noopener noreferrer">Individual Calculations</a> <br><a href="/api-documentation/docs/api/service/individuals-disclosures-api" rel="noopener noreferrer">Individuals Disclosures</a> <br><a href="/api-documentation/docs/api/service/individuals-income-received-api" rel="noopener noreferrer">Individuals Income Received</a> <br><a href="/api-documentation/docs/api/service/individuals-reliefs-api" rel="noopener noreferrer">Individuals Reliefs</a> <br><a href="/api-documentation/docs/api/service/individuals-state-benefits-api" rel="noopener noreferrer">Individuals State Benefits</a> <br><a href="/api-documentation/docs/api/service/self-assessment-accounts-api" rel="noopener noreferrer">Self Assessment Accounts</a>
+</td>
+</tr><tr>
+<td><a href="https://www.gov.uk/government/publications/self-assessment-additional-information-sa101" rel="noopener noreferrer">SA101 Additional Information (GOV.UK)</a></td>
+<td>
+<a href="/api-documentation/docs/api/service/individuals-charges-api" rel="noopener noreferrer">Individuals Charges</a> <br><a href="/api-documentation/docs/api/service/individuals-disclosures-api" rel="noopener noreferrer">Individuals Disclosures</a> <br><a href="/api-documentation/docs/api/service/individuals-expenses-api" rel="noopener noreferrer">Individuals Expenses</a> <br><a href="/api-documentation/docs/api/service/individuals-income-received-api" rel="noopener noreferrer">Individuals Income Received</a> <br><a href="/api-documentation/docs/api/service/individuals-reliefs-api" rel="noopener noreferrer">Individuals Reliefs</a> <br><a href="/api-documentation/docs/api/service/other-deductions-api" rel="noopener noreferrer">Other Deductions</a>
+</td>
+</tr><tr>
+<td><a href="https://www.gov.uk/government/publications/self-assessment-employment-sa102" rel="noopener noreferrer">SA102 Employment (GOV.UK)</a></td>
+<td>
+<a href="/api-documentation/docs/api/service/individuals-expenses-api" rel="noopener noreferrer">Individuals Expenses</a> <br><a href="/api-documentation/docs/api/service/individuals-income-received-api" rel="noopener noreferrer">Individuals Income Received</a>
+</td>
+</tr><tr>
+<td><a href="https://www.gov.uk/government/publications/self-assessment-uk-property-sa105" rel="noopener noreferrer">SA105 UK Property (GOV.UK)</a></td>
+<td>
+<a href="/api-documentation/docs/api/service/individual-losses-api" rel="noopener noreferrer">Individual Losses</a> <br><a href="/api-documentation/docs/api/service/property-business-api" rel="noopener noreferrer">Property Business</a>
+</td>
+</tr><tr>
+<td><a href="https://www.gov.uk/government/publications/self-assessment-foreign-sa106" rel="noopener noreferrer">SA106 Foreign (GOV.UK)</a></td>
+<td>
+<a href="/api-documentation/docs/api/service/individual-losses-api" rel="noopener noreferrer">Individual Losses</a> <br><a href="/api-documentation/docs/api/service/individuals-income-received-api" rel="noopener noreferrer">Individuals Income Received</a> <br><a href="/api-documentation/docs/api/service/individuals-reliefs-api" rel="noopener noreferrer">Individuals Reliefs</a> <br><a href="/api-documentation/docs/api/service/property-business-api" rel="noopener noreferrer">Property Business</a>
+</td>
+</tr>
+        </table>
+      </div><h2 id="changelogs">Changelogs</h2>
 
 <h3 id="api-changelog">API changelog</h3>
 
-<p>The full changelog for Income Tax MTD APIs is now at <a href="https://github.com/hmrc/income-tax-mtd-changelog" rel="noopener noreferrer">https://github.com/hmrc/income-tax-mtd-changelog</a> - that is the best source for detailed and comprehensive information about API changes.</p>
+<p>The <a href="https://github.com/hmrc/income-tax-mtd-changelog" rel="noopener noreferrer">income-tax-mtd-changelog</a> (GitHub) provides detailed and comprehensive information about API changes.</p>
 <h3 id="documentation-changelog">Documentation changelog</h3>
 
 <p>Below is a summary of updates to this service guide.</p>
