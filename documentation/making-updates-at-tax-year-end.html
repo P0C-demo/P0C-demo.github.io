@@ -1,0 +1,1147 @@
+<!doctype html>
+<html lang="en" class="govuk-template no-js">
+  <head>
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+
+    <title>Making updates at the end of a tax year | Income Tax (Making Tax Digital) end-to-end service guide - Income Tax (Making Tax Digital) end-to-end service guide</title>
+
+    <link href="/stylesheets/manifest.css" rel="stylesheet" />
+
+    <link rel="canonical" href="developer.service.hmrc.gov.uk/documentation/making-updates-at-tax-year-end.html">
+
+      <meta name="description" content="Software developers, designers, product owners or business analysts. Integrate your software with the Income Tax API for Making Tax Digital." />
+      <meta name="twitter:card" content="summary" />
+      <meta name="twitter:image" content="developer.service.hmrc.gov.uk/images/govuk-large.png" />
+      <meta name="twitter:title" content="Making updates at the end of a tax year | Income Tax (Making Tax Digital) end-to-end service guide - Income Tax (Making Tax Digital) end-to-end service guide" />
+      <meta name="twitter:url" content="developer.service.hmrc.gov.uk/documentation/making-updates-at-tax-year-end.html" />
+
+      <meta property="og:description" content="Software developers, designers, product owners or business analysts. Integrate your software with the Income Tax API for Making Tax Digital." />
+      <meta property="og:image" content="developer.service.hmrc.gov.uk/images/govuk-large.png" />
+      <meta property="og:site_name" content="Income Tax (Making Tax Digital) end-to-end service guide" />
+      <meta property="og:title" content="Making updates at the end of a tax year | Income Tax (Making Tax Digital) end-to-end service guide" />
+      <meta property="og:type" content="object" />
+      <meta property="og:url" content="developer.service.hmrc.gov.uk/documentation/making-updates-at-tax-year-end.html" />
+
+    
+  </head>
+
+  <body class="govuk-template__body">
+    <script>document.body.className = ((document.body.className) ? document.body.className + ' js-enabled' : 'js-enabled');</script>
+
+    <div class="app-pane">
+      <div class="app-pane__header toc-open-disabled">
+        <a href="#content" class="govuk-skip-link" data-module="govuk-skip-link">Skip to main content</a>
+
+        <header class="govuk-header app-header" role="banner" data-module="govuk-header">
+  <div class="govuk-header__container govuk-header__container--full-width">
+    <div class="govuk-header__logo">
+      <a href="/" class="govuk-header__link govuk-header__link--homepage">
+        <svg
+          aria-hidden="true"
+          focusable="false"
+          class="govuk-header__logotype-crown"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 32 30"
+          height="30"
+          width="32"
+        >
+          <path
+            fill="currentColor" fill-rule="evenodd"
+            d="M22.6 10.4c-1 .4-2-.1-2.4-1-.4-.9.1-2 1-2.4.9-.4 2 .1 2.4 1s-.1 2-1 2.4m-5.9 6.7c-.9.4-2-.1-2.4-1-.4-.9.1-2 1-2.4.9-.4 2 .1 2.4 1s-.1 2-1 2.4m10.8-3.7c-1 .4-2-.1-2.4-1-.4-.9.1-2 1-2.4.9-.4 2 .1 2.4 1s0 2-1 2.4m3.3 4.8c-1 .4-2-.1-2.4-1-.4-.9.1-2 1-2.4.9-.4 2 .1 2.4 1s-.1 2-1 2.4M17 4.7l2.3 1.2V2.5l-2.3.7-.2-.2.9-3h-3.4l.9 3-.2.2c-.1.1-2.3-.7-2.3-.7v3.4L15 4.7c.1.1.1.2.2.2l-1.3 4c-.1.2-.1.4-.1.6 0 1.1.8 2 1.9 2.2h.7c1-.2 1.9-1.1 1.9-2.1 0-.2 0-.4-.1-.6l-1.3-4c-.1-.2 0-.2.1-.3m-7.6 5.7c.9.4 2-.1 2.4-1 .4-.9-.1-2-1-2.4-.9-.4-2 .1-2.4 1s0 2 1 2.4m-5 3c.9.4 2-.1 2.4-1 .4-.9-.1-2-1-2.4-.9-.4-2 .1-2.4 1s.1 2 1 2.4m-3.2 4.8c.9.4 2-.1 2.4-1 .4-.9-.1-2-1-2.4-.9-.4-2 .1-2.4 1s0 2 1 2.4m14.8 11c4.4 0 8.6.3 12.3.8 1.1-4.5 2.4-7 3.7-8.8l-2.5-.9c.2 1.3.3 1.9 0 2.7-.4-.4-.8-1.1-1.1-2.3l-1.2 4c.7-.5 1.3-.8 2-.9-1.1 2.5-2.6 3.1-3.5 3-1.1-.2-1.7-1.2-1.5-2.1.3-1.2 1.5-1.5 2.1-.1 1.1-2.3-.8-3-2-2.3 1.9-1.9 2.1-3.5.6-5.6-2.1 1.6-2.1 3.2-1.2 5.5-1.2-1.4-3.2-.6-2.5 1.6.9-1.4 2.1-.5 1.9.8-.2 1.1-1.7 2.1-3.5 1.9-2.7-.2-2.9-2.1-2.9-3.6.7-.1 1.9.5 2.9 1.9l.4-4.3c-1.1 1.1-2.1 1.4-3.2 1.4.4-1.2 2.1-3 2.1-3h-5.4s1.7 1.9 2.1 3c-1.1 0-2.1-.2-3.2-1.4l.4 4.3c1-1.4 2.2-2 2.9-1.9-.1 1.5-.2 3.4-2.9 3.6-1.9.2-3.4-.8-3.5-1.9-.2-1.3 1-2.2 1.9-.8.7-2.3-1.2-3-2.5-1.6.9-2.2.9-3.9-1.2-5.5-1.5 2-1.3 3.7.6 5.6-1.2-.7-3.1 0-2 2.3.6-1.4 1.8-1.1 2.1.1.2.9-.3 1.9-1.5 2.1-.9.2-2.4-.5-3.5-3 .6 0 1.2.3 2 .9l-1.2-4c-.3 1.1-.7 1.9-1.1 2.3-.3-.8-.2-1.4 0-2.7l-2.9.9C1.3 23 2.6 25.5 3.7 30c3.7-.5 7.9-.8 12.3-.8"></path>
+        </svg>
+          <span class="govuk-header__logotype-text">
+            GOV.UK
+          </span>
+        </span>
+        <span class="govuk-header__product-name">
+          Income Tax (Making Tax Digital) end-to-end service guide
+        </span>
+      </a>
+    </div>
+    <div class="govuk-header__content">
+      <nav class="govuk-header__navigation govuk-header__navigation--end" aria-label="Menu">
+        <button type="button" class="govuk-header__menu-button govuk-js-header-toggle" aria-controls="navigation" aria-label="Show or hide menu">Menu</button>
+        <ul id="navigation" class="govuk-header__navigation-list">
+            <li class="govuk-header__navigation-item">
+              <a class="govuk-header__link" href="https://developer.service.hmrc.gov.uk/api-documentation">Developer Hub</a>
+            </li>
+            <li class="govuk-header__navigation-item">
+              <a class="govuk-header__link" href="https://developer.service.hmrc.gov.uk/roadmaps/mtd-itsa-vendors-roadmap/">Roadmap</a>
+            </li>
+            <li class="govuk-header__navigation-item">
+              <a class="govuk-header__link" href="https://github.com/hmrc/income-tax-mtd-changelog">API Changelog</a>
+            </li>
+            <li class="govuk-header__navigation-item">
+              <a class="govuk-header__link" href="https://developer.service.hmrc.gov.uk/api-documentation/docs/api?filter=income-tax-mtd">API Documentation</a>
+            </li>
+            <li class="govuk-header__navigation-item">
+              <a class="govuk-header__link" href="https://developer.service.hmrc.gov.uk/developer/applications">Applications</a>
+            </li>
+            <li class="govuk-header__navigation-item">
+              <a class="govuk-header__link" href="https://developer.service.hmrc.gov.uk/developer/support">Support</a>
+            </li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+</header>
+
+      </div>
+
+        <div id="toc-heading" class="toc-show fixedsticky">
+          <button type="button" class="toc-show__label js-toc-show" aria-controls="toc">
+            Table of contents <span class="toc-show__icon"></span>
+          </button>
+        </div>
+
+      <div class="app-pane__body" data-module="in-page-navigation">
+          <div class="app-pane__toc">
+            <div class="toc" data-module="table-of-contents" tabindex="-1" aria-label="Table of contents" role="dialog">
+              <div class="search" data-module="search" data-path-to-site-root="/">
+  <form action="https://www.google.co.uk/search" method="get" role="search" class="search__form govuk-!-margin-bottom-4">
+    <input type="hidden" name="as_sitesearch" value="developer.service.hmrc.gov.uk"/>
+    <label class="govuk-label search__label" for="search" aria-hidden="true">
+      Search (via Google)
+    </label>
+    <input
+      type="text"
+      id="search" name="q"
+      class="govuk-input govuk-!-margin-bottom-0 search__input"
+      aria-controls="search-results"
+      placeholder="Search">
+    <button type="submit" class="search__button">Search</button>
+  </form>
+</div>
+
+              <button type="button" class="toc__close js-toc-close" aria-controls="toc" aria-label="Hide table of contents"></button>
+              <nav id="toc" class="js-toc-list toc__list" aria-labelledby="toc-heading" data-module="collapsible-navigation">
+                      <ul>
+  <li>
+    <a href="/"><span>Overview of the service guide</span></a>
+    <ul>
+      <li>
+        <a href="/#overview"><span>Overview</span></a>
+      </li>
+      <li>
+        <a href="/#software-provider-overview"><span>Software provider overview</span></a>
+        <ul>
+          <li>
+            <a href="/#bridging-software"><span>Bridging software</span></a>
+          </li>
+          <li>
+            <a href="/#non-mtd-products"><span>Non-MTD products</span></a>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <a href="/#how-to-use-this-guide"><span>How to use this guide</span></a>
+      </li>
+      <li>
+        <a href="/#mapping-apis-to-self-assessment-tax-return-forms"><span>Mapping APIs to Self Assessment tax return forms</span></a>
+      </li>
+      <li>
+        <a href="/#changelogs"><span>Changelogs</span></a>
+        <ul>
+          <li>
+            <a href="/#api-changelog"><span>API changelog</span></a>
+          </li>
+          <li>
+            <a href="/#documentation-changelog"><span>Documentation changelog</span></a>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+<ul>
+  <li>
+    <a href="/documentation/how-to-integrate-with-hmrc-apis.html"><span>How to integrate with HMRC APIs</span></a>
+    <ul>
+      <li>
+        <a href="/documentation/how-to-integrate-with-hmrc-apis.html#minimum-functionality-standards"><span>Minimum functionality standards</span></a>
+        <ul>
+          <li>
+            <a href="/documentation/how-to-integrate-with-hmrc-apis.html#fraud-prevention-headers"><span>Fraud Prevention Headers</span></a>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <a href="/documentation/how-to-integrate-with-hmrc-apis.html#getting-production-approval"><span>Getting Production Approval</span></a>
+        <ul>
+          <li>
+            <a href="/documentation/how-to-integrate-with-hmrc-apis.html#overview-of-developer-journey-to-production-credentials-step-by-step"><span>Overview of developer journey to production credentials (step by step)</span></a>
+          </li>
+          <li>
+            <a href="/documentation/how-to-integrate-with-hmrc-apis.html#product-build"><span>Product build</span></a>
+          </li>
+          <li>
+            <a href="/documentation/how-to-integrate-with-hmrc-apis.html#testing-requirements"><span>Testing requirements</span></a>
+          </li>
+          <li>
+            <a href="/documentation/how-to-integrate-with-hmrc-apis.html#terms-of-use"><span>Terms of use</span></a>
+          </li>
+          <li>
+            <a href="/documentation/how-to-integrate-with-hmrc-apis.html#product-demonstration"><span>Product demonstration</span></a>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <a href="/documentation/how-to-integrate-with-hmrc-apis.html#software-choices"><span>Software choices</span></a>
+        <ul>
+          <li>
+            <a href="/documentation/how-to-integrate-with-hmrc-apis.html#free-to-use-software"><span>Free-to-use software</span></a>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <a href="/documentation/how-to-integrate-with-hmrc-apis.html#supporting-customers-in-mtd"><span>Supporting customers in MTD</span></a>
+      </li>
+      <li>
+        <a href="/documentation/how-to-integrate-with-hmrc-apis.html#api-lifecycle-amp-deprecation"><span>API lifecycle & deprecation</span></a>
+        <ul>
+          <li>
+            <a href="/documentation/how-to-integrate-with-hmrc-apis.html#api-status"><span>API status</span></a>
+          </li>
+          <li>
+            <a href="/documentation/how-to-integrate-with-hmrc-apis.html#breaking-changes"><span>Breaking changes</span></a>
+          </li>
+          <li>
+            <a href="/documentation/how-to-integrate-with-hmrc-apis.html#deprecating-apis"><span>Deprecating APIs</span></a>
+          </li>
+          <li>
+            <a href="/documentation/how-to-integrate-with-hmrc-apis.html#indicating-deprecation-in-headers"><span>Indicating deprecation in headers</span></a>
+          </li>
+          <li>
+            <a href="/documentation/how-to-integrate-with-hmrc-apis.html#retiring-apis"><span>Retiring APIs</span></a>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+<ul>
+  <li>
+    <a href="/documentation/customers-and-agents-preparing-for-mtd.html"><span>Customers and agents preparing for MTD</span></a>
+    <ul>
+      <li>
+        <a href="/documentation/customers-and-agents-preparing-for-mtd.html#who-can-sign-up-and-how"><span>Who can sign up and how</span></a>
+        <ul>
+          <li>
+            <a href="/documentation/customers-and-agents-preparing-for-mtd.html#agent-sign-up"><span>Agent sign-up</span></a>
+          </li>
+          <li>
+            <a href="/documentation/customers-and-agents-preparing-for-mtd.html#individual-sign-up"><span>Individual sign-up</span></a>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <a href="/documentation/customers-and-agents-preparing-for-mtd.html#how-users-authorise-your-software"><span>How users authorise your software</span></a>
+      </li>
+      <li>
+        <a href="/documentation/customers-and-agents-preparing-for-mtd.html#mtd-customer-status"><span>MTD customer status</span></a>
+        <ul>
+          <li>
+            <a href="/documentation/customers-and-agents-preparing-for-mtd.html#mtd-mandated"><span>MTD Mandated</span></a>
+          </li>
+          <li>
+            <a href="/documentation/customers-and-agents-preparing-for-mtd.html#mtd-voluntary"><span>MTD Voluntary</span></a>
+          </li>
+          <li>
+            <a href="/documentation/customers-and-agents-preparing-for-mtd.html#annual"><span>Annual</span></a>
+          </li>
+          <li>
+            <a href="/documentation/customers-and-agents-preparing-for-mtd.html#mtd-exempt"><span>MTD Exempt</span></a>
+          </li>
+          <li>
+            <a href="/documentation/customers-and-agents-preparing-for-mtd.html#non-digital"><span>Non-Digital</span></a>
+          </li>
+          <li>
+            <a href="/documentation/customers-and-agents-preparing-for-mtd.html#dormant"><span>Dormant</span></a>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+<ul>
+  <li>
+    <a href="/documentation/making-updates-during-tax-year.html"><span>Making updates during the tax year</span></a>
+    <ul>
+      <li>
+        <a href="/documentation/making-updates-during-tax-year.html#showing-customers-their-obligations"><span>Showing customers their obligations</span></a>
+      </li>
+      <li>
+        <a href="/documentation/making-updates-during-tax-year.html#how-to-submit-and-view-in-year-updates"><span>How to submit and view in-year updates</span></a>
+        <ul>
+          <li>
+            <a href="/documentation/making-updates-during-tax-year.html#submit-quarterly-update"><span>Submit quarterly update</span></a>
+          </li>
+          <li>
+            <a href="/documentation/making-updates-during-tax-year.html#user-journey"><span>User journey</span></a>
+          </li>
+          <li>
+            <a href="/documentation/making-updates-during-tax-year.html#change-to-calendar-quarters"><span>Change to calendar quarters</span></a>
+          </li>
+          <li>
+            <a href="/documentation/making-updates-during-tax-year.html#view-quarterly-update"><span>View quarterly update</span></a>
+          </li>
+          <li>
+            <a href="/documentation/making-updates-during-tax-year.html#amend-quarterly-update"><span>Amend quarterly update</span></a>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+<ul>
+  <li>
+    <a href="/documentation/tax-calculations.html"><span>Tax calculations</span></a>
+    <ul>
+      <li>
+        <a href="/documentation/tax-calculations.html#retrieving-a-tax-calculation"><span>Retrieving a tax calculation</span></a>
+        <ul>
+          <li>
+            <a href="/documentation/tax-calculations.html#calculations-that-produce-errors"><span>Calculations that produce errors</span></a>
+          </li>
+          <li>
+            <a href="/documentation/tax-calculations.html#calculations-that-are-free-from-errors"><span>Calculations that are free from errors</span></a>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <a href="/documentation/tax-calculations.html#hmrc-assist"><span>HMRC Assist</span></a>
+        <ul>
+          <li>
+            <a href="/documentation/tax-calculations.html#produce-an-hmrc-self-assessment-assist-report"><span>Produce an HMRC Self Assessment assist report</span></a>
+          </li>
+          <li>
+            <a href="/documentation/tax-calculations.html#acknowledge-an-hmrc-self-assessment-assist-report"><span>Acknowledge an HMRC Self Assessment assist report</span></a>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+<ul>
+  <li>
+    <a href="/documentation/tasks-outside-mtd-software.html"><span>Tasks outside MTD software</span></a>
+    <ul>
+      <li>
+        <a href="/documentation/tasks-outside-mtd-software.html#hmrc-online-services"><span>HMRC online services</span></a>
+        <ul>
+          <li>
+            <a href="/documentation/tasks-outside-mtd-software.html#changing-contact-preference"><span>Changing contact preference</span></a>
+          </li>
+          <li>
+            <a href="/documentation/tasks-outside-mtd-software.html#adding-new-business-details-for-a-self-employment-sole-trader-or-property-business"><span>Adding new business details for a self-employment sole trader or property business</span></a>
+          </li>
+          <li>
+            <a href="/documentation/tasks-outside-mtd-software.html#closing-ceasing-a-self-employment-sole-trader-or-property-business"><span>Closing (ceasing) a self-employment sole trader or property business</span></a>
+          </li>
+          <li>
+            <a href="/documentation/tasks-outside-mtd-software.html#future-development"><span>Future development</span></a>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <a href="/documentation/tasks-outside-mtd-software.html#pay-or-get-a-repayment"><span>Pay or get a repayment</span></a>
+      </li>
+      <li>
+        <a href="/documentation/tasks-outside-mtd-software.html#making-a-payment"><span>Making a payment</span></a>
+      </li>
+      <li>
+        <a href="/documentation/tasks-outside-mtd-software.html#claiming-a-refund"><span>Claiming a refund</span></a>
+      </li>
+      <li>
+        <a href="/documentation/tasks-outside-mtd-software.html#opting-out-of-mtd"><span>Opting out of MTD</span></a>
+      </li>
+    </ul>
+  </li>
+</ul>
+<ul>
+  <li>
+    <a href="/documentation/making-updates-at-tax-year-end.html"><span>Making updates at the end of a tax year</span></a>
+    <ul>
+      <li>
+        <a href="/documentation/making-updates-at-tax-year-end.html#submit-accounting-adjustments"><span>Submit accounting adjustments</span></a>
+      </li>
+      <li>
+        <a href="/documentation/making-updates-at-tax-year-end.html#additional-information"><span>Additional information</span></a>
+        <ul>
+          <li>
+            <a href="/documentation/making-updates-at-tax-year-end.html#employments"><span>Employments</span></a>
+          </li>
+          <li>
+            <a href="/documentation/making-updates-at-tax-year-end.html#dividends-income"><span>Dividends Income</span></a>
+          </li>
+          <li>
+            <a href="/documentation/making-updates-at-tax-year-end.html#foreign-income"><span>Foreign Income</span></a>
+          </li>
+          <li>
+            <a href="/documentation/making-updates-at-tax-year-end.html#insurance-policies-income"><span>Insurance Policies Income</span></a>
+          </li>
+          <li>
+            <a href="/documentation/making-updates-at-tax-year-end.html#pensions-income"><span>Pensions Income</span></a>
+          </li>
+          <li>
+            <a href="/documentation/making-updates-at-tax-year-end.html#other-income"><span>Other Income</span></a>
+          </li>
+          <li>
+            <a href="/documentation/making-updates-at-tax-year-end.html#savings-income"><span>Savings Income</span></a>
+          </li>
+          <li>
+            <a href="/documentation/making-updates-at-tax-year-end.html#savings-accounts"><span>Savings Accounts</span></a>
+          </li>
+          <li>
+            <a href="/documentation/making-updates-at-tax-year-end.html#disclosures"><span>Disclosures</span></a>
+          </li>
+          <li>
+            <a href="/documentation/making-updates-at-tax-year-end.html#individual-charges"><span>Individual Charges</span></a>
+          </li>
+          <li>
+            <a href="/documentation/making-updates-at-tax-year-end.html#individual-reliefs"><span>Individual Reliefs</span></a>
+          </li>
+          <li>
+            <a href="/documentation/making-updates-at-tax-year-end.html#other-deductions"><span>Other Deductions</span></a>
+          </li>
+          <li>
+            <a href="/documentation/making-updates-at-tax-year-end.html#employment-expenses"><span>Employment Expenses</span></a>
+          </li>
+          <li>
+            <a href="/documentation/making-updates-at-tax-year-end.html#non-paye-income"><span>Non-PAYE Income</span></a>
+          </li>
+          <li>
+            <a href="/documentation/making-updates-at-tax-year-end.html#state-benefits"><span>State Benefits</span></a>
+          </li>
+          <li>
+            <a href="/documentation/making-updates-at-tax-year-end.html#providing-information-about-how-to-treat-a-loss"><span>Providing information about how to treat a loss</span></a>
+          </li>
+          <li>
+            <a href="/documentation/making-updates-at-tax-year-end.html#capital-gains-tax"><span>Capital Gains Tax</span></a>
+          </li>
+          <li>
+            <a href="/documentation/making-updates-at-tax-year-end.html#marriage-allowance"><span>Marriage Allowance</span></a>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <a href="/documentation/making-updates-at-tax-year-end.html#construction-industry-scheme"><span>Construction Industry Scheme</span></a>
+        <ul>
+          <li>
+            <a href="/documentation/making-updates-at-tax-year-end.html#view-cis-deductions"><span>View CIS deductions</span></a>
+          </li>
+          <li>
+            <a href="/documentation/making-updates-at-tax-year-end.html#create-cis-deductions"><span>Create CIS deductions</span></a>
+          </li>
+          <li>
+            <a href="/documentation/making-updates-at-tax-year-end.html#amend-cis-deductions"><span>Amend CIS deductions</span></a>
+          </li>
+          <li>
+            <a href="/documentation/making-updates-at-tax-year-end.html#delete-cis-deductions"><span>Delete CIS deductions</span></a>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <a href="/documentation/making-updates-at-tax-year-end.html#submit-allowance-and-adjustments"><span>Submit allowance and adjustments</span></a>
+        <ul>
+          <li>
+            <a href="/documentation/making-updates-at-tax-year-end.html#view-allowance-and-adjustments"><span>View allowance and adjustments</span></a>
+          </li>
+          <li>
+            <a href="/documentation/making-updates-at-tax-year-end.html#amend-allowance-and-adjustments"><span>Amend allowance and adjustments</span></a>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <a href="/documentation/making-updates-at-tax-year-end.html#how-to-treat-a-loss"><span>How to treat a loss</span></a>
+      </li>
+      <li>
+        <a href="/documentation/making-updates-at-tax-year-end.html#final-declaration"><span>Final declaration</span></a>
+        <ul>
+          <li>
+            <a href="/documentation/making-updates-at-tax-year-end.html#making-a-final-declaration"><span>Making a final declaration</span></a>
+          </li>
+          <li>
+            <a href="/documentation/making-updates-at-tax-year-end.html#agreeing-to-the-declaration"><span>Agreeing to the declaration</span></a>
+          </li>
+          <li>
+            <a href="/documentation/making-updates-at-tax-year-end.html#final-declaration-user-journey"><span>Final declaration user journey</span></a>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <a href="/documentation/making-updates-at-tax-year-end.html#making-amendments-after-submitting-a-final-declaration"><span>Making amendments after submitting a final declaration</span></a>
+      </li>
+      <li>
+        <a href="/documentation/making-updates-at-tax-year-end.html#using-tax-codes-to-collect-tax-due"><span>Using tax codes to collect tax due</span></a>
+      </li>
+    </ul>
+  </li>
+</ul>
+<ul>
+  <li>
+    <a href="/documentation/view-customer-self-assessment-account-information.html"><span>Viewing a customers Self-Assessment account information</span></a>
+    <ul>
+      <li>
+        <ul>
+          <li>
+            <a href="/documentation/view-customer-self-assessment-account-information.html#payments-and-liabilities"><span>Payments and liabilities</span></a>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+
+              </nav>
+            </div>
+          </div>
+
+        <div class="app-pane__content toc-open-disabled" aria-label="Content" tabindex="0">
+          <main id="content" class="technical-documentation" data-module="anchored-headings">
+            <h1 id="making-updates-at-the-end-of-a-tax-year">Making updates at the end of a tax year</h1>
+
+<p>(Content needed)</p>
+<h2 id="submit-accounting-adjustments">Submit accounting adjustments</h2>
+
+<p>When the customer has submitted all quarterly updates, they may need to make an accounting adjustment to their income or expenses. They should first make changes to their digital records and then use the software to submit them to HMRC. The <a href="/api-documentation/docs/api/service/self-assessment-bsas-api/" rel="noopener noreferrer">Self Assessment BSAS (Business Source Adjustable Summary) API</a> enables a customer to submit or retrieve an adjustable summary calculation for a specified self-employment or property business.</p>
+<p>The adjustments should be submitted as a positive or negative amount. For example, if a customer has already submitted advertising costs of £250 but the figure should be £200, the adjustment required would be -50. Adjustments are always made against the total of the original quarterly updates. Each new adjustment will overwrite the previous adjustment as shown in the table below.</p>
+<div class="table-container">
+        <table>
+          <tr>
+<th></th>
+<th>Original (total of all 4 quarters)</th>
+<th>1<sup>st</sup> adjustment</th>
+<th>Revised total</th>
+<th>2<sup>nd</sup> adjustment</th>
+<th>Revised total</th>
+</tr><tr>
+<td>premisesRunningCosts</td>
+<td>500</td>
+<td>25</td>
+<td>525</td>
+<td>23</td>
+<td>523</td>
+</tr><tr>
+<td>travelCosts</td>
+<td>600</td>
+<td>-17</td>
+<td>583</td>
+<td>-20</td>
+<td>580</td>
+</tr>
+        </table>
+      </div><p>To make an accounting adjustment, the software needs to call the <a href="/api-documentation/docs/api/service/self-assessment-bsas-api/4.0/oas/page#/paths/~1individuals~1self-assessment~1adjustable-summary~1{nino}~1trigger/post" rel="noopener noreferrer">Trigger a Business Source Adjustable Summary</a> endpoint to receive the Calculation ID. The software will need to provide this Calculation ID when submitting any adjustments to HMRC using the following endpoints:</p>
+
+<ul>
+<li><a href="/api-documentation/docs/api/service/self-assessment-bsas-api/4.0/oas/page#tag/Self-employment-business/paths/~1individuals~1self-assessment~1adjustable-summary~1{nino}~1self-employment~1{calculationId}~1adjust/post" rel="noopener noreferrer">Submit Self-Employment Accounting Adjustments</a></li>
+<li><a href="/api-documentation/docs/api/service/self-assessment-bsas-api/4.0/oas/page#tag/UK-property-business/paths/~1individuals~1self-assessment~1adjustable-summary~1{nino}~1uk-property~1{calculationId}~1adjust/post" rel="noopener noreferrer">Submit UK Property Accounting Adjustments</a></li>
+<li><a href="/api-documentation/docs/api/service/self-assessment-bsas-api/4.0/oas/page#tag/Foreign-property-business/paths/~1individuals~1self-assessment~1adjustable-summary~1{nino}~1foreign-property~1{calculationId}~1adjust/post" rel="noopener noreferrer">Submit Foreign Property Accounting Adjustments</a></li>
+</ul>
+<p>When an adjustment has been made, the customer can view a summary. To retrieve this, the software should call any of the following endpoints, using the same Calculation ID:</p>
+
+<ul>
+<li><a href="/api-documentation/docs/api/service/self-assessment-bsas-api/4.0/oas/page#tag/Self-employment-business/paths/~1individuals~1self-assessment~1adjustable-summary~1{nino}~1self-employment~1{calculationId}/get" rel="noopener noreferrer">Retrieve a Self-Employment Business Source Adjustable Summary (BSAS)</a><a href="/api-documentation/docs/api/service/self-assessment-bsas-api/4.0/oas/page#tag/Self-employment-business/paths/~1individuals~1self-assessment~1adjustable-summary~1{nino}~1self-employment~1{calculationId}~1adjust/post" rel="noopener noreferrer"> </a></li>
+<li><a href="/api-documentation/docs/api/service/self-assessment-bsas-api/4.0/oas/page#tag/UK-property-business/paths/~1individuals~1self-assessment~1adjustable-summary~1{nino}~1uk-property~1{calculationId}/get" rel="noopener noreferrer">Retrieve a UK Property Business Source Adjustable Summary (BSAS)</a></li>
+<li><a href="/api-documentation/docs/api/service/self-assessment-bsas-api/4.0/oas/page#tag/Foreign-property-business/paths/~1individuals~1self-assessment~1adjustable-summary~1{nino}~1foreign-property~1{calculationId}/get" rel="noopener noreferrer">Retrieve a Foreign Property Business Source Adjustable Summary (BSAS)</a></li>
+</ul>
+<h2 id="additional-information">Additional information</h2>
+
+<p>If MTD customers are earning any type of income in addition to their self-employment and property income, they must report that to HMRC just as they would in their Self Assessment return.</p>
+<p>The software should prompt customers to provide details about any additional income sources. If the software does not support submission of any applicable additional income, customers must use <a href="/guides/income-tax-mtd-end-to-end-service-guide/documentation/online-tax-account.html#hmrc-online-services" rel="noopener noreferrer">HMRC online services</a> to make their submission. For more information about which type of income to tell HMRC, refer to <a href="https://www.gov.uk/check-additional-income-tax" rel="noopener noreferrer">Check if you need to tell HMRC about additional income (GOV.UK)</a>.</p>
+<p>Customers who need to submit their additional income must do it before submitting their final declaration. The following sections cover the different types of additional income and the endpoints needed to submit them in the software.</p>
+<h3 id="employments">Employments</h3>
+
+<p>A customer will have employment income if they work for an employer who deducts tax from their pay through Pay As You Earn (PAYE). A customer&rsquo;s earnings and tax deducted are sent to HMRC by their employer. This allows HMRC to hold an employment history for each customer. HMRC uses this information to calculate whether the correct PAYE tax has been paid at the end of the tax year. For more information about declaring employment income, refer to <a href="https://www.gov.uk/government/publications/self-assessment-employment-sa102" rel="noopener noreferrer">Self Assessment: Employment (GOV.UK).</a></p>
+<p>Currently, under Self Assessment, a customer will see their PAYE earnings, tax deducted and other financial details pre-populated in their online tax return. They can overwrite any information that might be incorrect.</p>
+<p>Customers can continue to do this under Making Tax Digital (MTD). They can:</p>
+
+<ul>
+<li>view employment details (financial and non-financial) held by HMRC throughout the year</li>
+<li>create and amend employment details submitted by them after the end of the tax year</li>
+<li>delete employment details submitted by them after the end of the tax year</li>
+</ul>
+<h4 id="view-employment-details">View employment details</h4>
+
+<p>The following endpoints enables the customer to view different types of employment details:</p>
+
+<ul>
+<li><a href="/api-documentation/docs/api/service/individuals-income-received-api/2.0/oas/page#tag/Employments/paths/~1individuals~1income-received~1employments~1{nino}~1{taxYear}/get" rel="noopener noreferrer">List Employments</a></li>
+<li><a href="/api-documentation/docs/api/service/individuals-income-received-api/2.0/oas/page#tag/Employments/paths/~1individuals~1income-received~1employments~1{nino}~1{taxYear}~1{employmentId}/get" rel="noopener noreferrer">Retrieve an Employment</a></li>
+<li><a href="/api-documentation/docs/api/service/individuals-income-received-api/2.0/oas/page#tag/Other-Employment-Income/paths/~1individuals~1income-received~1employments~1other~1{nino}~1{taxYear}/get" rel="noopener noreferrer">Retrieve Other Employment Income</a></li>
+<li><a href="/api-documentation/docs/api/service/individuals-income-received-api/2.0/oas/page#tag/Employments/paths/~1individuals~1income-received~1employments~1{nino}~1{taxYear}~1{employmentId}~1financial-details/get" rel="noopener noreferrer">Retrieve an Employment and its Financial Details</a></li>
+</ul>
+<p>A customer, at any time, can view a list of their employers for a specific tax year. The <a href="/api-documentation/docs/api/service/individuals-income-received-api/2.0/oas/page#tag/Employments/paths/~1individuals~1income-received~1employments~1{nino}~1{taxYear}/get" rel="noopener noreferrer">List Employments</a> endpoint provides the software with the Employment IDs for each customer employment. This Employment ID is necessary to call other employment income endpoints.</p>
+<p>The software can use the <a href="/api-documentation/docs/api/service/individuals-income-received-api/2.0/oas/page#tag/Employments/paths/~1individuals~1income-received~1employments~1{nino}~1{taxYear}~1{employmentId}/get" rel="noopener noreferrer">Retrieve an Employment</a> endpoint to enable the customer to view non-financial details about a specific employment for a given tax year. This includes the start date of the employment and employer name.</p>
+<p>The software can use the <a href="/api-documentation/docs/api/service/individuals-income-received-api/2.0/oas/page#tag/Other-Employment-Income/paths/~1individuals~1income-received~1employments~1other~1{nino}~1{taxYear}/get" rel="noopener noreferrer">Retrieve Other Employment Income</a> endpoint to enable the customer to view other employment income details for a given year. This includes share options, shares awarded or received, disability, lump sums and foreign service income.</p>
+<p>Employers will also submit financial details that form the customers earnings and deductions. In software, this information can be viewed using the <a href="/api-documentation/docs/api/service/individuals-income-received-api/2.0/oas/page#tag/Employments/paths/~1individuals~1income-received~1employments~1{nino}~1{taxYear}~1{employmentId}~1financial-details/get" rel="noopener noreferrer">Retrieve an Employment and its Financial Details</a> endpoint. The endpoint contains details on taxable pay to date, <a href="https://www.gov.uk/tax-company-benefits" rel="noopener noreferrer">benefits in kind</a>, student loan deductions and the customer&rsquo;s off payroll working status for a specific employment.</p>
+<h4 id="off-payroll-working-opw-rules">Off-payroll working (OPW) rules</h4>
+
+<p>Off-payroll working rules (IR35) govern how a worker (sometimes called a contractor) who is providing their services through an intermediary such as a personal service company, is treated in terms of their Income Tax and National Insurance. More information on off-payroll working rules can be found on the <a href="https://www.gov.uk/guidance/understanding-off-payroll-working-ir35" rel="noopener noreferrer">GOV.UK</a> website.</p>
+<p>The off-payroll worker status can be seen in-year as part of the employment pre-population into the customer’s self-assessment tax calculations. In software, the off-payroll working status is retrieved using the <a href="/api-documentation/docs/api/service/individuals-income-received-api/2.0/oas/page#tag/Employments/paths/~1individuals~1income-received~1employments~1%7Bnino%7D~1%7BtaxYear%7D~1%7BemploymentId%7D~1financial-details/get" rel="noopener noreferrer">Retrieve an Employment and its Financial Details</a> endpoint. The status is also available in the <a href="/api-documentation/docs/api/%20service/individual-calculations-api/5.0/oas/page#tag/Tax-Calculations/paths/~1individuals~1calculations~1%7Bnino%7D~1self-assessment~1%7BtaxYear%7D~1%7BcalculationId%7D/get" rel="noopener noreferrer">Retrieve A Self Assessment Tax Calculation</a> endpoint. If the status is set to false, indicating the worker is not regarded as being subject to OPW rules, the software should not display it to the customer. This status is view-only: the customer does not need to take any action unless they think it has been set in error, in which case they must contact their employer.</p>
+<p>After the end of the tax year, the off-payroll working status will be displayed to the customer along with the employment data fields. As part of their self-assessment, if a customer agrees with their off-payroll working status, there is no further action required from them. However, if a customer disagrees with their off-payroll working status, they can change it after the end of tax year before completing their final declaration. This change can be made in software or through their HMRC online services account. The software must call the <a href="/api-documentation/docs/api/service/individuals-income-received-api/2.0/oas/page#tag/Employments/paths/~1individuals~1income-received~1employments~1%7Bnino%7D~1%7BtaxYear%7D~1%7BemploymentId%7D~1financial-details/put" rel="noopener noreferrer">Create and Amend Employment Financial Details</a> endpoint to change the off-payroll working status.</p>
+<p>The following  warning message must be displayed to the customer:</p>
+
+<blockquote>
+<p>“Do you want to change your employment details? You are about to change information [insert employer name] sent to HMRC:</p>
+
+<ul>
+<li>Off-payroll working status</li>
+</ul>
+<p>HMRC may review this change.”</p>
+</blockquote>
+<p>As stated in the warning message, this action may be reviewed by HMRC.</p>
+<h4 id="create-and-amend-employment-details">Create and Amend employment details</h4>
+
+<p>The following endpoints enable the customer to create and amend different types of employment details:</p>
+
+<ul>
+<li><a href="/api-documentation/docs/api/service/individuals-income-received-api/2.0/oas/page#tag/Employments/paths/~1individuals~1income-received~1employments~1{nino}~1{taxYear}/post" rel="noopener noreferrer">Add a Custom Employment</a></li>
+<li><a href="/api-documentation/docs/api/service/individuals-income-received-api/2.0/oas/page#tag/Employments/paths/~1individuals~1income-received~1employments~1{nino}~1{taxYear}~1{employmentId}/put" rel="noopener noreferrer">Amend a Custom Employment</a></li>
+<li><a href="/api-documentation/docs/api/service/individuals-income-received-api/2.0/oas/page#tag/Employments/paths/~1individuals~1income-received~1employments~1{nino}~1{taxYear}~1{employmentId}~1financial-details/put" rel="noopener noreferrer">Create and Amend Employment Financial Details </a></li>
+<li><a href="/api-documentation/docs/api/service/individuals-income-received-api/2.0/oas/page#tag/Other-Employment-Income/paths/~1individuals~1income-received~1employments~1other~1{nino}~1{taxYear}/put" rel="noopener noreferrer">Create and Amend Other Employment Income</a></li>
+</ul>
+<p>At the end of the tax year, if the customer thinks an employment is missing in data held by HMRC, they can add it. In software, this is done by calling the <a href="/api-documentation/docs/api/service/individuals-income-received-api/2.0/oas/page#tag/Employments/paths/~1individuals~1income-received~1employments~1{nino}~1{taxYear}/post" rel="noopener noreferrer">Add a Custom Employment</a> endpoint. After adding an employment, the customer needs to add the appropriate financial details for that employment. In software, this is done by calling the <a href="/api-documentation/docs/api/service/individuals-income-received-api/2.0/oas/page#tag/Employments/paths/~1individuals~1income-received~1employments~1{nino}~1{taxYear}~1{employmentId}~1financial-details/put" rel="noopener noreferrer">Create and Amend Employment Financial Details</a> endpoint.</p>
+<p>If a customer thinks that the financial details are incorrect for an employer in data held by HMRC, they can update it using the same endpoint. If the customer also thinks their non-financial details or other employment details are inaccurate, they can amend it. In software, this is done by calling the <a href="/api-documentation/docs/api/service/individuals-income-received-api/2.0/oas/page#tag/Employments/paths/~1individuals~1income-received~1employments~1{nino}~1{taxYear}~1{employmentId}/put" rel="noopener noreferrer">Amend a Custom Employment</a> or <a href="/api-documentation/docs/api/service/individuals-income-received-api/2.0/oas/page#tag/Other-Employment-Income/paths/~1individuals~1income-received~1employments~1other~1{nino}~1{taxYear}/put" rel="noopener noreferrer">Create and Amend Other Employment Income</a> endpoint respectively.</p>
+<h4 id="delete-employment-details">Delete employment details</h4>
+
+<p>The following endpoints allow the customer to delete different types of employment details:</p>
+
+<ul>
+<li><a href="/api-documentation/docs/api/service/individuals-income-received-api/2.0/oas/page#tag/Employments/paths/~1individuals~1income-received~1employments~1{nino}~1{taxYear}~1{employmentId}~1financial-details/delete" rel="noopener noreferrer">Delete Employment Financial Details</a></li>
+<li><a href="/api-documentation/docs/api/service/individuals-income-received-api/2.0/oas/page#tag/Other-Employment-Income/paths/~1individuals~1income-received~1employments~1other~1{nino}~1{taxYear}/delete" rel="noopener noreferrer">Delete Other Employment Income</a></li>
+<li><a href="/api-documentation/docs/api/service/individuals-income-received-api/2.0/oas/page#tag/Employments/paths/~1individuals~1income-received~1employments~1{nino}~1{taxYear}~1{employmentId}~1ignore/post" rel="noopener noreferrer">Ignore Employment</a></li>
+<li><a href="/api-documentation/docs/api/service/individuals-income-received-api/2.0/oas/page#tag/Employments/paths/~1individuals~1income-received~1employments~1{nino}~1{taxYear}~1{employmentId}~1unignore/post" rel="noopener noreferrer">Unignore Employment</a></li>
+</ul>
+<p>If a customer has incorrect employment details, they can delete them. This can be done only at the end of the tax year. In the software, this is done by calling the <a href="/api-documentation/docs/api/service/individuals-income-received-api/2.0/oas/page#tag/Employments/paths/~1individuals~1income-received~1employments~1{nino}~1{taxYear}~1{employmentId}~1financial-details/delete" rel="noopener noreferrer">Delete Employment Financial Details</a> or <a href="/api-documentation/docs/api/service/individuals-income-received-api/2.0/oas/page#tag/Other-Employment-Income/paths/~1individuals~1income-received~1employments~1other~1{nino}~1{taxYear}/delete" rel="noopener noreferrer">Delete Other Employment Income</a> endpoint, depending on the detail type.</p>
+<p>For some incorrect employment details held by HMRC, the customer can ask HMRC to ignore this information. In software, this is done by calling the <a href="/api-documentation/docs/api/service/individuals-income-received-api/2.0/oas/page#tag/Employments/paths/~1individuals~1income-received~1employments~1{nino}~1{taxYear}~1{employmentId}~1ignore/post" rel="noopener noreferrer">Ignore Employment</a> endpoint. This action can be reversed by using the <a href="/api-documentation/docs/api/service/individuals-income-received-api/2.0/oas/page#tag/Employments/paths/~1individuals~1income-received~1employments~1{nino}~1{taxYear}~1{employmentId}~1unignore/post" rel="noopener noreferrer">Unignore Employment</a> endpoint.</p>
+<h3 id="dividends-income">Dividends Income</h3>
+
+<p>Customers might get a dividend if they own shares in a company. They must pay tax on dividend income if it is above their personal allowance. For more information, refer to <a href="https://www.gov.uk/tax-on-dividends" rel="noopener noreferrer">Tax on dividends (GOV.UK)</a>.</p>
+<p>Customers can use their software to submit different types of dividend income. This includes UK dividend income, foreign dividend income, stock dividend income, redeemable shares income, bonus securities, dividend income received while abroad and close company loans written off.</p>
+<p>The software can use the following endpoints to enable customers to:</p>
+
+<ul>
+<li><a href="/api-documentation/docs/api/service/individuals-income-received-api/2.0/oas/page#tag/Dividends-Income/paths/~1individuals~1income-received~1dividends~1{nino}~1{taxYear}/put" rel="noopener noreferrer">Create and Amend Dividends Income</a></li>
+<li><a href="/api-documentation/docs/api/service/individuals-income-received-api/2.0/oas/page#tag/UK-Dividends-Income/paths/~1individuals~1income-received~1uk-dividends~1{nino}~1{taxYear}/put" rel="noopener noreferrer">Create and Amend a UK Dividends Income Annual Summary</a></li>
+<li><a href="/api-documentation/docs/api/service/individuals-income-received-api/2.0/oas/page#tag/Dividends-Income/paths/~1individuals~1income-received~1dividends~1{nino}~1{taxYear}/get" rel="noopener noreferrer">Retrieve Dividends Income</a> </li>
+<li><a href="/api-documentation/docs/api/service/individuals-income-received-api/2.0/oas/page#tag/UK-Dividends-Income/paths/~1individuals~1income-received~1uk-dividends~1{nino}~1{taxYear}/get" rel="noopener noreferrer">Retrieve a UK Dividends Income Annual Summary</a></li>
+<li><a href="/api-documentation/docs/api/service/individuals-income-received-api/2.0/oas/page#tag/Dividends-Income/paths/~1individuals~1income-received~1dividends~1{nino}~1{taxYear}/delete" rel="noopener noreferrer">Delete Dividends Income</a></li>
+<li><a href="/api-documentation/docs/api/service/individuals-income-received-api/2.0/oas/page#tag/UK-Dividends-Income/paths/~1individuals~1income-received~1uk-dividends~1{nino}~1{taxYear}/delete" rel="noopener noreferrer">Delete a UK Dividends Income Annual Summary</a></li>
+</ul>
+<h3 id="foreign-income">Foreign Income</h3>
+
+<p>Foreign income is any income earned outside England, Wales, Scotland and Northern Ireland. The Channel Islands and the Isle of Man are classed as foreign.</p>
+<p>Customers might need to pay UK income tax on their foreign income. This includes wages if they work abroad, foreign investment income and income from pensions held overseas. For more information about tax on foreign income, refer to <a href="https://www.gov.uk/tax-foreign-income" rel="noopener noreferrer">Tax on foreign income (GOV.UK)</a>.</p>
+<p>Customers can use their software to submit information about foreign earnings and unremittable foreign income. The software can use the following endpoints to enable customers to:</p>
+
+<ul>
+<li><a href="/api-documentation/docs/api/service/individuals-income-received-api/2.0/oas/page#tag/Foreign-Income/paths/~1individuals~1income-received~1foreign~1{nino}~1{taxYear}/put" rel="noopener noreferrer">Create and Amend Foreign Income</a></li>
+<li><a href="/api-documentation/docs/api/service/individuals-income-received-api/2.0/oas/page#tag/Foreign-Income/paths/~1individuals~1income-received~1foreign~1{nino}~1{taxYear}/get" rel="noopener noreferrer">Retrieve Foreign Income</a></li>
+<li><a href="/api-documentation/docs/api/service/individuals-income-received-api/2.0/oas/page#tag/Foreign-Income/paths/~1individuals~1income-received~1foreign~1{nino}~1{taxYear}/delete" rel="noopener noreferrer">Delete Foreign Income</a></li>
+</ul>
+<h3 id="insurance-policies-income">Insurance Policies Income</h3>
+
+<p>Income from insurance policies is any chargeable gains from UK life insurance policies. This includes cash or other benefits received on a full or part surrender of a policy, a policy matured or brought to an end by the death of the life insured, the sale or assignment of a UK policy, or part of a policy. For more information about insurance policies income tax, refer to <a href="https://www.gov.uk/hmrc-internal-manuals/insurance-policyholder-taxation-manual" rel="noopener noreferrer">Insurance Policyholder Taxation Manual (GOV.UK)</a>.</p>
+<p>Customers can use their software to submit different types of insurance policies income. This includes information about life insurance policies, capital redemption policies, life annuities, voided ISAs, and foreign policies.</p>
+<p>The software can use the following endpoints to enable customers to:</p>
+
+<ul>
+<li><a href="/api-documentation/docs/api/service/individuals-income-received-api/2.0/oas/page#tag/Insurance-Policies-Income/paths/~1individuals~1income-received~1insurance-policies~1{nino}~1{taxYear}/put" rel="noopener noreferrer">Create and Amend Insurance Policies Income</a></li>
+<li><a href="/api-documentation/docs/api/service/individuals-income-received-api/2.0/oas/page#tag/Insurance-Policies-Income/paths/~1individuals~1income-received~1insurance-policies~1{nino}~1{taxYear}/get" rel="noopener noreferrer">Retrieve Insurance Policies Income</a></li>
+<li><a href="/api-documentation/docs/api/service/individuals-income-received-api/2.0/oas/page#tag/Insurance-Policies-Income/paths/~1individuals~1income-received~1insurance-policies~1{nino}~1{taxYear}/delete" rel="noopener noreferrer">Delete Insurance Policies Income</a></li>
+</ul>
+<h3 id="pensions-income">Pensions Income</h3>
+
+<p>Customers in receipt of foreign pensions must continue to report this income to HMRC. For more information about these income types, refer to <a href="https://www.gov.uk/government/publications/self-assessment-foreign-sa106" rel="noopener noreferrer">Self Assessment: Foreign (SA106) (GOV.UK)</a>. Customers should also tell HMRC about their overseas pension. For more information, refer to <a href="https://www.gov.uk/government/publications/self-assessment-additional-information-sa101" rel="noopener noreferrer">Self Assessment: additional information SA101 (GOV.UK)</a>.</p>
+<p>Customers can use their software to submit the information above. The software can use the following endpoints to enable customers to:</p>
+
+<ul>
+<li><a href="/api-documentation/docs/api/service/individuals-income-received-api/2.0/oas/page#tag/Pensions-Income/paths/~1individuals~1income-received~1pensions~1%7Bnino%7D~1%7BtaxYear%7D/get" rel="noopener noreferrer">Retrieve Pensions Income</a></li>
+<li><a href="/api-documentation/docs/api/service/individuals-income-received-api/2.0/oas/page#tag/Pensions-Income/paths/~1individuals~1income-received~1pensions~1%7Bnino%7D~1%7BtaxYear%7D/put" rel="noopener noreferrer">Create and Amend Pensions Income</a></li>
+<li><a href="/api-documentation/docs/api/service/individuals-income-received-api/2.0/oas/page#tag/Pensions-Income/paths/~1individuals~1income-received~1pensions~1%7Bnino%7D~1%7BtaxYear%7D/delete" rel="noopener noreferrer">Delete Pensions Income</a></li>
+</ul>
+<h3 id="other-income">Other Income</h3>
+
+<p>Customers should tell HMRC about their other taxable income. This includes miscellaneous income like casual earnings, commission or freelance income.</p>
+<p>Customers can use their software to submit different types of other income. This includes information about business receipts, all other income received while abroad, overseas income and gains, chargeable foreign benefits and gifts and omitted foreign income.</p>
+<p>The software can use the following endpoints to enable customers to:</p>
+
+<ul>
+<li><a href="/api-documentation/docs/api/service/individuals-income-received-api/2.0/oas/page#tag/Other-Income/paths/~1individuals~1income-received~1other~1%7Bnino%7D~1%7BtaxYear%7D/get" rel="noopener noreferrer">Retrieve Other Income</a></li>
+<li><a href="/api-documentation/docs/api/service/individuals-income-received-api/2.0/oas/page#tag/Other-Income/paths/~1individuals~1income-received~1other~1%7Bnino%7D~1%7BtaxYear%7D/put" rel="noopener noreferrer">Create and Amend Other Income</a></li>
+<li><a href="/api-documentation/docs/api/service/individuals-income-received-api/2.0/oas/page#tag/Other-Income/paths/~1individuals~1income-received~1other~1%7Bnino%7D~1%7BtaxYear%7D/delete" rel="noopener noreferrer">Delete Other Income</a></li>
+</ul>
+<h3 id="savings-income">Savings Income</h3>
+
+<p>Savings income can include interest for certain securities and income from overseas savings. For more information, refer to <a href="https://www.gov.uk/government/publications/self-assessment-tax-return-sa100#supplementary-pages" rel="noopener noreferrer">How to complete your tax return for Self Assessment (GOV.UK)</a>.</p>
+<p>Customers can use their software to submit information about savings income. The software can use the following endpoints to enable customers to:</p>
+
+<ul>
+<li><a href="/api-documentation/docs/api/service/individuals-income-received-api/2.0/oas/page#tag/Savings-Income/paths/~1individuals~1income-received~1savings~1%7Bnino%7D~1%7BtaxYear%7D/get" rel="noopener noreferrer">Retrieve Savings Income</a></li>
+<li><a href="/api-documentation/docs/api/service/individuals-income-received-api/2.0/oas/page#tag/Savings-Income/paths/~1individuals~1income-received~1savings~1%7Bnino%7D~1%7BtaxYear%7D/put" rel="noopener noreferrer">Create and Amend Savings Income</a></li>
+<li><a href="/api-documentation/docs/api/service/individuals-income-received-api/2.0/oas/page#tag/Savings-Income/paths/~1individuals~1income-received~1savings~1%7Bnino%7D~1%7BtaxYear%7D/delete" rel="noopener noreferrer">Delete Savings Income</a></li>
+</ul>
+<h3 id="savings-accounts">Savings Accounts</h3>
+
+<p>Customers must submit information to HMRC about any UK savings accounts they hold. For information about eligible account types, refer to <a href="https://www.gov.uk/government/publications/self-assessment-tax-return-sa100#supplementary-pages" rel="noopener noreferrer">How to complete your tax return for Self Assessment (GOV.UK)</a>.</p>
+<p>Customers can use their software to submit information about each account and record the annual interest income data for it. The software can use the following endpoints to enable customers to:</p>
+
+<ul>
+<li><a href="/api-documentation/docs/api/service/individuals-income-received-api/2.0/oas/page#tag/UK-Savings-Account/paths/~1individuals~1income-received~1savings~1uk-accounts~1{nino}/post" rel="noopener noreferrer">Add a UK Savings Account</a></li>
+<li><a href="/api-documentation/docs/api/service/individuals-income-received-api/2.0/oas/page#tag/UK-Savings-Account/paths/~1individuals~1income-received~1savings~1uk-accounts~1{nino}~1{taxYear}~1{savingsAccountId}/put" rel="noopener noreferrer">Create and Amend a UK Savings Account Annual Summary</a></li>
+<li><a href="/api-documentation/docs/api/service/individuals-income-received-api/2.0/oas/page#tag/UK-Savings-Account/paths/~1individuals~1income-received~1savings~1uk-accounts~1{nino}/get" rel="noopener noreferrer">List All UK Savings Accounts</a></li>
+<li><a href="/api-documentation/docs/api/service/individuals-income-received-api/2.0/oas/page#tag/UK-Savings-Account/paths/~1individuals~1income-received~1savings~1uk-accounts~1{nino}~1{taxYear}~1{savingsAccountId}/get" rel="noopener noreferrer">Retrieve UK Savings Account Annual Summary</a></li>
+</ul>
+<h3 id="disclosures">Disclosures</h3>
+
+<p>Customers should tell HMRC if they think they have not paid the correct amount of tax. In serious cases of undisclosed tax or income, HMRC may consider starting a criminal investigation.</p>
+<p>Customers are encouraged to voluntarily tell HMRC about any failures or errors rather than wait for HMRC to contact them. This might reduce any potential penalties on outstanding tax. For more information about making disclosures, refer to <a href="https://www.gov.uk/government/publications/hmrc-your-guide-to-making-a-disclosure/your-guide-to-making-a-disclosure" rel="noopener noreferrer">How to make a voluntary disclosure to HMRC (GOV.UK)</a>.</p>
+<p>Customers can use their software to submit disclosures about tax avoidance. The software can use the following endpoints to enable customers to:</p>
+
+<ul>
+<li><a href="/api-documentation/docs/api/service/individuals-disclosures-api/1.0/oas/page#tag/Disclosures/paths/~1individuals~1disclosures~1%7Bnino%7D~1%7BtaxYear%7D/put" rel="noopener noreferrer">Create and Amend Disclosures</a></li>
+<li><a href="/api-documentation/docs/api/service/individuals-disclosures-api/1.0/oas/page#tag/Disclosures/paths/~1individuals~1disclosures~1%7Bnino%7D~1%7BtaxYear%7D/get" rel="noopener noreferrer">Retrieve Disclosures</a></li>
+<li><a href="/api-documentation/docs/api/service/individuals-disclosures-api/1.0/oas/page#tag/Disclosures/paths/~1individuals~1disclosures~1%7Bnino%7D~1%7BtaxYear%7D/delete" rel="noopener noreferrer">Delete Disclosures</a></li>
+</ul>
+<h3 id="individual-charges">Individual Charges</h3>
+
+<p>This currently applies only to a customer’s pension charges. For more information, refer to <a href="https://www.gov.uk/government/publications/pensions-tax-charges-on-any-excess-over-the-lifetime-allowance-annual-allowance-special-annual-allowance-and-on-unauthorised-payments-hs345-self" rel="noopener noreferrer">Pension savings - tax charges (GOV.UK)</a>.</p>
+<p>Customers can use their software to submit different types of pension charges. This includes UK and overseas pension contributions, tax on unauthorised payments, transfer of overseas pension to another pension scheme and tax paid for exceeding their lifetime allowance.</p>
+<p>The software can use the following endpoints to enable customers to:</p>
+
+<ul>
+<li><a href="/api-documentation/docs/api/service/individuals-charges-api/2.0/oas/page#/paths/~1individuals~1charges~1pensions~1%7Bnino%7D~1%7BtaxYear%7D/get" rel="noopener noreferrer">Retrieve Pension Charges</a></li>
+<li><a href="/api-documentation/docs/api/service/individuals-charges-api/2.0/oas/page#/paths/~1individuals~1charges~1pensions~1%7Bnino%7D~1%7BtaxYear%7D/put" rel="noopener noreferrer">Create and Amend Pension Charges</a></li>
+<li><a href="/api-documentation/docs/api/service/individuals-charges-api/2.0/oas/page#/paths/~1individuals~1charges~1pensions~1%7Bnino%7D~1%7BtaxYear%7D/delete" rel="noopener noreferrer">Delete Pension Charges</a></li>
+</ul>
+<h3 id="individual-reliefs">Individual Reliefs</h3>
+
+<p>‘Tax relief’ means that you either:</p>
+
+<ul>
+<li>pay less tax to take account of money you have spent on specific things, such as business expenses if you’re self-employed</li>
+<li>get tax back or get it repaid in another way, such as personal pension payments</li>
+</ul>
+<p>For more information about individual tax reliefs, refer to <a href="https://www.gov.uk/government/publications/self-assessment-tax-return-sa100/how-to-fill-in-your-tax-return-2021#tax-reliefs" rel="noopener noreferrer">Tax reliefs (GOV.UK)</a>. The following sections cover the different types of tax reliefs and the endpoints needed to submit in the  software.</p>
+<h4 id="pensions-relief">Pensions relief</h4>
+
+<p>Customers can use their software to submit different types of pension relief. This includes regular pension contributions, one-off pension contributions, retirement annuity payments, payments to employer’s scheme, and overseas pensions contributions.</p>
+<p>The software can use the following endpoints to enable customers to:</p>
+
+<ul>
+<li><a href="/api-documentation/docs/api/service/individuals-reliefs-api/1.0/oas/page#tag/Pensions-Reliefs/paths/~1individuals~1reliefs~1pensions~1%7Bnino%7D~1%7BtaxYear%7D/get" rel="noopener noreferrer">Retrieve Pensions Reliefs</a></li>
+<li><a href="/api-documentation/docs/api/service/individuals-reliefs-api/1.0/oas/page#tag/Pensions-Reliefs/paths/~1individuals~1reliefs~1pensions~1%7Bnino%7D~1%7BtaxYear%7D/put" rel="noopener noreferrer">Create and Amend Pensions Reliefs</a></li>
+<li><a href="/api-documentation/docs/api/service/individuals-reliefs-api/1.0/oas/page#tag/Pensions-Reliefs/paths/~1individuals~1reliefs~1pensions~1%7Bnino%7D~1%7BtaxYear%7D/delete" rel="noopener noreferrer">Delete Pensions Reliefs</a></li>
+</ul>
+<h4 id="relief-investments">Relief investments</h4>
+
+<p>Customers can use their software to submit different types of relief investments. This includes venture capital subscriptions, Enterprise Investment Scheme (EIS), community investments, seed enterprise investments, and social enterprise investments.</p>
+<p>The software can use the following endpoints to enable customers to:</p>
+
+<ul>
+<li><a href="/api-documentation/docs/api/service/individuals-reliefs-api/1.0/oas/page#tag/Relief-Investments/paths/~1individuals~1reliefs~1investment~1%7Bnino%7D~1%7BtaxYear%7D/get" rel="noopener noreferrer">Retrieve Relief Investments</a></li>
+<li><a href="/api-documentation/docs/api/service/individuals-reliefs-api/1.0/oas/page#tag/Relief-Investments/paths/~1individuals~1reliefs~1investment~1%7Bnino%7D~1%7BtaxYear%7D/put" rel="noopener noreferrer">Create and Amend Relief Investments</a></li>
+<li><a href="/api-documentation/docs/api/service/individuals-reliefs-api/1.0/oas/page#tag/Relief-Investments/paths/~1individuals~1reliefs~1investment~1%7Bnino%7D~1%7BtaxYear%7D/delete" rel="noopener noreferrer">Delete Relief Investments</a></li>
+</ul>
+<h4 id="other-reliefs">Other reliefs</h4>
+
+<p>Customers can use their software to submit other types of tax relief. This includes non-deductible loan interests, payroll giving, redemption of shares and securities, maintenance payments, post-cessation trade relief, annual payments made, and qualifying loan interest payments.</p>
+<p>The software can use the following endpoints to enable customers to:</p>
+
+<ul>
+<li><a href="/api-documentation/docs/api/service/individuals-reliefs-api/1.0/oas/page#tag/Other-Reliefs/paths/~1individuals~1reliefs~1other~1%7Bnino%7D~1%7BtaxYear%7D/get" rel="noopener noreferrer">Retrieve Other Reliefs</a></li>
+<li><a href="/api-documentation/docs/api/service/individuals-reliefs-api/1.0/oas/page#tag/Other-Reliefs/paths/~1individuals~1reliefs~1other~1%7Bnino%7D~1%7BtaxYear%7D/put" rel="noopener noreferrer">Create and Amend Other Reliefs</a></li>
+<li><a href="/api-documentation/docs/api/service/individuals-reliefs-api/1.0/oas/page#tag/Other-Reliefs/paths/~1individuals~1reliefs~1other~1%7Bnino%7D~1%7BtaxYear%7D/delete" rel="noopener noreferrer">Delete Other Reliefs</a></li>
+</ul>
+<h4 id="foreign-reliefs">Foreign reliefs</h4>
+
+<p>Customers can use their software to submit different types of foreign relief. This includes foreign tax credit, foreign income tax credit, and foreign tax not claimed.</p>
+<p>The software can use the following endpoints to enable customers to:</p>
+
+<ul>
+<li><a href="/api-documentation/docs/api/service/individuals-reliefs-api/1.0/oas/page#tag/Foreign-Reliefs/paths/~1individuals~1reliefs~1foreign~1%7Bnino%7D~1%7BtaxYear%7D/get" rel="noopener noreferrer">Retrieve Foreign Reliefs</a></li>
+<li><a href="/api-documentation/docs/api/service/individuals-reliefs-api/1.0/oas/page#tag/Foreign-Reliefs/paths/~1individuals~1reliefs~1foreign~1%7Bnino%7D~1%7BtaxYear%7D/put" rel="noopener noreferrer">Create and Amend Foreign Reliefs</a></li>
+<li><a href="/api-documentation/docs/api/service/individuals-reliefs-api/1.0/oas/page#tag/Foreign-Reliefs/paths/~1individuals~1reliefs~1foreign~1%7Bnino%7D~1%7BtaxYear%7D/delete" rel="noopener noreferrer">Delete Foreign Reliefs</a></li>
+</ul>
+<h4 id="charitable-giving">Charitable giving</h4>
+
+<p>Customers can use their software to submit information about gifts and gift aid payments to non-UK charities. The software can use the following endpoints to enable customers to:</p>
+
+<ul>
+<li><a href="/api-documentation/docs/api/service/individuals-reliefs-api/1.0/oas/page#tag/Charitable-Givings/paths/~1individuals~1reliefs~1charitable-giving~1{nino}~1{taxYear}/get" rel="noopener noreferrer">Retrieve Charitable Giving Tax Relief</a></li>
+<li><a href="/api-documentation/docs/api/service/individuals-reliefs-api/1.0/oas/page#tag/Charitable-Givings/paths/~1individuals~1reliefs~1charitable-giving~1{nino}~1{taxYear}/put" rel="noopener noreferrer">Create and Amend Charitable Giving Tax Relief</a></li>
+<li><a href="/api-documentation/docs/api/service/individuals-reliefs-api/1.0/oas/page#tag/Charitable-Givings/paths/~1individuals~1reliefs~1charitable-giving~1{nino}~1{taxYear}/delete" rel="noopener noreferrer">Delete Charitable Giving Tax Relief</a></li>
+</ul>
+<h3 id="other-deductions">Other Deductions</h3>
+
+<p>This currently applies only to people working at sea outside of the UK. For more information, refer to <a href="https://www.gov.uk/guidance/seafarers-earnings-deduction-tax-relief-if-you-work-on-a-ship" rel="noopener noreferrer">Seafarers Earnings Deduction: tax relief if you work on a ship (GOV.UK)</a>.</p>
+<p>Customers can use their software to submit information about seafarers. The software can use the following endpoints to enable customers to:</p>
+
+<ul>
+<li><a href="/api-documentation/docs/api/service/other-deductions-api/1.0/oas/page#/paths/~1individuals~1deductions~1other~1%7Bnino%7D~1%7BtaxYear%7D/get" rel="noopener noreferrer">Retrieve Deductions</a></li>
+<li><a href="/api-documentation/docs/api/service/other-deductions-api/1.0/oas/page#/paths/~1individuals~1deductions~1other~1%7Bnino%7D~1%7BtaxYear%7D/put" rel="noopener noreferrer">Create and Amend Deductions</a></li>
+<li><a href="/api-documentation/docs/api/service/other-deductions-api/1.0/oas/page#/paths/~1individuals~1deductions~1other~1%7Bnino%7D~1%7BtaxYear%7D/delete" rel="noopener noreferrer">Delete Deductions</a></li>
+</ul>
+<h3 id="employment-expenses">Employment Expenses</h3>
+
+<p>Customers can claim tax relief on certain expenses related to their work. For more information, refer to <a href="https://www.gov.uk/tax-relief-for-employees" rel="noopener noreferrer">Claim tax relief for your job expenses (GOV.UK).</a></p>
+<p>Customers can use their software to claim tax relief on the following types of expenses related to their employment:</p>
+
+<ul>
+<li>travel, vehicle, clothing, uniform, equipment or tools costs</li>
+<li>annual subscriptions paid to approved professional bodies relevant to their work</li>
+</ul>
+<p>The software can use the following endpoints to enable customers to:</p>
+
+<ul>
+<li><a href="/api-documentation/docs/api/service/individuals-expenses-api/2.0/oas/page#tag/Employment-Expenses/paths/~1individuals~1expenses~1employments~1{nino}~1{taxYear}/put" rel="noopener noreferrer">Create and Amend Employment Expenses</a></li>
+<li><a href="/api-documentation/docs/api/service/individuals-expenses-api/2.0/oas/page#tag/Employment-Expenses/paths/~1individuals~1expenses~1employments~1{nino}~1{taxYear}/get" rel="noopener noreferrer">Retrieve Employment Expenses</a></li>
+<li><a href="/api-documentation/docs/api/service/individuals-expenses-api/2.0/oas/page#tag/Employment-Expenses/paths/~1individuals~1expenses~1employments~1{nino}~1{taxYear}/delete" rel="noopener noreferrer">Delete Employment Expenses</a></li>
+<li><a href="/api-documentation/docs/api/service/individuals-expenses-api/2.0/oas/page#tag/Employment-Expenses/paths/~1individuals~1expenses~1employments~1{nino}~1{taxYear}~1ignore/post" rel="noopener noreferrer">Ignore Employment Expenses</a></li>
+</ul>
+<p>Customers can also use their software to claim tax relief on other types of expenses related to their work:</p>
+
+<ul>
+<li>annual subscriptions paid to an approved trade union or friendly society that entitle the customer to a pension, life assurance, or death benefits</li>
+<li>non-annual UK <a href="https://www.gov.uk/hmrc-internal-manuals/savings-and-investment-manual/saim9130" rel="noopener noreferrer">patent royalty payments</a></li>
+</ul>
+<p>The software can use the following endpoints to enable customers to:</p>
+
+<ul>
+<li><a href="/api-documentation/docs/api/service/individuals-expenses-api/2.0/oas/page#tag/Other-Expenses/paths/~1individuals~1expenses~1other~1%7Bnino%7D~1%7BtaxYear%7D/get" rel="noopener noreferrer">Retrieve Other Expenses</a></li>
+<li><a href="/api-documentation/docs/api/service/individuals-expenses-api/2.0/oas/page#tag/Other-Expenses/paths/~1individuals~1expenses~1other~1%7Bnino%7D~1%7BtaxYear%7D/put" rel="noopener noreferrer">Create and Amend Other Expenses</a></li>
+<li><a href="/api-documentation/docs/api/service/individuals-expenses-api/2.0/oas/page#tag/Other-Expenses/paths/~1individuals~1expenses~1other~1%7Bnino%7D~1%7BtaxYear%7D/delete" rel="noopener noreferrer">Delete Other Expenses</a></li>
+</ul>
+<h3 id="non-paye-income">Non-PAYE Income</h3>
+
+<p>Customers might need to pay taxes on any tips they have received. For more information about paying taxes on tips, refer to <a href="https://www.gov.uk/tips-at-work" rel="noopener noreferrer">Tips at work (GOV.UK)</a>.</p>
+<p>Customers can use their software to submit information about tips they have received through their employment. The software can use the following endpoints to enable customers to:</p>
+
+<ul>
+<li><a href="/api-documentation/docs/api/service/individuals-income-received-api/2.0/oas/page#tag/Non-PAYE-Employment-Income/paths/~1individuals~1income-received~1employments~1non-paye~1%7Bnino%7D~1%7BtaxYear%7D/put" rel="noopener noreferrer">Create and Amend Non-PAYE Employment Income</a></li>
+<li><a href="/api-documentation/docs/api/service/individuals-income-received-api/2.0/oas/page#tag/Non-PAYE-Employment-Income/paths/~1individuals~1income-received~1employments~1non-paye~1%7Bnino%7D~1%7BtaxYear%7D/get" rel="noopener noreferrer">Retrieve Non-PAYE Employment Income</a></li>
+<li><a href="/api-documentation/docs/api/service/individuals-income-received-api/2.0/oas/page#tag/Non-PAYE-Employment-Income/paths/~1individuals~1income-received~1employments~1non-paye~1%7Bnino%7D~1%7BtaxYear%7D/delete" rel="noopener noreferrer">Delete Non-PAYE Employment Income</a></li>
+</ul>
+<h3 id="state-benefits">State Benefits</h3>
+
+<p>State benefits are sums of money paid by the government to people in certain circumstances to help meet their day-to-day living needs. They exist to make sure no one falls below a minimum standard of living. State benefits are sometimes called allowances, pensions, tax credits or entitlements. For more information, refer to <a href="https://www.gov.uk/income-tax/taxfree-and-taxable-state-benefits" rel="noopener noreferrer">Tax-free and taxable state benefits (GOV.UK)</a>.</p>
+<p>Customers can use their software to submit information about incapacity benefits, state pension lump sums and other state benefits. The software can use the following endpoints to enable customers to:</p>
+
+<ul>
+<li><a href="/api-documentation/docs/api/service/individuals-state-benefits-api/1.0/oas/page#/paths/~1individuals~1state-benefits~1%7Bnino%7D~1%7BtaxYear%7D/get" rel="noopener noreferrer">List State Benefits</a></li>
+<li><a href="/api-documentation/docs/api/service/individuals-state-benefits-api/1.0/oas/page#/paths/~1individuals~1state-benefits~1%7Bnino%7D~1%7BtaxYear%7D/post" rel="noopener noreferrer">Create State Benefit</a></li>
+<li><a href="/api-documentation/docs/api/service/individuals-state-benefits-api/1.0/oas/page#/paths/~1individuals~1state-benefits~1%7Bnino%7D~1%7BtaxYear%7D~1%7BbenefitId%7D/put" rel="noopener noreferrer">Amend State Benefit</a></li>
+<li><a href="/api-documentation/docs/api/service/individuals-state-benefits-api/1.0/oas/page#/paths/~1individuals~1state-benefits~1%7Bnino%7D~1%7BtaxYear%7D~1%7BbenefitId%7D/delete" rel="noopener noreferrer">Delete State Benefit</a></li>
+<li><a href="/api-documentation/docs/api/service/individuals-state-benefits-api/1.0/oas/page#/paths/~1individuals~1state-benefits~1%7Bnino%7D~1%7BtaxYear%7D~1%7BbenefitId%7D~1amounts/put" rel="noopener noreferrer">Amend State Benefit Amounts</a></li>
+<li><a href="/api-documentation/docs/api/service/individuals-state-benefits-api/1.0/oas/page#/paths/~1individuals~1state-benefits~1%7Bnino%7D~1%7BtaxYear%7D~1%7BbenefitId%7D~1amounts/delete" rel="noopener noreferrer">Delete State Benefit Amounts</a></li>
+<li><a href="/api-documentation/docs/api/service/individuals-state-benefits-api/1.0/oas/page#/paths/~1individuals~1state-benefits~1%7Bnino%7D~1%7BtaxYear%7D~1%7BbenefitId%7D~1ignore/post" rel="noopener noreferrer">Ignore State Benefit</a></li>
+<li><a href="/api-documentation/docs/api/service/individuals-state-benefits-api/1.0/oas/page#/paths/~1individuals~1state-benefits~1%7Bnino%7D~1%7BtaxYear%7D~1%7BbenefitId%7D~1unignore/post" rel="noopener noreferrer">Unignore State Benefit</a></li>
+</ul>
+<h3 id="providing-information-about-how-to-treat-a-loss">Providing information about how to treat a loss</h3>
+
+<p>A self-employed business can have a loss when trade expenses are more than trade income. If the business has a loss for a year before signing up to Making Tax Digital, the customer or agent will need to submit details about the loss to be brought forward. For more information, refer to <a href="https://www.gov.uk/government/publications/losses-hs227-self-assessment-helpsheet/hs227-losses-2023#using-losses-types-of-claim" rel="noopener noreferrer">HS227 Losses (GOV.UK).</a></p>
+<p>Customers can submit different types of losses through their software. This includes brought forward losses and capital gains losses. Brought forward losses can be calculated for the customer’s self-employment, UK property, and foreign property business income types. The software can use the following endpoints to enable customers to:</p>
+
+<ul>
+<li><a href="/api-documentation/docs/api/service/individual-losses-api/4.0/oas/page#tag/Brought-Forward-Losses/paths/~1individuals~1losses~1{nino}~1brought-forward-losses/post" rel="noopener noreferrer">Create a brought forward loss</a></li>
+<li><a href="/api-documentation/docs/api/service/individual-losses-api/4.0/oas/page#tag/Brought-Forward-Losses/paths/~1individuals~1losses~1{nino}~1brought-forward-losses~1tax-year~1{taxYearBroughtForwardFrom}/get" rel="noopener noreferrer">List brought forward losses</a></li>
+<li><a href="/api-documentation/docs/api/service/individual-losses-api/4.0/oas/page#tag/Brought-Forward-Losses/paths/~1individuals~1losses~1{nino}~1brought-forward-losses~1{lossId}~1change-loss-amount/post" rel="noopener noreferrer">Amend a brought forward loss</a></li>
+<li><a href="/api-documentation/docs/api/service/individual-losses-api/4.0/oas/page#tag/Brought-Forward-Losses/paths/~1individuals~1losses~1{nino}~1brought-forward-losses~1{lossId}/get" rel="noopener noreferrer">Retrieve a brought forward loss</a></li>
+<li><a href="/api-documentation/docs/api/service/individual-losses-api/4.0/oas/page#tag/Brought-Forward-Losses/paths/~1individuals~1losses~1{nino}~1brought-forward-losses~1{lossId}/delete" rel="noopener noreferrer">Delete a brought forward loss</a></li>
+</ul>
+<p>For capital gains losses, the software can use the following endpoints to enable customers to:</p>
+
+<ul>
+<li><a href="/api-documentation/docs/api/service/individuals-income-received-api/2.0/oas/page#tag/Other-Capital-Gains-and-Disposals/paths/~1individuals~1income-received~1disposals~1other-gains~1{nino}~1{taxYear}/put" rel="noopener noreferrer">Create and Amend Other Capital Gains and Disposals</a></li>
+<li><a href="/api-documentation/docs/api/service/individuals-income-received-api/2.0/oas/page#tag/Other-Capital-Gains-and-Disposals/paths/~1individuals~1income-received~1disposals~1other-gains~1{nino}~1{taxYear}/get" rel="noopener noreferrer">Retrieve Other Capital Gains and Disposals</a></li>
+<li><a href="/api-documentation/docs/api/service/individuals-income-received-api/2.0/oas/page#tag/Other-Capital-Gains-and-Disposals/paths/~1individuals~1income-received~1disposals~1other-gains~1{nino}~1{taxYear}/delete" rel="noopener noreferrer">Delete Other Capital Gains and Disposals</a></li>
+</ul>
+<p>After submitting the above losses, customers can view their loss position. If they do not agree with that, they can submit an independent loss claim. The software can use the following endpoints to enable a customer to:</p>
+
+<ul>
+<li><a href="/api-documentation/docs/api/service/individual-losses-api/4.0/oas/page#tag/Loss-Claims/paths/~1individuals~1losses~1{nino}~1loss-claims/post" rel="noopener noreferrer">Create a Loss Claim</a></li>
+<li><a href="/api-documentation/docs/api/service/individual-losses-api/4.0/oas/page#tag/Loss-Claims/paths/~1individuals~1losses~1{nino}~1loss-claims~1tax-year~1{taxYearClaimedFor}/get" rel="noopener noreferrer">List Loss Claims</a></li>
+<li><a href="/api-documentation/docs/api/service/individual-losses-api/4.0/oas/page#tag/Loss-Claims/paths/~1individuals~1losses~1{nino}~1loss-claims~1{claimId}/get" rel="noopener noreferrer">Retrieve a Loss Claim</a></li>
+<li><a href="/api-documentation/docs/api/service/individual-losses-api/4.0/oas/page#tag/Loss-Claims/paths/~1individuals~1losses~1{nino}~1loss-claims~1{claimId}/delete" rel="noopener noreferrer">Delete a Loss Claim</a></li>
+<li><a href="/api-documentation/docs/api/service/individual-losses-api/4.0/oas/page#tag/Loss-Claims/paths/~1individuals~1losses~1{nino}~1loss-claims~1{claimId}~1change-type-of-claim/post" rel="noopener noreferrer">Amend a Loss Claim Type</a></li>
+<li><a href="/api-documentation/docs/api/service/individual-losses-api/4.0/oas/page#tag/Loss-Claims/paths/~1individuals~1losses~1{nino}~1loss-claims~1order~1{taxYearClaimedFor}/put" rel="noopener noreferrer">Amend Loss Claims Order</a></li>
+</ul>
+<h3 id="capital-gains-tax">Capital Gains Tax</h3>
+
+<p>Capital Gains Tax is a tax on the profit when someone sells or disposes of an asset that has increased in value. Customers may need to report on the following types of asset:</p>
+
+<ul>
+<li>residential property</li>
+<li>other property </li>
+<li>listed and unlisted shares and securities </li>
+</ul>
+<p>For more information on capital gains tax, see <a href="https://www.gov.uk/capital-gains-tax" rel="noopener noreferrer">Capital Gains Tax: what you pay it on, rates and allowances</a>.</p>
+<p>MTD customers can also report any losses they have made. This charge may be set against earlier or later years. When the customer sells or disposes of the whole or part of a UK residential property and is liable to pay CGT, they must tell HMRC within a specific time following the date of completion of the sale. For more information on the reporting requirement, see <a href="https://www.gov.uk/report-and-pay-your-capital-gains-tax/if-you-sold-a-property-in-the-uk-on-or-after-6-april-2020" rel="noopener noreferrer">Report and pay your Capital Gains Tax: If you sold a property in the UK on or after 6 April 2020</a>. For non-resident customers, see <a href="https://www.gov.uk/guidance/capital-gains-tax-for-non-residents-uk-residential-property" rel="noopener noreferrer">Tell HMRC about Capital Gains Tax on UK property or land if you’re not a UK resident</a>, which advises on how these gains must be reported in year.</p>
+<p>The customer can create, update, or delete their capital gains tax in software only after the end of the tax year. If they need to make changes during the year, they need to use HMRC online services. In some cases, customers must report and pay before they submit their final declaration. However, this information will still need to be included in their final declaration if they are a Self Assessment or MTD customer.</p>
+<p>An MTD customer can do the following:</p>
+
+<ul>
+<li>view CGT Residential Property Disposals for PPD, non-PPD and other capital gains and disposals</li>
+<li>create or amend CGT Residential Property Disposals for PPD, non-PPD and other capital gains and disposals</li>
+<li>delete CGT Residential Property Disposals for PPD, non-PPD and other capital gains and disposals</li>
+</ul>
+<h4 id="viewing-cgt">Viewing CGT</h4>
+
+<p>At any time, a customer can view their capital gains tax information. In software, this information is retrieved using the following endpoints:</p>
+
+<ul>
+<li><a href="/api-documentation/docs/api/service/individuals-income-received-api/2.0/oas/page#tag/Capital-Gains-on-Residential-Property-Disposals/paths/~1individuals~1income-received~1disposals~1residential-property~1%7Bnino%7D~1%7BtaxYear%7D/get" rel="noopener noreferrer">Retrieve All CGT Residential Property Disposals and Overrides (Includes PPD and Non-PPD)</a></li>
+<li><a href="/api-documentation/docs/api/service/individuals-income-received-api/2.0/oas/page#tag/Other-Capital-Gains-and-Disposals/paths/~1individuals~1income-received~1disposals~1other-gains~1%7Bnino%7D~1%7BtaxYear%7D/get" rel="noopener noreferrer">Retrieve Other Capital Gains and Disposals</a></li>
+</ul>
+<h4 id="creating-or-amending-cgt">Creating or Amending CGT</h4>
+
+<p>Customers can create or amend the different types of CGT information after the end of the tax year. This change must be done before they submit their final declaration. In software, this information is updated using the following endpoints:</p>
+
+<ul>
+<li><a href="/api-documentation/docs/api/service/individuals-income-received-api/2.0/oas/page#tag/Capital-Gains-on-Residential-Property-Disposals/paths/~1individuals~1income-received~1disposals~1residential-property~1%7Bnino%7D~1%7BtaxYear%7D~1ppd/put" rel="noopener noreferrer">Create and Amend ‘Report and Pay Capital Gains Tax on Property’ Overrides</a></li>
+<li><a href="/api-documentation/docs/api/service/individuals-income-received-api/2.0/oas/page#tag/Capital-Gains-on-Residential-Property-Disposals/paths/~1individuals~1income-received~1disposals~1residential-property~1%7Bnino%7D~1%7BtaxYear%7D/put" rel="noopener noreferrer">Create and Amend CGT Residential Property Disposals</a></li>
+<li><a href="/api-documentation/docs/api/service/individuals-income-received-api/2.0/oas/page#tag/Other-Capital-Gains-and-Disposals/paths/~1individuals~1income-received~1disposals~1other-gains~1%7Bnino%7D~1%7BtaxYear%7D/put" rel="noopener noreferrer">Create and Amend Other Capital Gains and Disposals</a></li>
+</ul>
+<h4 id="deleting-cgt">Deleting CGT</h4>
+
+<p>Customers can delete different types of CGT only after the end of the tax year and only after they have created CGT using software. However, this change must be done before they submit their final declaration.  In software, this deletion is made using the following endpoints:</p>
+
+<ul>
+<li><a href="/api-documentation/docs/api/service/individuals-income-received-api/2.0/oas/page#tag/Capital-Gains-on-Residential-Property-Disposals/paths/~1individuals~1income-received~1disposals~1residential-property~1%7Bnino%7D~1%7BtaxYear%7D~1ppd/delete" rel="noopener noreferrer">Delete ‘Report and Pay Capital Gains Tax on Residential Property’ Overrides</a></li>
+<li><a href="/api-documentation/docs/api/service/individuals-income-received-api/2.0/oas/page#tag/Capital-Gains-on-Residential-Property-Disposals/paths/~1individuals~1income-received~1disposals~1residential-property~1%7Bnino%7D~1%7BtaxYear%7D/delete" rel="noopener noreferrer">Delete CGT Residential Property Disposals</a></li>
+<li><a href="/api-documentation/docs/api/service/individuals-income-received-api/2.0/oas/page#tag/Other-Capital-Gains-and-Disposals/paths/~1individuals~1income-received~1disposals~1other-gains~1%7Bnino%7D~1%7BtaxYear%7D/delete" rel="noopener noreferrer">Delete Other Capital Gains and Disposals</a></li>
+</ul>
+<h3 id="marriage-allowance">Marriage Allowance</h3>
+
+<p>Marriage Allowance allows the customer to transfer some of their Personal Allowance to their husband, wife or civil partner. This will reduce the customer&rsquo;s tax in the next tax year (6 April to 5 April). For more information about marriage allowance, refer to <a href="https://www.gov.uk/marriage-allowance" rel="noopener noreferrer">Marriage Allowance: How it works - GOV.UK</a>.</p>
+<p>Customers can create a Marriage Allowance claim using their name, date of birth and NINO. To do this action, the software must call the <a href="/api-documentation/docs/api/service/individuals-disclosures-api/1.0/oas/page#tag/Marriage-Allowance/paths/~1individuals~1disclosures~1marriage-allowance~1{nino}/post" rel="noopener noreferrer">Create Marriage Allowance</a> endpoint in the <a href="/api-documentation/docs/api/service/individuals-disclosures-api/" rel="noopener noreferrer">Individuals Disclosures API</a>. After the claim has been accepted by HMRC, the customer can view their Marriage Allowance in their tax calculations.</p>
+<h2 id="construction-industry-scheme">Construction Industry Scheme</h2>
+
+<p>Under the Construction Industry Scheme (CIS), <a href="https://www.gov.uk/what-you-must-do-as-a-cis-contractor" rel="noopener noreferrer">contractors</a> deduct money from a <a href="https://www.gov.uk/what-you-must-do-as-a-cis-subcontractor" rel="noopener noreferrer">subcontractor&rsquo;s</a> payments and send it to HM Revenue and Customs (HMRC).</p>
+<p>Currently, under Self Assessment, a subcontractor submits their deductions on their Self-Assessment return and it is checked against HMRC records with what their contractor(s) have submitted.</p>
+<p>Under Making Tax Digital for ITSA, a customer can view what has been submitted by their contractor through their HMRC online services account or their software. Customers can complete the following tasks on their CIS deductions:</p>
+
+<ul>
+<li><a href="#view-cis-deductions" rel="noopener noreferrer">view CIS deductions</a></li>
+<li><a href="#create-cis-deductions" rel="noopener noreferrer">create CIS deductions</a></li>
+<li><a href="#amend-cis-deductions" rel="noopener noreferrer">amend CIS deductions</a></li>
+<li><a href="#delete-cis-deductions" rel="noopener noreferrer">delete CIS deductions</a></li>
+</ul>
+<h3 id="view-cis-deductions">View CIS deductions</h3>
+
+<p>A customer, at any time, can view a breakdown of all the CIS deductions that have been reported to HMRC by their contractors. In software, this is done by calling the <a href="/api-documentation/docs/api/service/cis-deductions-api/2.0/oas/page#/paths/~1individuals~1deductions~1cis~1%7Bnino%7D~1current-position~1%7BtaxYear%7D~1%7Bsource%7D/get" rel="noopener noreferrer">Retrieve CIS Deductions for Subcontractor</a> endpoint.</p>
+<p><a href="/documentation/figures/cis-retrieve-cis.svg" target="blank"><img src="/Users/fmcgrath/Documents/GitHub/poc-demo/income-tax-mtd-end-to-end-service-guide/source/documentation/figures/cis-retrieve-cis.svg" alt="CIS create diagram" style="width:720px;" /></a>
+<a href="/documentation/figures/cis-retrieve-cis.svg" target="blank">Open the CIS retrieve deduction diagram in a new tab</a>.</p>
+<p>When the customer submits quarterly updates to HMRC through their software, they will not be required to provide a CIS deduction amount. When a quarterly update has been made, the software will trigger the tax calculation using the <a href="/api-documentation/docs/api/service/individual-calculations-api/5.0/oas/page#tag/Tax-Calculations/paths/~1individuals~1calculations~1%7Bnino%7D~1self-assessment~1%7BtaxYear%7D/post" rel="noopener noreferrer">Trigger a Self Assessment Tax Calculation</a> endpoint and display the calculation result to the customer using the <a href="/api-documentation/docs/api/service/individual-calculations-api/5.0/oas/page#tag/Tax-Calculations/paths/~1individuals~1calculations~1%7Bnino%7D~1self-assessment~1%7BtaxYear%7D~1%7BcalculationId%7D/get" rel="noopener noreferrer">Retrieve A Self Assessment Tax Calculation</a> endpoint. This calculation result will include the CIS deductions received by the contractor for that quarter.</p>
+<p>If the customer does not agree with the amount the contractor has submitted to HMRC for any of their quarterly updates, HMRC advises them to query any discrepancies with their contractor.</p>
+<h3 id="create-cis-deductions">Create CIS deductions</h3>
+
+<p>At the end of the year, if the customer still does not agree with the CIS deductions amount the contractor has submitted to HMRC, they can submit what they believe to be the correct amount. This needs to be completed following the fourth quarterly update and before the end-of-period statement is submitted. In software, this is done by calling the <a href="/api-documentation/docs/api/service/cis-deductions-api/2.0/oas/page#/paths/~1individuals~1deductions~1cis~1%7Bnino%7D~1amendments/post" rel="noopener noreferrer">Create CIS Deductions for Subcontractor</a> endpoint. After successfully creating CIS deductions for the customer, the API returns a submission ID in the success response. This ID must be used to amend or delete CIS deductions in the future. A customer might also submit their CIS deductions amount if they find that no data from the contractor is included in the tax calculation.</p>
+<p><a href="/documentation/figures/cis-create-cis.svg" target="blank"><img src="/Users/fmcgrath/Documents/GitHub/poc-demo/income-tax-mtd-end-to-end-service-guide/source/documentation/figures/cis-create-cis.svg" alt="CIS create diagram" style="width:720px;" /></a>
+<a href="/documentation/figures/cis-create-cis.svg" target="blank">Open the CIS create deduction diagram in a new tab</a></p>
+<h3 id="amend-cis-deductions">Amend CIS deductions</h3>
+
+<p>If the customer has submitted a CIS deduction amount after the end of the year but later realises what they submitted was incorrect, they can provide the correct CIS deduction amount. This amendment can be made even after the end-of-period statement is submitted. However, it needs to be done before the final declaration is submitted. In software, amending CIS deductions is done by calling the <a href="/api-documentation/docs/api/service/cis-deductions-api/2.0/oas/page#/paths/~1individuals~1deductions~1cis~1%7Bnino%7D~1amendments~1%7BsubmissionId%7D/put" rel="noopener noreferrer">Amend CIS Deductions for Subcontractor</a> endpoint.</p>
+<p><a href="/documentation/figures/cis-amend-cis.svg" target="blank"><img src="/Users/fmcgrath/Documents/GitHub/poc-demo/income-tax-mtd-end-to-end-service-guide/source/documentation/figures/cis-amend-cis.svg" alt="CIS amend diagram" style="width:720px;" /></a>
+<a href="/documentation/figures/cis-amend-cis.svg" target="blank">Open the CIS amend deduction diagram in a new tab</a></p>
+<h3 id="delete-cis-deductions">Delete CIS deductions</h3>
+
+<p>If the customer has submitted a CIS deduction amount after the end of the year but later realises they did not pay any CIS deductions and what they submitted was incorrect, they can delete the amount. This deletion can be made even after the end-of-period statement is submitted. However, it needs to be done before the final declaration is submitted. In software, deleting CIS deductions is done by calling the <a href="/api-documentation/docs/api/service/cis-deductions-api/2.0/oas/page#/paths/~1individuals~1deductions~1cis~1%7Bnino%7D~1amendments~1%7BsubmissionId%7D/delete" rel="noopener noreferrer">Delete CIS Deductions for Subcontractor</a> endpoint.</p>
+<p><a href="/documentation/figures/cis-delete-cis.svg" target="blank"><img src="/Users/fmcgrath/Documents/GitHub/poc-demo/income-tax-mtd-end-to-end-service-guide/source/documentation/figures/cis-delete-cis.svg" alt="CIS delete diagram" style="width:720px;" /></a>
+<a href="/documentation/figures/cis-delete-cis.svg" target="blank">Open the CIS delete deduction diagram in a new tab</a></p>
+<h2 id="submit-allowance-and-adjustments">Submit allowance and adjustments</h2>
+
+<p>Some customers must submit an annual summary update. They can provide updates more frequently if they wish, though they must make this submission before submitting their final declaration. The following endpoints enable customers to submit their annual allowances or adjustments:</p>
+
+<ul>
+<li><a href="/api-documentation/docs/api/service/self-employment-business-api/3.0/oas/page#tag/Self-Employment-Annual-Submission/paths/~1individuals~1business~1self-employment~1{nino}~1{businessId}~1annual~1{taxYear}/put" rel="noopener noreferrer">Create and Amend Self-Employment Annual Submission</a></li>
+<li><a href="/api-documentation/docs/api/service/property-business-api/3.0/oas/page#tag/UK-Property-Business-Annual-Submission/paths/~1individuals~1business~1property~1uk~1{nino}~1{businessId}~1annual~1{taxYear}/put" rel="noopener noreferrer">Create and Amend a UK Property Business Annual Submission</a></li>
+<li><a href="/api-documentation/docs/api/service/property-business-api/3.0/oas/page#tag/Foreign-Property-Annual-Submission/paths/~1individuals~1business~1property~1foreign~1{nino}~1{businessId}~1annual~1{taxYear}/put" rel="noopener noreferrer">Create and Amend a Foreign Property Annual Submission</a></li>
+<li><a href="/api-documentation/docs/api/service/property-business-api/3.0/oas/page#tag/Historic-FHL-UK-Property-Business-Annual-Submission/paths/~1individuals~1business~1property~1uk~1annual~1furnished-holiday-lettings~1{nino}~1{taxYear}/put" rel="noopener noreferrer">Create and Amend Historic FHL UK Property Business Annual Submission</a></li>
+<li><a href="/api-documentation/docs/api/service/property-business-api/3.0/oas/page#tag/Historic-non-FHL-UK-Property-Business-Annual-Submission/paths/~1individuals~1business~1property~1uk~1annual~1non-furnished-holiday-lettings~1{nino}~1{taxYear}/put" rel="noopener noreferrer">Create and Amend Historic Non-FHL UK Property Business Annual Submission</a></li>
+</ul>
+<h3 id="view-allowance-and-adjustments">View allowance and adjustments</h3>
+
+<p>Submitted updates can be viewed any time throughout the year. The following endpoints enable customers to view their submitted annual allowances or adjustments:</p>
+
+<ul>
+<li><a href="/api-documentation/docs/api/service/self-employment-business-api/3.0/oas/page#tag/Self-Employment-Annual-Submission/paths/~1individuals~1business~1self-employment~1{nino}~1{businessId}~1annual~1{taxYear}/get" rel="noopener noreferrer">Retrieve a Self-Employment Annual Submission</a></li>
+<li><a href="/api-documentation/docs/api/service/property-business-api/3.0/oas/page#tag/UK-Property-Business-Annual-Submission/paths/~1individuals~1business~1property~1uk~1{nino}~1{businessId}~1annual~1{taxYear}/get" rel="noopener noreferrer">Retrieve a UK Property Business Annual Submission</a></li>
+<li><a href="/api-documentation/docs/api/service/property-business-api/3.0/oas/page#tag/Foreign-Property-Annual-Submission/paths/~1individuals~1business~1property~1foreign~1{nino}~1{businessId}~1annual~1{taxYear}/get" rel="noopener noreferrer">Retrieve a Foreign Property Annual Submission</a></li>
+<li><a href="/api-documentation/docs/api/service/property-business-api/3.0/oas/page#tag/Historic-FHL-UK-Property-Business-Annual-Submission/paths/~1individuals~1business~1property~1uk~1annual~1furnished-holiday-lettings~1{nino}~1{taxYear}/get" rel="noopener noreferrer">Retrieve a Historic FHL UK Property Business Annual Submission</a></li>
+<li><a href="/api-documentation/docs/api/service/property-business-api/3.0/oas/page#tag/Historic-non-FHL-UK-Property-Business-Annual-Submission/paths/~1individuals~1business~1property~1uk~1annual~1non-furnished-holiday-lettings~1{nino}~1{taxYear}/get" rel="noopener noreferrer">Retrieve a Historic Non-FHL UK Property Business Annual Submission</a></li>
+</ul>
+<h3 id="amend-allowance-and-adjustments">Amend allowance and adjustments</h3>
+
+<p>The software should use the same endpoints and process for submitting annual information as <a href="/guides/income-tax-mtd-end-to-end-service-guide/documentation/businessandpropertyincome.html#submit-allowance-and-adjustment-updates-for-se-and-property-businesses" rel="noopener noreferrer">Submit allowance and adjustment updates for SE and property businesses</a>.</p>
+<p>When a customer amends an annual summary update, it is necessary to provide all previously submitted figures again in addition to any new information. This means all previous entries will be removed after the new submission.</p>
+<p>The customer can also delete their previously submitted annual allowance and adjustment updates. In software, this deletion is done by calling any of the following endpoints, depending on the business income type:</p>
+
+<ul>
+<li><a href="/api-documentation/docs/api/service/self-employment-business-api/3.0/oas/page#tag/Self-Employment-Annual-Submission/paths/~1individuals~1business~1self-employment~1{nino}~1{businessId}~1annual~1{taxYear}/delete" rel="noopener noreferrer">Delete a Self-Employment Annual Submission</a></li>
+<li><a href="/api-documentation/docs/api/service/property-business-api/3.0/oas/page#tag/UK-or-Foreign-Property-Annual-Submission-Deletion/paths/~1individuals~1business~1property~1{nino}~1{businessId}~1annual~1{taxYear}/delete" rel="noopener noreferrer">Delete a Property Annual Submission</a></li>
+<li><a href="/api-documentation/docs/api/service/property-business-api/3.0/oas/page#tag/Historic-FHL-UK-Property-Business-Annual-Submission/paths/~1individuals~1business~1property~1uk~1annual~1furnished-holiday-lettings~1{nino}~1{taxYear}/delete" rel="noopener noreferrer">Delete a Historic FHL UK Property Business Annual Submission</a></li>
+<li><a href="/api-documentation/docs/api/service/property-business-api/3.0/oas/page#tag/Historic-non-FHL-UK-Property-Business-Annual-Submission/paths/~1individuals~1business~1property~1uk~1annual~1non-furnished-holiday-lettings~1{nino}~1{taxYear}/delete" rel="noopener noreferrer">Delete a Historic Non-FHL UK Property Business Annual Submission</a></li>
+</ul>
+<h2 id="how-to-treat-a-loss">How to treat a loss</h2>
+
+<p>(Content needed)</p>
+<h2 id="final-declaration">Final declaration</h2>
+
+<p>Final declaration is the process that allows customers to finalise their tax position for any one tax year, taking into account all sources of chargeable income and gains, whether business income or otherwise.</p>
+<p>It is also the process by which most formal claims for reliefs and allowances and any deductions are made, where these were previously included within a Self Assessment tax return.</p>
+<p>Customers are able to tell us at this point (subject to the existing limits) how they wish any losses available to them to be treated.</p>
+<p>Customers can make a final declaration from 6 April Year 1. The deadline for final declaration is 31 January Year 2. The software should remind customers to help them to meet this deadline.</p>
+<p>Before starting the final declaration journey, the software package must ensure that for the relevant tax year, the customer:</p>
+
+<ul>
+<li>has submitted quarterly update information for each business income source (self-employment and property income)</li>
+<li>has finalised EOPS for all their businesses (self-employment and property income)</li>
+<li>has already provided their entire income (for example, interest, dividends, other SA schedules)</li>
+<li>does not have any additional information to provide (for example, information about how to treat a loss)</li>
+</ul>
+<p>If your software will not allow customers to report their entire income and reliefs, customers should be informed to report them using HMRC Online Services.</p>
+<h3 id="making-a-final-declaration">Making a final declaration</h3>
+
+<p>The software will have to let HMRC know that the customer is ready to submit a final declaration. To do this, you must call the <a href="/api-documentation/docs/api/service/individual-calculations-api/5.0/oas/page#tag/Tax-Calculations/paths/~1individuals~1calculations~1%7Bnino%7D~1self-assessment~1%7BtaxYear%7D/post" rel="noopener noreferrer">Trigger a Self Assessment Tax Calculation</a> endpoint under the <a href="/api-documentation/docs/api/service/individual-calculations-api" rel="noopener noreferrer">Individual Calculations (MTD) API</a> with the Final Declaration parameter set to &lsquo;true&rsquo;. This has the following consequences:</p>
+
+<ul>
+<li>it starts the final declaration process in HMRC </li>
+<li>it triggers the business validation rules (which, if violated, produce errors rather than warnings) </li>
+<li>it generates a final liability calculation and a Calculation ID</li>
+<li>the software must then quote the Calculation ID when retrieving the calculation output using the <a href="/api-documentation/docs/api/service/individual-calculations-api/5.0/oas/page#tag/Tax-Calculations/paths/~1individuals~1calculations~1%7Bnino%7D~1self-assessment~1%7BtaxYear%7D~1%7BcalculationId%7D/get" rel="noopener noreferrer">Retrieve A Self Assessment Tax Calculation</a> endpoint</li>
+</ul>
+<p>If the <a href="/api-documentation/docs/api/service/individual-calculations-api/5.0/oas/page#tag/Tax-Calculations/paths/~1individuals~1calculations~1{nino}~1self-assessment~1{taxYear}/post" rel="noopener noreferrer">Trigger a Self Assessment Tax Calculation</a> does not pass HMRC validation, it results in an error. For more information, refer to <a href="/guides/income-tax-mtd-end-to-end-service-guide/documentation/business-and-property-income.html#tax-calculation" rel="noopener noreferrer">Tax calculation</a>. If it results in no errors, the results of the final declaration calculation are available to the software to show the customer.</p>
+<p>If a customer thinks the calculation is incorrect based on the data they have submitted, they can go back and change the information by resubmitting the relevant update with the correct information. After they have done this, the software will have to call the <a href="/api-documentation/docs/api/service/individual-calculations-api/5.0/oas/page#tag/Tax-Calculations/paths/~1individuals~1calculations~1%7Bnino%7D~1self-assessment~1%7BtaxYear%7D/post" rel="noopener noreferrer">Trigger a Self Assessment Tax Calculation</a> endpoint again to generate a new final liability.</p>
+<p>If a customer does not agree with the calculation based on rules HMRC has used, they will need to contact HMRC before submitting their final declaration. If a software vendor identifies a problem with the <a href="/api-documentation/docs/api/service/individual-calculations-api" rel="noopener noreferrer">Individual Calculations API</a>, they will need to contact <a href="mailto:SDSTeam@hmrc.gov.uk" rel="noopener noreferrer">SDSTeam@hmrc.gov.uk</a>.</p>
+<p>If a customer thinks the calculation is correct, they can use the <a href="/api-documentation/docs/api/service/individual-calculations-api/5.0/oas/page#tag/Final-Declaration/paths/~1individuals~1calculations~1%7Bnino%7D~1self-assessment~1%7BtaxYear%7D~1%7BcalculationId%7D~1final-declaration/post" rel="noopener noreferrer">Submit a Self Assessment Final Declaration</a> endpoint to submit their final declaration.</p>
+<p><strong>Note:</strong> After a customer has submitted their final declaration, they will not currently be able to amend their submission using their software.</p>
+<h3 id="agreeing-to-the-declaration">Agreeing to the declaration</h3>
+
+<p>After a customer is confident that they have submitted all the required income tax information through software and HMRC online services, they will have to agree to a declaration and send it to HMRC. When using the software, this is done by using the <a href="/api-documentation/docs/api/service/individual-calculations-api/5.0/oas/page#tag/Final-Declaration/paths/~1individuals~1calculations~1%7Bnino%7D~1self-assessment~1%7BtaxYear%7D~1%7BcalculationId%7D~1final-declaration/post" rel="noopener noreferrer">Submit a Self Assessment Final Declaration</a> endpoint.</p>
+
+<blockquote>
+<p><strong>The Declaration</strong></p>
+<p>“Before you can submit the information displayed here in response to your notice to file from HM Revenue &amp; Customs, you must read and agree to the following statement by</p>
+<p>[Here the vendor can decide how to manage the actual declaration in the user interface, for example a tick box, confirm button or other method]</p>
+<p>I declare that the information and self-assessment I have filed are (taken together) correct and complete to the best of my knowledge. I understand that I may have to pay financial penalties and face prosecution if I give false information.”</p>
+<p><strong>Declaration for Agents</strong></p>
+<p>&ldquo;I confirm that my client has received a copy of all the information being filed and approved the information as being correct and complete to the best of their knowledge and belief. My client understands that they may have to pay financial penalties and face prosecution if they give false information.&rdquo;</p>
+</blockquote>
+<p>The software must send the Calculation ID that matches the specific calculation that the customer is agreeing to in the declaration.</p>
+<h3 id="final-declaration-user-journey">Final declaration user journey</h3>
+
+<p><a href="/documentation/figures/final-declaration-diagram.svg" target="blank"><img src="/Users/fmcgrath/Documents/GitHub/poc-demo/income-tax-mtd-end-to-end-service-guide/source/documentation/figures/final-declaration-diagram.svg" alt="final declaration process API diagram" style="width:720px;" /></a></p>
+<p><a href="/documentation/figures/final-declaration-diagram.svg" target="blank">Open the final declaration process diagram in a new tab</a>.</p>
+
+<ol>
+<li> The customer is ready to complete their final declaration.</li>
+<li> The software calls the <a href="/api-documentation/docs/api/service/individual-calculations-api/5.0/oas/page#tag/Tax-Calculations/paths/~1individuals~1calculations~1%7Bnino%7D~1self-assessment~1%7BtaxYear%7D/post" rel="noopener noreferrer">Trigger a Self Assessment Tax Calculation</a> endpoint with the Final Declaration parameter set to &lsquo;true&rsquo;.</li>
+<li> HMRC receives the request, starts the tax calculation, and returns a Calculation ID.</li>
+<li> The software receives the Calculation ID.</li>
+<li> HMRC generates the final declaration tax calculation - this process will also convert any business validation warnings into errors. If there are any errors, the calculation will not run and the customer will not be able to declare the liability.</li>
+<li> HMRC Stores the tax calculation with the Calculation ID.</li>
+<li> The software uses the Calculation ID to receive details about the calculation or errors using the <a href="/api-documentation/docs/api/service/individual-calculations-api/5.0/oas/page#tag/Tax-Calculations/paths/~1individuals~1calculations~1%7Bnino%7D~1self-assessment~1%7BtaxYear%7D~1%7BcalculationId%7D/get" rel="noopener noreferrer">Retrieve A Self Assessment Tax Calculation</a> endpoint.</li>
+<li> HMRC provides the calculation results in case of a successful call. If there are any validation errors, the customer will not be able to view the calculation results.</li>
+<li> The software must make the calculation results available to the customer – at this point in the journey, it is mandatory that the customer is shown a copy of the calculation associated with the Calculation ID. As a minimum, a customer must view the equivalent of what is currently in the SA302.</li>
+<li>The customer reviews the calculation and the declaration text.</li>
+<li>The customer confirms the declaration and the software calls the <a href="/api-documentation/docs/api/service/individual-calculations-api/5.0/oas/page#tag/Final-Declaration/paths/~1individuals~1calculations~1%7Bnino%7D~1self-assessment~1%7BtaxYear%7D~1%7BcalculationId%7D~1final-declaration/post" rel="noopener noreferrer">Submit a Self Assessment Final Declaration</a> endpoint using the Calculation ID to confirm the calculation to which the customer is agreeing.</li>
+<li>HMRC receives the submission, marks the obligation as fulfilled, and confirms receipt with a success code.</li>
+<li>The software receives a success code (HTTP 204) and the software needs to confirm to the customer that HMRC has received the return because HMRC will not communicate this to the customer.</li>
+<li>The customer views confirmation that the return has been successfully submitted to HMRC.</li>
+</ol>
+<h2 id="making-amendments-after-submitting-a-final-declaration">Making amendments after submitting a final declaration</h2>
+
+<p>If a customer wants to make any changes following a final declaration, they have 12 months from the statutory filing date to do this (the statutory filing date is 31 January following the end of the tax year). They can make these changes by following the existing <a href="https://www.gov.uk/self-assessment-tax-returns/corrections" rel="noopener noreferrer">Self Assessment tax returns amendment process</a>. These amendments cannot currently be made using software.</p>
+<p><strong>Note:</strong> Any changes made after final declaration will be a formal amendment under section 9ZA TMA 1970.</p>
+<h2 id="using-tax-codes-to-collect-tax-due">Using tax codes to collect tax due</h2>
+
+<p>When a Self Assessment customer receives PAYE income in addition to business income, HMRC will try to collect any Self Assessment tax owed through their tax code for the following tax year.</p>
+<p>However, if there is a change in the customer&rsquo;s tax code, it may no longer be possible to collect the tax owed using this method. As a result, any amount collected will be returned to the customer’s account. For more information, refer to <a href="https://www.gov.uk/pay-self-assessment-tax-bill/through-your-tax-code" rel="noopener noreferrer">Pay your Self Assessment tax bill: Through your tax code (GOV.UK)</a>.</p>
+<p>‘Coding out’ refers to the use of tax codes to collect tax and debts due to HMRC. The coding out underpayments and debts endpoints in the <a href="/api-documentation/docs/api/service/self-assessment-accounts-api/" rel="noopener noreferrer">Self Assessment Accounts API</a> enable the customer to complete the following tasks:</p>
+
+<ul>
+<li>view coding out underpayment and debt amounts</li>
+<li>create or amend coding out underpayment and debt amounts</li>
+<li>delete coding out underpayment and debt amounts</li>
+</ul>
+<p>A customer can view the coded out Self Assessment underpayments stored by HMRC and the amount submitted for the previous tax year at any time. In the software, this is done by calling the <a href="/api-documentation/docs/api/service/self-assessment-accounts-api/2.0/oas/page#tag/Coding-Out-Underpayments-and-Debts/paths/~1accounts~1self-assessment~1%7Bnino%7D~1%7BtaxYear%7D~1collection~1tax-code/get" rel="noopener noreferrer">Retrieve Coding Out Underpayments and Debt Amounts</a> endpoint.</p>
+<p>At the end of the tax year, the customer will review their calculations before submitting the final declaration. If the customer does not agree with the coded out amount in their calculation shown by HMRC, they can submit what they believe to be the correct coded out amount. This can be corrected more than once if needed, but it needs to be done before the final declaration is submitted. In the software, this amendment is done by calling the <a href="/api-documentation/docs/api/service/self-assessment-accounts-api/2.0/oas/page#tag/Coding-Out-Underpayments-and-Debts/paths/~1accounts~1self-assessment~1%7Bnino%7D~1%7BtaxYear%7D~1collection~1tax-code/put" rel="noopener noreferrer">Create or Amend Coding Out Underpayments and Debt Amounts</a> endpoint. This endpoint can be used only after the tax year has ended.</p>
+<p>If the customer has submitted an amendment to the coded out amount after the end of the tax year but later realises they agree with the coded out amount shown by HMRC, they can delete their submitted amount. This deletion needs to be done before the final declaration is submitted. In the software, this deletion is done by calling the <a href="/api-documentation/docs/api/service/self-assessment-accounts-api/2.0/oas/page#tag/Coding-Out-Underpayments-and-Debts/paths/~1accounts~1self-assessment~1%7Bnino%7D~1%7BtaxYear%7D~1collection~1tax-code/delete" rel="noopener noreferrer">Delete Coding Out Underpayments and Debt Amounts</a> endpoint.</p>
+<p>Coding out is specific to the tax year. If a customer opts out of coding out for a specific tax year, they will not be opted out for future tax years.</p>
+<p>The software can use the following endpoints to enable customers to:</p>
+
+<ul>
+<li><a href="/api-documentation/docs/api/service/self-assessment-accounts-api/3.0/oas/page#tag/Coding-Out-Status/paths/~1accounts~1self-assessment~1{nino}~1{taxYear}~1collection~1tax-code~1coding-out~1opt-out/post" rel="noopener noreferrer">Opt Out of Coding Out</a> </li>
+<li><a href="/api-documentation/docs/api/service/self-assessment-accounts-api/3.0/oas/page#tag/Coding-Out-Status/paths/~1accounts~1self-assessment~1{nino}~1{taxYear}~1collection~1tax-code~1coding-out~1status/get" rel="noopener noreferrer">Retrieve Coding Out Status</a></li>
+<li><a href="/api-documentation/docs/api/service/self-assessment-accounts-api/3.0/oas/page#tag/Coding-Out-Status/paths/~1accounts~1self-assessment~1{nino}~1{taxYear}~1collection~1tax-code~1coding-out~1opt-in/post" rel="noopener noreferrer">Opt in to Coding Out</a></li>
+</ul>
+
+            
+          </main>
+
+          <aside>
+          </aside>
+
+          <footer class="govuk-footer app-footer" role="contentinfo">
+  <div class="govuk-footer__meta">
+    <div class="govuk-footer__meta-item govuk-footer__meta-item--grow">
+
+
+      <svg
+        aria-hidden="true"
+        focusable="false"
+        class="govuk-footer__licence-logo"
+        xmlns="http://www.w3.org/2000/svg"
+        viewbox="0 0 483.2 195.7"
+        height="17"
+        width="41"
+      >
+        <path
+          fill="currentColor"
+          d="M421.5 142.8V.1l-50.7 32.3v161.1h112.4v-50.7zm-122.3-9.6A47.12 47.12 0 0 1 221 97.8c0-26 21.1-47.1 47.1-47.1 16.7 0 31.4 8.7 39.7 21.8l42.7-27.2A97.63 97.63 0 0 0 268.1 0c-36.5 0-68.3 20.1-85.1 49.7A98 98 0 0 0 97.8 0C43.9 0 0 43.9 0 97.8s43.9 97.8 97.8 97.8c36.5 0 68.3-20.1 85.1-49.7a97.76 97.76 0 0 0 149.6 25.4l19.4 22.2h3v-87.8h-80l24.3 27.5zM97.8 145c-26 0-47.1-21.1-47.1-47.1s21.1-47.1 47.1-47.1 47.2 21 47.2 47S123.8 145 97.8 145"
+        />
+      </svg>
+      <span class="govuk-footer__licence-description">
+        All content is available under the
+        <a
+          class="govuk-footer__link"
+          href="https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/"
+          rel="license"
+        >Open Government Licence v3.0</a>, except where otherwise stated
+      </span>
+    </div>
+    <div class="govuk-footer__meta-item">
+      <a
+        class="govuk-footer__link govuk-footer__copyright-logo"
+        href="https://www.nationalarchives.gov.uk/information-management/re-using-public-sector-information/uk-government-licensing-framework/crown-copyright/"
+      >© Crown copyright</a>
+    </div>
+  </div>
+</footer>
+
+        </div>
+      </div>
+    </div>
+
+      <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-43414424-1', 'auto');
+  ga('set', 'anonymizeIp', true);
+  ga('set', 'displayFeaturesTask', null);
+  ga('set', 'transport', 'beacon');
+  ga('set', 'page', location.pathname+location.search+location.hash);
+  ga('send', 'pageview');
+  </script>
+
+    <script src="/javascripts/application.js"></script>
+  </body>
+</html>

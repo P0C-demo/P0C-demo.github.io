@@ -5,23 +5,24 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 
-    <title>Search - Income Tax (Making Tax Digital) end-to-end service guide</title>
+    <title>How to integrate with HMRC APIs | Income Tax (Making Tax Digital) end-to-end service guide - Income Tax (Making Tax Digital) end-to-end service guide</title>
 
     <link href="/stylesheets/manifest.css" rel="stylesheet" />
 
-    <link rel="canonical" href="developer.service.hmrc.gov.uk/search/">
+    <link rel="canonical" href="developer.service.hmrc.gov.uk/documentation/how-to-integrate-with-hmrc-apis.html">
 
-      <meta name="robots" content="noindex" />
+      <meta name="description" content="Software developers, designers, product owners or business analysts. Integrate your software with the Income Tax API for Making Tax Digital." />
       <meta name="twitter:card" content="summary" />
       <meta name="twitter:image" content="developer.service.hmrc.gov.uk/images/govuk-large.png" />
-      <meta name="twitter:title" content="Search - Income Tax (Making Tax Digital) end-to-end service guide" />
-      <meta name="twitter:url" content="developer.service.hmrc.gov.uk/search/" />
+      <meta name="twitter:title" content="How to integrate with HMRC APIs | Income Tax (Making Tax Digital) end-to-end service guide - Income Tax (Making Tax Digital) end-to-end service guide" />
+      <meta name="twitter:url" content="developer.service.hmrc.gov.uk/documentation/how-to-integrate-with-hmrc-apis.html" />
 
+      <meta property="og:description" content="Software developers, designers, product owners or business analysts. Integrate your software with the Income Tax API for Making Tax Digital." />
       <meta property="og:image" content="developer.service.hmrc.gov.uk/images/govuk-large.png" />
       <meta property="og:site_name" content="Income Tax (Making Tax Digital) end-to-end service guide" />
-      <meta property="og:title" content="Search" />
+      <meta property="og:title" content="How to integrate with HMRC APIs | Income Tax (Making Tax Digital) end-to-end service guide" />
       <meta property="og:type" content="object" />
-      <meta property="og:url" content="developer.service.hmrc.gov.uk/search/" />
+      <meta property="og:url" content="developer.service.hmrc.gov.uk/documentation/how-to-integrate-with-hmrc-apis.html" />
 
     
   </head>
@@ -501,29 +502,347 @@
 
         <div class="app-pane__content toc-open-disabled" aria-label="Content" tabindex="0">
           <main id="content" class="technical-documentation" data-module="anchored-headings">
-            <div id="search-help" class="search-help">
-  <h1 id="how-to-search">Search</h1>
+            <h1 id="how-to-integrate-with-hmrc-apis">How to integrate with HMRC APIs</h1>
 
-  <p class="govuk-body search-help__no-js">
-    You need to turn on JavaScript in your browser to search this site. You can either:
+<p>(Content needed)</p>
+<h2 id="minimum-functionality-standards">Minimum functionality standards</h2>
 
-    <ul>
-      <li>turn on JavaScript in your browser</li>
-      <li>search this site using Google</li>
-    </ul>
-  </p>
+<p>Previously, the production approvals process included an assessment of whether a product includes certain minimum functionality.</p>
+<p>In response to developer feedback, we are content for software developers to build MTD Income Tax products iteratively and be granted production credentials for specific elements of the minimum required functionality. However, an MTD Income Tax product will only be listed on the software choices viewer when it satisfies all the requirements listed below.</p>
+<p>The minimum required functionality is as follows:</p>
 
-  <p class="govuk-body">
-    Enter a search term in the search box, then select the search button.
-  </p>
-</div>
+<ul>
+<li>a software product must submit the fraud prevention header data required by law.</li>
+<li>a Making Tax Digital for Income Tax product must allow the customer to:
 
-<div id="search-results" class="search-results" hidden aria-labelledby="search-results-title">
-  <div class="search-results__inner">
-    <h1 id="search-results-title" class="search-results__title" aria-live="assertive">Results</h1>
-    <div class="search-results__content"></div>
-  </div>
-</div>
+<ul>
+<li>create and maintain all business records a customer is required by law to keep in digital form (but see <a href="#bridging-software" rel="noopener noreferrer">bridging software</a>)</li>
+<li>submit quarterly update information for each business income source (self-employment, multiple self-employments, UK property income)</li>
+<li>have the option to provide accounting and other adjustments and an estimate of allowances to be claimed for any business income source</li>
+<li>submit an End of Period Statement for each business income source (with declaration of completeness)</li>
+<li>call for and view an estimate of their Income Tax liability for each tax year at any time</li>
+<li>make a self-assessment of the tax and Class 4 National Insurance contributions due on their total taxable income and a final declaration of completeness and correctness no later than 31 January following the end of tax year in which that income is taxable</li>
+<li>carry forward or set sideways (when permitted) business losses occurring in any one year as well as to apply losses incurred in earlier years against current year profits</li>
+<li>have visibility of all their Class 2 National Insurance contributions (so that they can make additional voluntary contributions if they wish)</li>
+</ul></li>
+</ul>
+<p>The Making Tax Digital for Income Tax APIs that include the endpoints for the functionality described above are:</p>
+
+<ul>
+<li><a href="/api-documentation/docs/api/service/business-details-api/" rel="noopener noreferrer">Business Details</a></li>
+<li><a href="/api-documentation/docs/api/service/self-assessment-biss-api/" rel="noopener noreferrer">Business Income Source Summary</a></li>
+<li><a href="/api-documentation/docs/api/service/self-assessment-bsas-api" rel="noopener noreferrer">Business Source Adjustable Summary</a></li>
+<li><a href="/api-documentation/docs/api/service/individuals-business-eops-api/" rel="noopener noreferrer">Individuals Business End of Period Statement</a></li>
+<li><a href="/api-documentation/docs/api/service/individual-calculations-api" rel="noopener noreferrer">Individual Calculations</a></li>
+<li><a href="/api-documentation/docs/api/service/individuals-disclosures-api" rel="noopener noreferrer">Individuals Disclosures (Class 2 NIC’s)</a></li>
+<li><a href="/api-documentation/docs/api/service/individual-losses-api" rel="noopener noreferrer">Individual Losses</a></li>
+<li><a href="/api-documentation/docs/api/service/obligations-api/" rel="noopener noreferrer">Obligations</a></li>
+<li><a href="/api-documentation/docs/api/service/property-business-api/" rel="noopener noreferrer">Property Business</a> (only for property full product)</li>
+<li><a href="/api-documentation/docs/api/service/self-employment-business-api/" rel="noopener noreferrer">Self-Employment Business</a> (only for self-employment full product)</li>
+</ul>
+<h3 id="fraud-prevention-headers">Fraud Prevention Headers</h3>
+
+<p>You must supply fraud prevention header information for all our APIs before approval can be granted and production credentials issued.</p>
+<p>HMRC must see evidence of fraud prevention headers being sent and be satisfied as to their level of accuracy.</p>
+<p>The developer must test their fraud prevention headers and provide SDST with screenshot evidence that the correct response is received from the <a href="/api-documentation/docs/api/service/txm-fph-validator-api/" rel="noopener noreferrer">Test Fraud Prevention Headers API</a>. <a href="/guides/fraud-prevention/" rel="noopener noreferrer">Guidance on Fraud Prevention Headers</a> is available.</p>
+<h2 id="getting-production-approval">Getting Production Approval</h2>
+
+<p>Our key objectives for MTD for Income Tax are to:</p>
+
+<ul>
+<li>ensure customers have a streamlined end-to-end journey and software that supports everything a business customer needs to do to meet their Income Tax obligations</li>
+<li>safeguard customer data and protect HMRC systems against fraud and criminal attack</li>
+</ul>
+<p>This section of the guide explains the features your product must include before production credentials are sought, together with features you should consider building into your products.</p>
+<h3 id="overview-of-developer-journey-to-production-credentials-step-by-step">Overview of developer journey to production credentials (step by step)</h3>
+
+
+<ol>
+<li>Sign in to the <a href="/api-documentation" rel="noopener noreferrer">developer hub</a> and register your application for sandbox testing.</li>
+<li><a href="/api-documentation/docs/api/service/api-platform-test-user/1.0/oas/page#tag/create-test-user/operation/Createatestuserwhichisanindividual" rel="noopener noreferrer">Create a test user which is an individual</a> to create test data.</li>
+<li>Review the <a href="/api-documentation/docs/api?filter=income-tax" rel="noopener noreferrer">API documentation</a> and Income Tax end-to-end service guide.</li>
+<li>Test ITSA endpoints and develop your software application. Any queries during this phase should be sent to <a href="mailto:SDSTeam@hmrc.gov.uk" rel="noopener noreferrer">SDSTeam@hmrc.gov.uk</a>.</li>
+<li>Register your application for production credentials by creating a production application within your developer hub account and completing the requested sections.</li>
+<li>Provide testing logs and credentials used for testing to HMRC.</li>
+<li>Developer testing is reviewed by HMRC (including fraud header validity): 
+
+<ul>
+<li>if satisfactory, you will be invited to demonstrate your product</li>
+<li>if unsatisfactory, further testing and development will be required for review</li>
+</ul></li>
+<li>The software vendor demonstrates its software to HMRC by using online screen sharing.</li>
+<li>Production credentials are issued if all requirements are met. If not, further development is required and a new demonstration will be arranged.</li>
+</ol>
+<h3 id="product-build">Product build</h3>
+
+<p>Developers have the option to either build all elements required to meet <a href="/guides/income-tax-mtd-end-to-end-service-guide/#minimum-functionality-standards" rel="noopener noreferrer">minimum functionality standards (MFS)</a> in one go or to build these elements iteratively. If you choose to build iteratively, you will be required to demonstrate your product after each stage of the build. There are three stages, although many developers choose to develop stages 2 and 3 together.</p>
+<p>The three stages are:</p>
+
+<ol>
+<li>In year functionality (submitting periodic updates).</li>
+<li>End of Period (EOPs).</li>
+<li>Final declaration.</li>
+</ol>
+<p>The <a href="/roadmaps/mtd-itsa-vendors-roadmap/#apis-required-for-each-stage-of-development-of-a-minimum-functionality-standard-mfs-product" rel="noopener noreferrer">API catalogue</a> shows which APIs are required at each stage of the build.</p>
+<h3 id="testing-requirements">Testing requirements</h3>
+
+<p>HMRC requires the software to test all the APIs that they require access to. The following points relate to access to both new API subscriptions and version updates of existing API subscriptions:</p>
+
+<ul>
+<li>For APIs included in the <a href="/guides/income-tax-mtd-end-to-end-service-guide/#minimum-functionality-standards" rel="noopener noreferrer">minimum functionality standards</a>, you are required to test all endpoints shown within the documentation.</li>
+<li>For APIs not included in the minimum functionality standards, you are only required to test the endpoints relating to the data sources that your software supports. Where your software doesn’t support all data items, please notify SDSTeam@hmrc.gov.uk separately to confirm which data items you do support, so we can take this into account when checking the testing logs.</li>
+</ul>
+<p><a href="/guides/fraud-prevention/" rel="noopener noreferrer">Fraud prevention headers</a> must be included in sandbox calls. A specialist team will check these and they must be confirmed as compliant before we can proceed.</p>
+<p>After testing is complete, please send details of the dummy NINO used to call the above endpoints in sandbox to SDSTeam@hmrc.gov.uk. You will need to contact us within 14 days of completing your API testing to enable us to view the data within our logs. SDST will advise you of the outcome of our checks within 10 working days.   </p>
+<p>After we are satisfied that the relevant APIs and endpoints have been tested satisfactorily and that calls include compliant fraud prevention headers, you will be invited to demonstrate your product. Please note, demonstration is not generally required for access to updated APIs (that is, new versions), but satisfactory testing will be required.</p>
+<h3 id="terms-of-use">Terms of use</h3>
+
+<p>You must comply with our <a href="/api-documentation/docs/terms-of-use" rel="noopener noreferrer">terms of use</a>. You must accept the terms of use before we can issue you with production credentials.</p>
+<h3 id="product-demonstration">Product demonstration</h3>
+
+<p>This is the final part of the process after all preceding steps have been completed.   </p>
+<p>During your product demonstration, HMRC expects to see a consumer-ready product for each income source your software supports; for example, Self-employment, UK property, and so on. If, in addition to the MFS APIs, you have also requested access to any non-MFS APIs, you should be ready to include these in your demonstration if requested to do so by SDST.</p>
+<p>The journey we expect to see for an MFS build will depend on whether you are building iteratively and if so, which stage you have built to:</p>
+<p><strong>Stage 1: In year build</strong></p>
+
+<ol>
+<li>Authorisation – ITSA scopes only.</li>
+<li>Retrieve Business Details.</li>
+<li>Retrieve Obligations.</li>
+<li>Digitally import data into the appropriate periodic update and submit.</li>
+<li>Automatically trigger and display a tax calculation.</li>
+<li>Submit an amended periodic update – automatically trigger and display the calculation.</li>
+<li>Demonstrate how your software returns and displays error messages to the customer.</li>
+</ol>
+<p><strong>Stage 2: EOPS</strong></p>
+
+<ol>
+<li>Submit details within the Annual Summary.</li>
+<li>Automatically trigger and display a tax calculation.</li>
+<li>Trigger a Business Source Adjustable Summary (BSAS).</li>
+<li>Retrieve a BSAS.</li>
+<li>Create and submit a Business Source Adjustable Summary for an accounting adjustment.</li>
+<li>Automatically trigger and display a tax calculation.</li>
+<li>Retrieve a Business Income Source Summary (BISS) and display it to the customer. 
+Alternatively, the software may choose to create a BISS themselves by totalling the relevant information held in software and displaying it to the customer.</li>
+<li>Show EOPS Declaration Statement.</li>
+<li>Submit EOPS.</li>
+<li>Demonstrate how your software returns and displays error messages to the end user.</li>
+</ol>
+<p><strong>Note:</strong> The end user must confirm they have read and agreed the declaration statement before the option to submit EOPS is made available.</p>
+<p><strong>Stage 3: Final Declaration</strong></p>
+
+<ol>
+<li>Create and submit a loss.</li>
+<li>Create/Amend and submit disclosures (Class 2 NICs).</li>
+<li>Trigger a tax calculation with the Final Declaration parameter set to &lsquo;true&rsquo;.</li>
+<li>Retrieve and display this tax calculation for the customer to review.</li>
+<li>Show the Final Declaration Statement – this must match the statement shown on the ITSA End to End Service Guide.</li>
+<li>Submit a Final Declaration.</li>
+<li>Demonstrate how your software returns and displays error messages to the end user.</li>
+</ol>
+<p><strong>Note:</strong> The end user must confirm they have read and agreed the declaration statement before the option to submit the Final Declaration is made available.</p>
+<h2 id="software-choices">Software choices</h2>
+
+<p>Software Choices is a service designed to help users <a href="https://www.gov.uk/guidance/find-software-thats-compatible-with-making-tax-digital-for-income-tax" rel="noopener noreferrer">find compatible software for Making Tax Digital for Income Tax</a> that meets their needs.</p>
+<p>An updated version is being developed with filters to help users find products that fit their specific requirements. For instance, a user may wish to find bridging software instead of a standalone product, or a product that suits their accessibility needs. It will also include a filter to find software that is also compatible with Making Tax Digital for VAT.</p>
+<p>Software vendors have the option for their software to be listed on <a href="https://www.gov.uk/guidance/find-software-thats-compatible-with-making-tax-digital-for-income-tax" rel="noopener noreferrer">software choices</a> as <a href="https://www.gov.uk/guidance/find-software-thats-compatible-with-making-tax-digital-for-income-tax#software-in-development" rel="noopener noreferrer">software in development</a> after production credentials have been approved. To be listed as <a href="https://www.gov.uk/guidance/find-software-thats-compatible-with-making-tax-digital-for-income-tax#software-available-now" rel="noopener noreferrer">software available now</a>, vendors must demonstrate that they: </p>
+
+<ul>
+<li>have developed to minimum functionality standards, by being granted access to the full set of APIs listed in the <a href="#minimum-functionality-standards" rel="noopener noreferrer">minimum functionality standards</a> section</li>
+<li>can complete the successful onboarding for a customer - sign up, authorise software, and retrieve obligations</li>
+<li>can submit a periodic update for a customer for each business income source</li>
+</ul>
+<p>HMRC staff will monitor this activity in real time if they feel it is necessary. HMRC will then perform final checks before allowing a software product to be listed on <a href="https://www.gov.uk/" rel="noopener noreferrer">GOV.UK</a>.</p>
+<p>We advise users to speak to their appointed tax agent (if they have one) before making a decision on software.</p>
+<h3 id="free-to-use-software">Free-to-use software</h3>
+
+<p>The government has committed to the availability of free software for small businesses mandated to use MTD for income tax. HMRC strongly encourages all developers to consider producing a free version of their MTD for Income Tax product for this customer group.</p>
+<p>By ‘small businesses’, we mean that eligibility for free software will apply if the business meets all of these conditions:</p>
+
+<ul>
+<li>is an individual (self-employed or a landlord) or a simple partnership</li>
+<li>is not VAT registered</li>
+<li>has no employees</li>
+<li>has a turnover (gross annual income from all business sources) of less than £85,000</li>
+<li>uses cash basis accounting</li>
+</ul>
+<p>For the avoidance of any doubt, there is no expectation that a free product will include VAT, Corporation Tax or PAYE functionality.</p>
+<p>In addition to the minimum standards set out in the terms of use, and the general functionality standards applicable to all MTD for Income Tax software, we expect any free software product you provide to small businesses to:</p>
+
+<ul>
+<li>enable the provision of a dataset that correlates to the current <a href="https://www.gov.uk/government/publications/self-assessment-self-employment-short-sa103s" rel="noopener noreferrer">SA103S self-employment supplementary page (short)</a></li>
+<li>enable the provision of a dataset that correlates to the current <a href="https://www.gov.uk/government/publications/self-assessment-uk-property-sa105" rel="noopener noreferrer">SA105 UK property</a> or <a href="https://www.gov.uk/government/publications/self-assessment-foreign-sa106" rel="noopener noreferrer">SA106 foreign property</a> pages, where the number of properties does not exceed one</li>
+<li>provide a reasonable level of guidance, help and support to users (HMRC is open to views on what might be ‘reasonable’ for a free product and will publish further advice on this in due course)</li>
+<li>allow the end user to own and have access to all their records created using the software product (past and present) to enable them to retrieve data and promptly export it if necessary</li>
+<li>be free for the business to use to comply with their MTD for Income Tax obligations for a full annual accounting period on the understanding the business continues to meet the eligibility criteria below</li>
+</ul>
+<p>HMRC would not require free software to link or integrate with an Agent product.</p>
+<h2 id="supporting-customers-in-mtd">Supporting customers in MTD</h2>
+
+<p>(Content needed)</p>
+<h2 id="api-lifecycle-amp-deprecation">API lifecycle &amp; deprecation</h2>
+
+<p>Each MTD API follows a lifecycle from the point where it is first published to the point where it is retired.</p>
+<p>More specifically, every version of each API follows a lifecycle. Different versions of the same API can be at different points in the lifecycle. For example, v1.0 might be retired, v2.0 might be stable and v3.0 might be in beta.</p>
+<h3 id="api-status">API status</h3>
+
+<p>The following table provides details about possible API statuses.</p>
+<div class="table-container">
+        <table>
+          <tr>
+<th>Status</th>
+<th>Meaning</th>
+<th>Documentation visible?</th>
+<th>Can be subscribed to in Developer Hub?</th>
+<th>Endpoints enabled?</th>
+</tr><tr>
+<td>Alpha</td>
+<td>Early prototype - documentation only, available in External Test. Intended for feedback about the initial API design and documentation. Expect breaking changes and behaviour changes.</td>
+<td>Yes</td>
+<td>No</td>
+<td>No</td>
+</tr><tr>
+<td>Beta</td>
+<td>Live service but not stable. Breaking changes and behaviour changes are possible.</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>Yes</td>
+</tr><tr>
+<td>Stable</td>
+<td>Stable live service. No breaking changes and only minor behaviour changes.</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>Yes</td>
+</tr><tr>
+<td>Deprecated</td>
+<td>Set to be retired, either because a new version of the API is available or because the API is no longer supported. If applicable, a new version of the API will be available in external test when the current version is deprecated.</td>
+<td>Yes</td>
+<td>No</td>
+<td>Yes</td>
+</tr><tr>
+<td>Retired</td>
+<td>API is no longer in use.</td>
+<td>No</td>
+<td>No</td>
+<td>No</td>
+</tr>
+        </table>
+      </div><h3 id="breaking-changes">Breaking changes</h3>
+
+<p>Any change that might break software that relies on an API is counted as breaking change.</p>
+<p>The following table  lists changes that we consider breaking.</p>
+<div class="table-container">
+        <table>
+          <tr>
+<th>Area</th>
+<th>Breaking changes</th>
+</tr><tr>
+<td>Query Parameter</td>
+<td><ul>
+<li>Adding mandatory query parameter</li>
+<li>Removing a query parameter</li>
+<li>Renaming a query parameter</li>
+<li>Changing an optional query parameter to be mandatory</li>
+<li>Removing/renaming a value from an enum</li>
+</ul></td>
+</tr><tr>
+<td>Request Body</td>
+<td><ul>
+<li> Adding a mandatory field </li>
+<li> Removing a field </li>
+<li> Renaming a field </li>
+<li> Changing an optional field to be mandatory </li>
+<li> Removing/renaming a value from an enum</li>
+</ul></td>
+</tr><tr>
+<td>Response Body</td>
+<td><ul>
+<li> Removing a field </li>
+<li> Renaming a field </li>
+<li> Changing a mandatory field to be optional </li>
+<li> Adding/renaming a value to an enum</li>
+</ul></td>
+</tr><tr>
+<td>Other</td>
+<td><ul>
+<li> Changing the URL of the endpoint </li>
+<li> Removing a resource/endpoint </li>
+<li> Changing the semantics of a field value (for example, the value returned changes from inclusive of VAT to exclusive of VAT) </li>
+<li> Changing validation to have stronger constraints</li>
+</ul></td>
+</tr>
+        </table>
+      </div><h4 id="changes-to-errors">Changes to errors</h4>
+
+<p>When we make changes to errors, we will not usually change the JSON structure returned. In the rare case when this is necessary, this will be considered a breaking change. The values of the error fields may change.</p>
+<p>The following table outlines which types of changes to errors are treated as breaking changes and which are not.</p>
+<div class="table-container">
+        <table>
+          <tr>
+<th>Breaking changes for errors</th>
+<th>Non-breaking changes for errors</th>
+</tr><tr>
+<td>Changing the HTTP status code to a different value</td>
+<td>Removing an error code</td>
+</tr><tr>
+<td>Renaming an error code</td>
+<td>Changing the message of an error</td>
+</tr><tr>
+<td>Adding a new error code (but see below)</td>
+<td></td>
+</tr>
+        </table>
+      </div><p>If we add a new error code to an endpoint as part of a new field/object, which is not itself a breaking change, the new error is not counted as a breaking change.</p>
+<p>For example, if we add a new optional string field to the request body and the field must satisfy a specific condition (otherwise, it fails with a new error), this error is not considered a breaking change because existing software will keep functioning as the error can be returned only if the new field is used.</p>
+<h3 id="deprecating-apis">Deprecating APIs</h3>
+
+<p>If an API has been in production with a status of &lsquo;Stable&rsquo;, we aim for a deprecation period of 6 months.</p>
+<p>For an API in beta, we aim for a deprecation period of 6 weeks minimum.</p>
+<p>Applications cannot subscribe to a deprecated API version, but can still call the API version if the subscription was made before the status changed.</p>
+<p>The status of APIs is indicated in the API documentation.</p>
+<h3 id="indicating-deprecation-in-headers">Indicating deprecation in headers</h3>
+
+<p>For releases after January 2024, when an endpoint becomes deprecated, it will return the following response headers.</p>
+<div class="table-container">
+        <table>
+          <tr>
+<th>Name</th>
+<th>Meaning</th>
+<th>Example value</th>
+</tr><tr>
+<td>Deprecation</td>
+<td>The deprecation date/time for this endpoint, in IMF-fixdate format.</td>
+<td>Sun, 01 Jan 2023 23:59:59 GMT</td>
+</tr><tr>
+<td>Sunset</td>
+<td>(optional) The earliest date/time this endpoint will become unavailable after deprecation, in IMF-fixdate format.</td>
+<td>Sun, 02 Jul 2023 23:59:59 GMT</td>
+</tr><tr>
+<td>Link</td>
+<td>Documentation URL for the relevant API</td>
+<td>https://developer.service.hmrc.gov.uk/api-documentation/docs/api/service/individual-calculations-api</td>
+</tr>
+        </table>
+      </div><p>The &lsquo;Sunset&rsquo; header contains the earliest date/time that the endpoint could be retired after being deprecated. Do not rely on the availability of the endpoint after this.</p>
+<p>The &lsquo;Sunset&rsquo; header may not be returned in some rare cases, such as when the retirement date for an endpoint is uncertain.</p>
+<h4 id="older-deprecation-headers">Older deprecation headers</h4>
+
+<p>In previous releases, deprecation status could be indicated with a &lsquo;Deprecation&rsquo; response header like this.</p>
+<div class="table-container">
+        <table>
+          <tr>
+<th>Name</th>
+<th>Example value</th>
+</tr><tr>
+<td>Deprecation</td>
+<td>This endpoint is deprecated. See the <a href="https://developer.service.hmrc.gov.uk/api-documentation/docs/api/service/self-assessment-bsas-api/" rel="noopener noreferrer">API documentation</a>.</td>
+</tr>
+        </table>
+      </div><p><strong>Note:</strong> This was implemented only for the Business Source Adjustable Summary API.</p>
+<h3 id="retiring-apis">Retiring APIs</h3>
+
+<p>After an API has been deprecated for the amounts of time indicated above, it can be retired and the endpoints and documentation will be removed. Ensure that your application does not rely on any deprecated APIs.</p>
 
             
           </main>
