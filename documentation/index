@@ -1,5 +1,9 @@
 <h1 id="overview-of-the-service-guide">Overview of the service guide</h1>
 
+
+<blockquote>
+<p><strong>Warning:</strong> This is not an official HMRC document. It is a prototype document for discussion within HMRC.</p>
+</blockquote>
 <p><strong>Version 3.9</strong> issued March 2024</p>
 <p>This service guide explains how you can integrate your software with the <a href="/api-documentation/docs/api?filter=income-tax-mtd" rel="noopener noreferrer">Income Tax (Making Tax Digital) APIs</a>.</p>
 
