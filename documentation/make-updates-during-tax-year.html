@@ -5,24 +5,24 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 
-    <title>Viewing a customer's Self Assessment account information | Income Tax (Making Tax Digital) end-to-end service guide - Income Tax (Making Tax Digital) end-to-end service guide</title>
+    <title>Making updates during the tax year | Income Tax (Making Tax Digital) end-to-end service guide - Income Tax (Making Tax Digital) end-to-end service guide</title>
 
     <link href="/guides/income-tax-mtd-end-to-end-service-guide/stylesheets/manifest.css" rel="stylesheet" />
 
-    <link rel="canonical" href="developer.service.hmrc.gov.uk/guides/income-tax-mtd-end-to-end-service-guide/documentation/view-customer-self-assessment-account-information.html">
+    <link rel="canonical" href="developer.service.hmrc.gov.uk/guides/income-tax-mtd-end-to-end-service-guide/documentation/make-updates-during-tax-year.html">
 
       <meta name="description" content="Software developers, designers, product owners or business analysts. Integrate your software with the Income Tax API for Making Tax Digital." />
       <meta name="twitter:card" content="summary" />
       <meta name="twitter:image" content="developer.service.hmrc.gov.uk/images/govuk-large.png" />
-      <meta name="twitter:title" content="Viewing a customer's Self Assessment account information | Income Tax (Making Tax Digital) end-to-end service guide - Income Tax (Making Tax Digital) end-to-end service guide" />
-      <meta name="twitter:url" content="developer.service.hmrc.gov.uk/guides/income-tax-mtd-end-to-end-service-guide/documentation/view-customer-self-assessment-account-information.html" />
+      <meta name="twitter:title" content="Making updates during the tax year | Income Tax (Making Tax Digital) end-to-end service guide - Income Tax (Making Tax Digital) end-to-end service guide" />
+      <meta name="twitter:url" content="developer.service.hmrc.gov.uk/guides/income-tax-mtd-end-to-end-service-guide/documentation/make-updates-during-tax-year.html" />
 
       <meta property="og:description" content="Software developers, designers, product owners or business analysts. Integrate your software with the Income Tax API for Making Tax Digital." />
       <meta property="og:image" content="developer.service.hmrc.gov.uk/images/govuk-large.png" />
       <meta property="og:site_name" content="Income Tax (Making Tax Digital) end-to-end service guide" />
-      <meta property="og:title" content="Viewing a customer's Self Assessment account information | Income Tax (Making Tax Digital) end-to-end service guide" />
+      <meta property="og:title" content="Making updates during the tax year | Income Tax (Making Tax Digital) end-to-end service guide" />
       <meta property="og:type" content="object" />
-      <meta property="og:url" content="developer.service.hmrc.gov.uk/guides/income-tax-mtd-end-to-end-service-guide/documentation/view-customer-self-assessment-account-information.html" />
+      <meta property="og:url" content="developer.service.hmrc.gov.uk/guides/income-tax-mtd-end-to-end-service-guide/documentation/make-updates-during-tax-year.html" />
 
     
   </head>
@@ -508,25 +508,203 @@
         <div class="app-pane__content toc-open-disabled" aria-label="Content" tabindex="0">
           <main id="content" class="technical-documentation" data-module="anchored-headings">
             <!--- Section owner: MTD Programme --->
-<h1 id="viewing-a-customer-39-s-self-assessment-account-information">Viewing a customer&rsquo;s Self Assessment account information</h1>
+<h1 id="making-updates-during-the-tax-year">Making updates during the tax year</h1>
 
-<p>The <a href="/api-documentation/docs/api/service/self-assessment-accounts-api/" rel="noopener noreferrer">Self Assessment Accounts API</a> has a suite of endpoints that retrieve the customer’s payment and liability information. The data returned relates only to payments and liabilities arising for tax years since the customer joined the new service. There may also be outstanding liabilities and payment information a customer needs to view for the years before signing up to Making Tax Digital for Income Tax Self Assessment that can be viewed using the <a href="/guides/income-tax-mtd-end-to-end-service-guide/documentation/tasks-outside-mtd-software.html#hmrc-online-services" rel="noopener noreferrer">HMRC online services</a> account.</p>
-<p>The endpoints allow the customer to complete the following tasks:</p>
+<h2 id="mtd-mandated-income">MTD mandated income</h2>
+
+<p>A customer’s MTD mandated income consists of the following:</p>
 
 <ul>
-<li>view a list of MTD charges and their due dates</li>
-<li>view the history of payments made to HMRC and how the money was used</li>
-<li>view the history of changes made to an individual charge</li>
+<li>self-employed sole trader income</li>
+<li>property income</li>
 </ul>
-<p>A customer, at any time, can view a breakdown of their MTD liabilities for a given date range. In software, this is done by calling the <a href="/api-documentation/docs/api/service/self-assessment-accounts-api/3.0/oas/page#tag/Payments-and-Liabilities/paths/~1accounts~1self-assessment~1%7Bnino%7D~1balance-and-transactions/get" rel="noopener noreferrer">Retrieve Self Assessment Balance and Transactions</a> endpoint. Customer liabilities in the endpoint are broken down into overdue, currently due (payable), and pending (not yet due) amounts.</p>
-<p><a href="figures/payments-and-liabilities-rsab.svg" target="blank"><img src="figures/payments-and-liabilities-rsab.svg" alt="Retrieve a Self Assessment Balance Transactions diagram" style="width:720px;" /></a></p>
-<p><a href="figures/payments-and-liabilities-rsab.svg" target="blank">Open the Retrieve a Self Assessment Balance and Transactions diagram in a new tab</a>.</p>
-<p>A customer, at any time, can view a history of their MTD payments for a given date range. In software, this is done by calling the <a href="/api-documentation/docs/api/service/self-assessment-accounts-api/2.0/oas/page#tag/Payments-and-Liabilities/paths/~1accounts~1self-assessment~1%7Bnino%7D~1payments-and-allocations/get" rel="noopener noreferrer">List Self Assessment Payments and Allocation Details</a> endpoint. The endpoint also retrieves details about how each payment was used by HMRC.</p>
-<p><a href="figures/payments-and-liabilities-lsat.svg" target="blank"><img src="figures/payments-and-liabilities-lsat.svg" alt="List Self Assessment Transactions diagram" style="width:720px;" /></a></p>
-<p><a href="figures/payments-and-liabilities-lsat.svg" target="blank">Open the List Self Assessment Payments and Allocation Details diagram in a new tab</a>.</p>
-<p>A customer, at any time, can view the history of changes made to an individual charge. In software, this is done by calling the <a href="/api-documentation/docs/api/service/self-assessment-accounts-api/3.0/oas/page#tag/Payments-and-Liabilities/paths/~1accounts~1self-assessment~1%7Bnino%7D~1charges~1%7BtransactionId%7D/get" rel="noopener noreferrer">Retrieve History of a Self Assessment Charge</a> endpoint.</p>
-<p><a href="figures/payments-and-liabilities-rsach.svg" target="blank"><img src="figures/payments-and-liabilities-rsach.svg" alt="Retrieve a Self Assessment Charge's History diagram" style="width:720px;" /></a></p>
-<p><a href="figures/payments-and-liabilities-rsach.svg" target="blank">Open the Retrieve a Self Assessment Charge&rsquo;s History diagram in a new tab</a>.</p>
+<p>This is the ‘qualifying’ income HMRC uses to establish if the customer meets the criteria for MTD. MTD Customers can have one, or multiple, businesses with these types of income. For more information about qualifying income, refer to <a href="https://www.gov.uk/guidance/check-if-youre-eligible-for-making-tax-digital-for-income-tax#check-what-is-included-in-your-qualifying-income" rel="noopener noreferrer">Check what is included in your qualifying income (GOV.UK)</a>.</p>
+<h3 id="self-employed-sole-trader-income">Self-employed sole trader income</h3>
+
+<p>If the customer is working for themselves, they are a sole trader. For more information about identifying self-employed sole traders, refer to <a href="https://www.gov.uk/working-for-yourself?step-by-step-nav=01ff8dbd-886a-4dbb-872c-d2092b31b2cf" rel="noopener noreferrer">Working for yourself (GOV.UK)</a>. Currently, self-employment income refers to sole trader self-employment income and not income earned through partnerships. This exclusion also applies to directors of limited companies.</p>
+<h3 id="property-income">Property income</h3>
+
+<p>A customer’s property income includes the following:</p>
+
+<ul>
+<li>rental income and other receipts from UK land or property</li>
+<li>rental income and other receipts from foreign land or property</li>
+<li>income from letting furnished rooms in customer’s own home</li>
+<li>income from furnished holiday lettings (FHL) and non-furnished holiday lettings (non-FHL) in the UK</li>
+<li>premiums from leasing UK land</li>
+<li>inducements to take an interest in letting a property (a reverse premium)</li>
+</ul>
+<p>For more information about property income, refer to <a href="https://www.gov.uk/guidance/income-tax-when-you-rent-out-a-property-working-out-your-rental-income" rel="noopener noreferrer">Work out your rental income when you let property (GOV.UK)</a>.</p>
+<h2 id="showing-customers-their-obligations">Showing customers their obligations</h2>
+
+<p>An MTD mandated or voluntary customer will have a set of obligations for each tax year. These are:</p>
+
+<ul>
+<li>four quarterly updates</li>
+<li>final declaration </li>
+</ul>
+<p>At any time of the year, customers can check their obligations. To provide this information, the software needs details about their business income sources. It gets this information by using the <a href="/api-documentation/docs/api/service/business-details-api/1.0/oas/page#/paths/~1individuals~1business~1details~1%7Bnino%7D~1list/get" rel="noopener noreferrer">List All Businesses</a> endpoint, which provides the business ID. This ID is required to call multiple self-employment and property endpoints. To save time, the software should store this ID instead of making extra calls.</p>
+<p>Quarterly obligations are created for sole trader and property income sources. In software, the retrieval of customer’s obligations is done by calling any of the following endpoints depending on the customer’s type of income source:</p>
+
+<ul>
+<li><a href="/api-documentation/docs/api/service/obligations-api/2.0/oas/page#/paths/~1obligations~1details~1%7Bnino%7D~1income-and-expenditure/get" rel="noopener noreferrer">Retrieve Income Tax (Self Assessment) Income and Expenditure Obligations</a></li>
+<li><a href="/api-documentation/docs/api/service/obligations-api/2.0/oas/page#/paths/~1obligations~1details~1%7Bnino%7D~1crystallisation/get" rel="noopener noreferrer">Retrieve Income Tax (Self Assessment) Final Declaration Obligations</a></li>
+</ul>
+<p>These endpoints provide obligation dates for all self-employment and property businesses, and inform whether or not obligations have been met. The deadline for meeting a quarterly obligation is one month after the obligation period end date. The software should communicate these deadlines clearly to the customer and prompt them to submit the information when the update is due.</p>
+<p>A customer should always be able to view their latest obligations. To do this, the software should be aware that the customer’s obligation will be created or updated for the following reasons:</p>
+
+<ul>
+<li>start of financial year</li>
+<li>when a customer submits updates</li>
+<li>when a customer adds a new sole trader business in <a href="/guides/income-tax-mtd-end-to-end-service-guide/documentation/tasks-outside-mtd-software.html#hmrc-online-services" rel="noopener noreferrer">HMRC online services</a></li>
+<li>when a customer ceases an existing business in HMRC online services</li>
+</ul>
+<h2 id="change-to-calendar-quarters">Change to calendar quarters</h2>
+
+<p>From the tax year 2024 to 2025, accounting periods that run from 1 April to 31 March will be treated as equivalent to 6 April to 5 April. This removes the need for customers to make small adjustments of a few days to determine their profit or loss for the tax year.</p>
+<p>As a result, customers with an accounting period that starts on 1 April (rather than 6 April) and ends on 31 March will have the opportunity to change their quarterly updates to also start at the beginning of the month. Although all MTD customers or their agents will be able to make this change through their software regardless of their accounting period, only customers with accounting periods starting on 1 April will benefit. Consequently, the software must avoid allowing customers with accounting periods other than 1 April to 31 March to make this change.</p>
+<p>The following table shows an example.</p>
+<div class="table-container">
+        <table>
+          <tr>
+<th>Quarterly update</th>
+<th>Calendar quarterly period</th>
+</tr><tr>
+<td>1</td>
+<td>1 April to 30 June</td>
+</tr><tr>
+<td>2</td>
+<td>1 July to 30 September</td>
+</tr><tr>
+<td>3</td>
+<td>1 October to 31 December</td>
+</tr><tr>
+<td>4</td>
+<td>1 January to 31 March</td>
+</tr>
+        </table>
+      </div><p>By default, a customer’s quarterly updates will be set automatically to standard quarters. If they wish to change to calendar quarterly updates, they must do this through their software. This cannot be done through HMRC online services. The software must make this option available to customers before they submit their first quarterly update. This is because after submitting the first quarterly update for a tax year, the customer cannot change the quarters for that tax year.</p>
+<p>However, if the customer is signing up to MTD late in the tax year, they can still make this change as long as it is before their first quarterly update. This change will have no effect on the update deadlines.</p>
+<p>To allow a customer to change their periods to calendar quarters, the software should use the <a href="/api-documentation/docs/api/service/business-details-api/1.0/oas/page#/paths/~1individuals~1business~1details~1{nino}~1{businessId}~1{taxYear}/put" rel="noopener noreferrer">Create and Amend Quarterly Period Type for a Business</a> endpoint. The software should use the <a href="/api-documentation/docs/api/service/obligations-api/" rel="noopener noreferrer">Obligations API</a> to access the new calendar quarterly periods.</p>
+<p>In the first year of a calendar quarter, the first quarterly period starts on 6 April and ends on 30 June. As a result, customers with a 1 April to 31 March accounting period will need to ensure that income and expenses for the period from 1 April to 5 April are also submitted so that their liability can be assessed accurately for the full tax year equivalent period.</p>
+<p>Consider the following example:</p>
+
+<ul>
+<li>the customer uses their software to make the change to calendar quarters before their first quarterly update - in software, this is done by using the <a href="/api-documentation/docs/api/service/business-details-api/1.0/oas/page#/paths/~1individuals~1business~1details~1{nino}~1{businessId}~1{taxYear}/put" rel="noopener noreferrer">Create and Amend Quarterly Period Type for a Business</a> endpoint</li>
+<li><p>the software then calls the <a href="/api-documentation/docs/api/service/obligations-api/" rel="noopener noreferrer">Obligations API</a> , which shows the customer’s new calendar quarterly updates as follows</p>
+<div class="table-container">
+        <table>
+          <tr>
+<th>Quarterly update</th>
+<th>Calendar quarterly period</th>
+</tr><tr>
+<td>1</td>
+<td>6 April to 30 June</td>
+</tr><tr>
+<td>2</td>
+<td>1 July to 30 September</td>
+</tr><tr>
+<td>3</td>
+<td>1 October to 31 December</td>
+</tr><tr>
+<td>4</td>
+<td>1 January to 31 March</td>
+</tr>
+        </table>
+      </div></li>
+<li><p>the change affects the first period of the first year and starts from 6 April because that is the first day of the tax year - the first period for subsequent tax years starts on 1 April</p></li>
+<li><p>the customer uses the steps described in <a href="#submit-quarterly-update" rel="noopener noreferrer">Submit quarterly update</a> to submit their calendar quarterly updates through their software</p></li>
+<li><p>when all calendar quarterly updates have been made, the customer needs to account for the income and expense information for the period to 5 April - they can do this through their software by using the <a href="/api-documentation/docs/api/service/self-assessment-bsas-api/" rel="noopener noreferrer">Business Source Adjustable Summary API</a></p></li>
+</ul>
+<p>After the calendar quarterly election change has been made, it will continue year on year until the customer requests a change back to standard quarterly updates. The software can use the <a href="/api-documentation/docs/api/service/business-details-api/1.0/oas/page#/paths/~1individuals~1business~1details~1{nino}~1{businessId}~1{taxYear}/put" rel="noopener noreferrer">Create and Amend Quarterly Period Type for a Business</a> endpoint to allow a customer to change their periods back to standard quarters. Each year the customer makes these changes, the first period start date will be affected and will reflect the previous quarterly update type.</p>
+<h2 id="how-to-submit-and-view-in-year-updates">How to submit and view in-year updates</h2>
+
+<p>MTD mandated and voluntary customers must maintain and submit digital records of their self-employment and property business income and expenses every quarter. If they wish, they can also submit summary-level information more frequently, for example, monthly.</p>
+<p>Customers must submit at least one update for each quarter. The following table shows an example.</p>
+<div class="table-container">
+        <table>
+          <tr>
+<th>Update</th>
+<th>Quarter(s)</th>
+<th>Result</th>
+</tr><tr>
+<td>1</td>
+<td>1</td>
+<td>6 April to 5 July is accepted</td>
+</tr><tr>
+<td>2</td>
+<td>2</td>
+<td>6 July to 5 October is accepted</td>
+</tr><tr>
+<td>3</td>
+<td>3, 4</td>
+<td>6 October to 5 April is accepted with a possible penalty</td>
+</tr>
+        </table>
+      </div><h3 id="submit-quarterly-update">Submit quarterly update</h3>
+
+<p>The software should convert transactional information into summary totals. It should categorise these totals as income or expenses. It should send this summary information to HMRC for each self-employment and property income source. HMRC can then use this information to calculate business profits based on the most recent data.</p>
+<p>Customers with an annual turnover (sales) of less than £85,000 can report their total income and expenses in their quarterly updates (no detailed breakdown required). They can do this through the software by using the ‘Consolidated Expenses’ parameter in the <a href="https://developer.service.hmrc.gov.uk/api-documentation/docs/api/service/self-employment-business-api/3.0" rel="noopener noreferrer">Self Employment Business</a> and <a href="https://developer.service.hmrc.gov.uk/api-documentation/docs/api/service/property-business-api/3.0" rel="noopener noreferrer">Property Business</a> APIs for both self-employment and property income.</p>
+<p>When the tax calculation is triggered, it means that the quarterly obligation has been fulfilled, if the data covers the entire period. If the calculation fails, the obligation will not be marked as fulfilled. Customers can also use <a href="/guides/income-tax-mtd-end-to-end-service-guide/documentation/tasks-outside-mtd-software.html#hmrc-online-services" rel="noopener noreferrer">HMRC online services</a> to check the status of their <a href="#showing-customers-their-obligations" rel="noopener noreferrer">obligations</a>.</p>
+<p><a href="figures/submit-periodics.svg" target="blank"><img src="figures/submit-periodics.svg" alt="submit periodics diagram" style="width:720px;" /></a></p>
+<p><a href="figures/submit-periodics.svg" target="blank">Open the submit periodics diagram in a new tab</a>.</p>
+<h3 id="user-journey">User journey</h3>
+
+
+<ol>
+<li><p>The software prompts the customer when they need to submit an update. This prompt will not be sent from any API.</p></li>
+<li><p>The customer receives the prompt in the software and begins their submission process.</p></li>
+<li><p>Software prepares the summary information and displays it to the customer.</p></li>
+<li><p>The customer checks the information and submits it.</p></li>
+<li><p>The software initiates the data submission process by calling one of the following endpoints, depending on the income source type being submitted:</p>
+
+<ul>
+<li><a href="/api-documentation/docs/api/service/self-employment-business-api/3.0/oas/page#tag/Self-Employment-Period-Summaries/paths/~1individuals~1business~1self-employment~1{nino}~1{businessId}~1period/post" rel="noopener noreferrer">Create a Self-Employment Period Summary</a></li>
+<li><a href="/api-documentation/docs/api/service/property-business-api/3.0/oas/page#tag/UK-Property-Income-and-Expenses-Period-Summary/paths/~1individuals~1business~1property~1uk~1{nino}~1{businessId}~1period~1{taxYear}/post" rel="noopener noreferrer">Create a UK Property Income and Expenses Period Summary</a></li>
+<li><a href="/api-documentation/docs/api/service/property-business-api/3.0/oas/page#tag/Foreign-Property-Income-and-Expenses-Period-Summary/paths/~1individuals~1business~1property~1foreign~1{nino}~1{businessId}~1period~1{taxYear}/post" rel="noopener noreferrer">Create a Foreign Property Income and Expenses Period Summary</a></li>
+<li><a href="/api-documentation/docs/api/service/property-business-api/3.0/oas/page#tag/Historic-FHL-UK-Property-Income-and-Expenses-Period-Summary/paths/~1individuals~1business~1property~1uk~1period~1furnished-holiday-lettings~1{nino}/post" rel="noopener noreferrer">Create a Historic FHL UK Property Income and Expenses Period Summary</a></li>
+<li><a href="/api-documentation/docs/api/service/property-business-api/3.0/oas/page#tag/Historic-non-FHL-UK-Property-Income-and-Expenses-Period-Summary/paths/~1individuals~1business~1property~1uk~1period~1non-furnished-holiday-lettings~1{nino}/post" rel="noopener noreferrer">Create a Historic Non-FHL UK Property Income and Expenses Period Summary</a></li>
+</ul></li>
+<li><p>HMRC receives and stores information and provides a success response.</p></li>
+<li><p>The software receives the success response and confirms with the customer that the update has been received and stored by HMRC.</p></li>
+<li><p>The customer views the confirmation.</p></li>
+<li><p>The software calls the <a href="/api-documentation/docs/api/service/individual-calculations-api/5.0/oas/page#tag/Tax-Calculations/paths/~1individuals~1calculations~1{nino}~1self-assessment~1{taxYear}/post" rel="noopener noreferrer">Trigger a Self Assessment Tax Calculation</a> endpoint to ensure the obligation is marked as fulfilled, once the update completes an obligation period.</p></li>
+<li><p>HMRC receives the request and returns a Calculation ID.</p></li>
+<li><p>The software receives the Calculation ID and stores it for future use.</p></li>
+<li><p>The software can also use this Calculation ID to call the <a href="/api-documentation/docs/api/service/individual-calculations-api/5.0/oas/page#tag/Tax-Calculations/paths/~1individuals~1calculations~1{nino}~1self-assessment~1{taxYear}~1{calculationId}/get" rel="noopener noreferrer">Retrieve a Self Assessment Tax Calculation</a> endpoint and display the calculation to the customer. However, this step is optional and the software does not have to retrieve the tax calculation information at this point.</p></li>
+</ol>
+<h3 id="view-quarterly-update">View quarterly update</h3>
+
+<p>When a quarterly update has been made, the customer can view a summary of a specific period. To retrieve this summary, the software should call any of the following endpoints, depending on the business income type:</p>
+
+<ul>
+<li><a href="/api-documentation/docs/api/service/self-employment-business-api/3.0/oas/page#tag/Self-Employment-Period-Summaries/paths/~1individuals~1business~1self-employment~1{nino}~1{businessId}~1period~1{periodId}/get" rel="noopener noreferrer">Retrieve a Self-Employment Period Summary</a></li>
+<li><a href="/api-documentation/docs/api/service/property-business-api/3.0/oas/page#tag/UK-Property-Income-and-Expenses-Period-Summary/paths/~1individuals~1business~1property~1uk~1{nino}~1{businessId}~1period~1{taxYear}~1{submissionId}/get" rel="noopener noreferrer">Retrieve a UK Property Income &amp; Expenses Period Summary</a></li>
+<li><a href="/api-documentation/docs/api/service/property-business-api/3.0/oas/page#tag/Foreign-Property-Income-and-Expenses-Period-Summary/paths/~1individuals~1business~1property~1foreign~1{nino}~1{businessId}~1period~1{taxYear}~1{submissionId}/get" rel="noopener noreferrer">Retrieve a Foreign Property Income &amp; Expenses Period Summary</a></li>
+<li><a href="/api-documentation/docs/api/service/property-business-api/3.0/oas/page#tag/Historic-FHL-UK-Property-Income-and-Expenses-Period-Summary/paths/~1individuals~1business~1property~1uk~1period~1furnished-holiday-lettings~1{nino}~1{periodId}/get" rel="noopener noreferrer">Retrieve a Historic FHL UK Property Income &amp; Expenses Period Summary</a></li>
+<li><a href="/api-documentation/docs/api/service/property-business-api/3.0/oas/page#tag/Historic-non-FHL-UK-Property-Income-and-Expenses-Period-Summary/paths/~1individuals~1business~1property~1uk~1period~1non-furnished-holiday-lettings~1{nino}~1{periodId}/get" rel="noopener noreferrer">Retrieve a Historic Non-FHL UK Property Income &amp; Expenses Period Summary</a></li>
+</ul>
+<h3 id="amend-quarterly-update">Amend quarterly update</h3>
+
+<p>If a customer wants to make a change to a previously submitted periodic update, the software should call the following endpoints, depending on the business income type:</p>
+
+<ul>
+<li><a href="/api-documentation/docs/api/service/self-employment-business-api/3.0/oas/page#tag/Self-Employment-Period-Summaries/paths/~1individuals~1business~1self-employment~1{nino}~1{businessId}~1period/get" rel="noopener noreferrer">List Self-Employment Period Summaries</a></li>
+<li><a href="/api-documentation/docs/api/service/property-business-api/3.0/oas/page#tag/UK-or-Foreign-Property-Income-and-Expenses-Period-Summaries-List/paths/~1individuals~1business~1property~1{nino}~1{businessId}~1period~1{taxYear}/get" rel="noopener noreferrer">List Property Income and Expenses Period Summaries</a> </li>
+<li><a href="/api-documentation/docs/api/service/property-business-api/3.0/oas/page#tag/Historic-FHL-UK-Property-Income-and-Expenses-Period-Summary/paths/~1individuals~1business~1property~1uk~1period~1furnished-holiday-lettings~1{nino}/get" rel="noopener noreferrer">List Historic FHL UK property Income &amp; Expenses Period Summaries</a> </li>
+<li><a href="/api-documentation/docs/api/service/property-business-api/3.0/oas/page#tag/Historic-non-FHL-UK-Property-Income-and-Expenses-Period-Summary/paths/~1individuals~1business~1property~1uk~1period~1non-furnished-holiday-lettings~1{nino}/get" rel="noopener noreferrer">List Historic Non-FHL UK Property Income &amp; Expenses Period Summaries</a></li>
+</ul>
+<p>Calling these endpoints enables the software to get the Period ID or Submission ID and check the update period date range. This allows the software to make changes to the correct date range. The update period the customer is trying to change must match the original update period exactly, or it will be rejected.</p>
+<p>The software should recreate the update period, including the new summary totals, and resubmit the specific update period using the following endpoints, depending on the business income type:</p>
+
+<ul>
+<li><a href="/api-documentation/docs/api/service/self-employment-business-api/3.0/oas/page#tag/Self-Employment-Period-Summaries/paths/~1individuals~1business~1self-employment~1{nino}~1{businessId}~1period~1{periodId}/put" rel="noopener noreferrer">Amend a Self-Employment Period Summary</a></li>
+<li><a href="/api-documentation/docs/api/service/property-business-api/3.0/oas/page#tag/UK-Property-Income-and-Expenses-Period-Summary/paths/~1individuals~1business~1property~1uk~1{nino}~1{businessId}~1period~1{taxYear}~1{submissionId}/put" rel="noopener noreferrer">Amend a UK Property Income &amp; Expenses Period Summary</a></li>
+<li><a href="/api-documentation/docs/api/service/property-business-api/3.0/oas/page#tag/Foreign-Property-Income-and-Expenses-Period-Summary/paths/~1individuals~1business~1property~1foreign~1{nino}~1{businessId}~1period~1{taxYear}~1{submissionId}/put" rel="noopener noreferrer">Amend a Foreign Property Income &amp; Expenses Period Summary</a> </li>
+<li><a href="/api-documentation/docs/api/service/property-business-api/3.0/oas/page#tag/Historic-FHL-UK-Property-Income-and-Expenses-Period-Summary/paths/~1individuals~1business~1property~1uk~1period~1furnished-holiday-lettings~1{nino}~1{periodId}/put" rel="noopener noreferrer">Amend a Historic FHL UK Property Income &amp; Expenses Period Summary</a> </li>
+<li><a href="/api-documentation/docs/api/service/property-business-api/3.0/oas/page#tag/Historic-non-FHL-UK-Property-Income-and-Expenses-Period-Summary/paths/~1individuals~1business~1property~1uk~1period~1non-furnished-holiday-lettings~1{nino}~1{periodId}/put" rel="noopener noreferrer">Amend a Historic Non-FHL UK Property Income &amp; Expenses Period Summary</a></li>
+</ul>
+<p>After an amendment has been made, the software should follow the same process used when submitting a quarterly update. This involves calling the <a href="/api-documentation/docs/api/service/individual-calculations-api/5.0/oas/page#tag/Tax-Calculations/paths/~1individuals~1calculations~1{nino}~1self-assessment~1{taxYear}/post" rel="noopener noreferrer">Trigger a Self Assessment Tax Calculation</a> endpoint to ensure the obligation is marked as fulfilled.</p>
 
             
           </main>
